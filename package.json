@@ -1,0 +1,14 @@
+{
+  "name": "vuent",
+  "version": "0.1.0",
+  "description": "Vue.js components implementing Microsoft's Fluent Design",
+  "author": {
+    "name": "Artur Mizera",
+    "email": "arturkoduje@outlook.com"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/arturmiz/vuent"
+  }
+}
