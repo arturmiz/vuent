@@ -10,5 +10,13 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/arturmiz/vuent"
+  },
+  "scripts": {
+    "commitmsg": "commitlint -e $GIT_PARAMS"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "6.0.2",
+    "@commitlint/config-conventional": "6.0.2",
+    "husky": "~0.14.3"
   }
 }
