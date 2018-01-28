@@ -12,11 +12,13 @@
     "url": "https://github.com/arturmiz/vuent"
   },
   "scripts": {
-    "commitmsg": "commitlint -e $GIT_PARAMS"
+    "commitmsg": "commitlint -e $GIT_PARAMS",
+    "lint": "eslint --ext .js ."
   },
   "devDependencies": {
     "@commitlint/cli": "6.0.2",
     "@commitlint/config-conventional": "6.0.2",
+    "eslint": "~4.16.0",
     "husky": "~0.14.3"
   }
 }
