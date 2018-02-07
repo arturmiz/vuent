@@ -2,9 +2,11 @@ module.exports = {
   "env": {
     "browser": true,
     "es6": true,
+    "jest": true,
   },
   "extends": [
-    "eslint:recommended"
+    "eslint:recommended",
+    "plugin:jest/recommended",
   ],
   "parserOptions": {
     "ecmaVersion": 7,

@@ -13,12 +13,17 @@
   },
   "scripts": {
     "commitmsg": "commitlint -e $GIT_PARAMS",
-    "lint": "eslint --ext .js ."
+    "lint": "eslint --ext .js .",
+    "test": "jest --config=jest.config.json",
+    "test:coverage":  "jest --config=jest.config.json --coverage"
   },
   "devDependencies": {
     "@commitlint/cli": "6.0.2",
     "@commitlint/config-conventional": "6.0.2",
+    "babel-jest": "~22.2.0",
     "eslint": "~4.16.0",
-    "husky": "~0.14.3"
+    "eslint-plugin-jest": "~21.7.0",
+    "husky": "~0.14.3",
+    "jest": "~22.2.1",
   }
 }

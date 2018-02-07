@@ -1,0 +1,9 @@
+{
+  "mapCoverage": true,
+  "moduleFileExtensions": [
+      "js"
+  ],
+  "transform": {
+      "^.+\\.js$": "<rootDir>/node_modules/babel-jest"
+  }
+}
