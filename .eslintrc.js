@@ -7,6 +7,7 @@ module.exports = {
   "extends": [
     "eslint:recommended",
     "plugin:jest/recommended",
+    "plugin:vue/recommended"
   ],
   "parserOptions": {
     "ecmaVersion": 7,
@@ -28,6 +29,13 @@ module.exports = {
     "semi": [
       "error",
       "always"
-    ]
+    ],
+    "vue/max-attributes-per-line": [2, {
+      "singleline": 1,
+      "multiline": {
+        "max": 1,
+        "allowFirstLine": true
+      }
+    }]
   }
 };

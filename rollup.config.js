@@ -1,5 +1,6 @@
 import resolve from 'rollup-plugin-node-resolve';
 import commonjs from 'rollup-plugin-commonjs';
+import vue from 'rollup-plugin-vue';
 import uglify from 'rollup-plugin-uglify';
 import pkg from './package.json';
 
@@ -20,7 +21,17 @@ export default [
     plugins: [
       resolve(),
       commonjs(),
+      vue({
+        css: 'dist/vuent.css',
+        compileTemplate: true,
+        compileOptions: {
+          preserveWhitespace: false
+        }
+      }),
       production && uglify()
+    ],
+    external: [
+      'vue'
     ]
   },
   {

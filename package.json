@@ -17,10 +17,13 @@
   "scripts": {
     "build": "npm run lint && npm run test && rollup -c",
     "commitmsg": "commitlint -e $GIT_PARAMS",
-    "lint": "eslint --ext .js .",
     "dev": "rollup -c -w",
+    "lint": "eslint --ext .js, .vue .",
     "test": "jest --config=jest.config.json",
     "test:coverage":  "jest --config=jest.config.json --coverage"
+  },
+  "peerDependencies": {
+    "vue": "~2.5.13"
   },
   "devDependencies": {
     "@commitlint/cli": "6.0.2",
@@ -28,11 +31,15 @@
     "babel-jest": "~22.2.0",
     "eslint": "~4.16.0",
     "eslint-plugin-jest": "~21.7.0",
+    "eslint-plugin-vue": "~4.2.0",
     "husky": "~0.14.3",
     "jest": "~22.2.1",
     "rollup": "~0.55.5",
     "rollup-plugin-commonjs": "~8.3.0",
     "rollup-plugin-node-resolve": "~3.0.2",
     "rollup-plugin-uglify": "^3.0.0",
+    "rollup-plugin-vue": "^3.0.0",
+    "vue-jest": "~2.0.1",
+    "vue-template-compiler": "^2.5.13"
   }
 }
