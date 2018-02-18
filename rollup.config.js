@@ -1,5 +1,6 @@
 import resolve from 'rollup-plugin-node-resolve';
 import commonjs from 'rollup-plugin-commonjs';
+import babel from 'rollup-plugin-babel';
 import vue from 'rollup-plugin-vue';
 import uglify from 'rollup-plugin-uglify';
 import pkg from './package.json';
@@ -27,6 +28,9 @@ export default [
         compileOptions: {
           preserveWhitespace: false
         }
+      }),
+      babel({
+        exclude: 'node_modules/**'
       }),
       production && uglify()
     ],

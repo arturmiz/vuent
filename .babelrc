@@ -1,0 +1,21 @@
+{
+  "presets": [
+    ["env", {
+        "modules": false,
+        "targets": {
+          "browsers": [
+            "defaults",
+            "not ie 11"
+          ]
+        }
+    }]
+  ],
+  "env": {
+    "test": {
+      "presets": [
+        ["env", "jest"]
+      ]
+    }
+  },
+  "plugins": ["external-helpers"]
+}
