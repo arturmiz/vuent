@@ -1,0 +1,6 @@
+@import '../variables';
+
+@mixin component-base() {
+  font-family: $font;
+  font-size: 15px;
+}
