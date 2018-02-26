@@ -11,13 +11,21 @@ const input = 'src/index.js';
 // `npm run dev` -> `production` is false
 const production = !process.env.ROLLUP_WATCH;
 
+const external = [
+  'vue'
+];
+
 export default [
   {
     input,
     output: {
       name: 'vuent',
       file: pkg.browser,
-      format: 'umd'
+      format: 'umd',
+      sourcemap: true,
+      globals: {
+        'vue': 'Vue'
+      }
     },
     plugins: [
       resolve(),
@@ -34,15 +42,24 @@ export default [
       }),
       production && uglify()
     ],
-    external: [
-      'vue'
-    ]
+    external
   },
   {
     input,
     output: [
       { file: pkg.main, format: 'cjs' },
       { file: pkg.module, format: 'es' }
-    ]
+    ],
+    plugins: [
+      resolve(),
+      vue({
+        css: false,
+        compileTemplate: true,
+        compileOptions: {
+          preserveWhitespace: false
+        }
+      }),
+    ],
+    external
   }
 ];
