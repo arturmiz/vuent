@@ -16,6 +16,5 @@
         ["env", "jest"]
       ]
     }
-  },
-  "plugins": ["external-helpers"]
+  }
 }

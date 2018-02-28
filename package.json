@@ -20,7 +20,7 @@
     "dev": "rollup -c -w",
     "lint": "eslint --ext .js, .vue .",
     "test": "jest --config=jest.config.json",
-    "test:coverage":  "jest --config=jest.config.json --coverage"
+    "test:coverage": "jest --config=jest.config.json --coverage"
   },
   "peerDependencies": {
     "vue": "~2.5.13"
@@ -43,7 +43,9 @@
     "rollup-plugin-node-resolve": "~3.0.2",
     "rollup-plugin-uglify": "^3.0.0",
     "rollup-plugin-vue": "^3.0.0",
+    "vue": "~2.5.13",
     "vue-jest": "~2.0.1",
-    "vue-template-compiler": "^2.5.13"
+    "vue-template-compiler": "^2.5.13",
+    "vue-test-utils": "^1.0.0-beta.11"
   }
 }
