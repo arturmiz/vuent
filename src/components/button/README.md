@@ -6,22 +6,22 @@
 ```
 
 ## Properties
-### `label`
+#### `label`
 Default: `'Button'`
 
 The button's text
 
-### `type`
+#### `type`
 Default: `button`
 
 Similar to standard HTML's `button`, could be one of `button`, `submit` or `reset`.
 
-### `click`
+#### `click`
 Default: `() => {}`
 
 The action handler invoked once user clicks the button. Must be a JS function.
 
-### `disabled`
+#### `disabled`
 Default: `false`
 
 Determines whether the button should be in disabled mode or not.
