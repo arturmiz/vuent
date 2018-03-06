@@ -4,7 +4,8 @@
     <slot>hyperlink</slot>
   </span>
   <a v-else
-     class="vnt-link">
+     class="vnt-link"
+     :href="href">
     <slot>hyperlink</slot>
   </a>
 </template>
@@ -17,6 +18,10 @@ export default {
     disabled: {
       type: Boolean,
       default: false
+    },
+    href: {
+      type: String,
+      default: '#'
     }
   }
 };

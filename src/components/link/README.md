@@ -12,3 +12,8 @@ All properties from standard HTML's `<a>` link are applicable. The additional on
 Default: `false`
 
 Determines whether the link should be in disabled mode or not.
+
+#### `href`
+Default: `#`
+
+Link's target URL.
