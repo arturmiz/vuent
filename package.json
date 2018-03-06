@@ -37,6 +37,7 @@
     "eslint-plugin-vue": "~4.2.0",
     "husky": "~0.14.3",
     "jest": "~22.2.1",
+    "jest-serializer-vue": "~0.3.0",
     "rollup": "~0.55.5",
     "rollup-plugin-babel": "~3.0.3",
     "rollup-plugin-commonjs": "~8.3.0",
