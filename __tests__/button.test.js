@@ -2,9 +2,9 @@ import { mount } from 'vue-test-utils';
 import Button from '@/components/button';
 
 describe('Button', () => {
+  let wrapper;
 
   describe('by default', () => {
-    let wrapper;
 
     beforeAll(() => {
       wrapper = mount(Button);
@@ -22,16 +22,30 @@ describe('Button', () => {
       expect(wrapper.vm.label).toBe('Button');
     });
 
+    test('renders correctly', () => {
+      expect(wrapper.html()).toMatchSnapshot();
+    });
+
   });
 
-  test('can be disabled', () => {
-    const wrapper = mount(Button, {
-      propsData: {
-        disabled: true
-      }
+  describe('can be disabled', () => {
+
+    beforeAll(() => {
+      wrapper = mount(Button, {
+        propsData: {
+          disabled: true
+        }
+      });
     });
-    expect(wrapper.vm.disabled).toBe(true);
+
+    test('renders correctly', () => {
+      expect(wrapper.html()).toMatchSnapshot();
+    });
+
+    test('is disabled', () => {
+      expect(wrapper.vm.disabled).toBe(true);
+    });
+
   });
 
 });
-
