@@ -4,6 +4,7 @@ module.exports = {
     'scope-enum': [2, 'always',
       [
         'button',
+        'checkbox',
         'link'
       ]
     ]
