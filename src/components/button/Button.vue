@@ -2,7 +2,9 @@
   <button class="vnt-button"
           :type="type"
           :disabled="disabled"
-          @click="click">{{ label }}</button>
+          @click="click">
+    <slot>{{ label }}</slot>
+  </button>
 </template>
 
 <script>

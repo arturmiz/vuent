@@ -48,4 +48,13 @@ describe('Button', () => {
 
   });
 
+  test('can have content set using slot', () => {
+    wrapper = mount(Button, {
+      slots: {
+        default: '<span>Custom content</span>'
+      }
+    });
+    expect(wrapper.html()).toMatchSnapshot();
+  });
+
 });
