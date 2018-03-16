@@ -57,4 +57,15 @@ describe('Button', () => {
     expect(wrapper.html()).toMatchSnapshot();
   });
 
+  test('when clicked invokes passed handler', () => {
+    const mockClick = jest.fn();
+    wrapper = mount(Button, {
+      propsData: {
+        click: mockClick
+      }
+    });
+    wrapper.find('button').trigger('click');
+    expect(mockClick).toBeCalled();
+  });
+
 });
