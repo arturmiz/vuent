@@ -14,12 +14,16 @@
     "type": "git",
     "url": "https://github.com/arturmiz/vuent"
   },
+  "bugs": {
+    "url": "https://github.com/arturmiz/vuent/issues"
+  },
   "scripts": {
     "build": "npm run lint && npm run test && rollup -c",
     "commitmsg": "commitlint -e $GIT_PARAMS",
     "dev": "rollup -c -w",
     "lint": "eslint --ext .js, .vue .",
     "test": "jest --config=jest.config.json",
+    "test:dev": "jest --config=jest.config.json --watch",
     "test:coverage": "jest --config=jest.config.json --coverage"
   },
   "peerDependencies": {
