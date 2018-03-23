@@ -7,6 +7,7 @@ module.exports = {
         'checkbox',
         'link',
         'radio',
+        'toggle',
       ]
     ]
   }
