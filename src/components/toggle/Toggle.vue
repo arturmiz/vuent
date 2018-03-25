@@ -6,7 +6,8 @@
       <slot>{{ label }}</slot>
     </span>
 
-    <label class="vnt-toggle__wrapper">
+    <label class="vnt-toggle__wrapper"
+           @click="toggle">
       <input class="vnt-toggle__input"
              type="checkbox"
              :checked="checked"
@@ -20,21 +21,17 @@
 </template>
 
 <script>
+import {checked} from '../../mixins';
+
 export default {
   name: 'VntToggle',
+
+  mixins: [checked],
 
   props: {
     label: {
       type: String,
       default: 'Toggle'
-    },
-    checked: {
-      type: Boolean,
-      default: false
-    },
-    disabled: {
-      type: Boolean,
-      default: false
     },
     labelOff: {
       type: String,
