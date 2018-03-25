@@ -1,5 +1,6 @@
 <template>
-  <label class="vnt-checkbox">
+  <label class="vnt-checkbox"
+         @click="toggle">
     <input class="vnt-checkbox__input"
            type="checkbox"
            :checked="checked"
@@ -12,21 +13,17 @@
 </template>
 
 <script>
+import {checked} from '../../mixins';
+
 export default {
   name: 'VntCheckbox',
+
+  mixins: [checked],
 
   props: {
     label: {
       type: String,
       default: 'Checkbox'
-    },
-    checked: {
-      type: Boolean,
-      default: false
-    },
-    disabled: {
-      type: Boolean,
-      default: false
     }
   }
 };
