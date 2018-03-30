@@ -5,6 +5,7 @@ module.exports = {
       [
         'button',
         'checkbox',
+        'input',
         'link',
         'radio',
         'toggle',
