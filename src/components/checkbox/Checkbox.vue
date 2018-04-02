@@ -38,7 +38,7 @@ export default {
   position: relative;
   display: flex;
   align-items: center;
-  line-height: 30px;
+  min-height: 30px;
 }
 
 .vnt-checkbox__input {
@@ -70,6 +70,7 @@ export default {
   width: 20px;
   height: 20px;
   position: relative;
+  flex: 0 0 auto;
 
   &:after {
     content: '';
@@ -88,6 +89,7 @@ export default {
 .vnt-checkbox__text {
   padding: 0 9px;
   color: #000100;
+  line-height: 20px;
 
   .vnt-checkbox__input:disabled ~ & {
     color: #999;
