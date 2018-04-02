@@ -1,7 +1,7 @@
 # Radio
 
 ## How to use
-```
+```html
 <!-- Unchecked -->
 <vnt-radio>Option</vnt-radio>
 

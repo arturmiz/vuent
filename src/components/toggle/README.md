@@ -1,7 +1,7 @@
 # Toggle
 
 ## How to use
-```
+```html
 <!-- Unchecked -->
 <vnt-toggle>Option</vnt-toggle>
 

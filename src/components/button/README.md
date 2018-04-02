@@ -1,7 +1,7 @@
 # Button
 
 ## How to use
-```
+```html
 <vnt-button label="Button"></vnt-button>
 
 <vnt-button>Button</vnt-button>

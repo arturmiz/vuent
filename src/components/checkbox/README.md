@@ -1,7 +1,7 @@
 # Checkbox
 
 ## How to use
-```
+```html
 <!-- Unchecked -->
 <vnt-checkbox>Option</vnt-checkbox>
 
@@ -21,7 +21,7 @@ Default: `'Checkbox'`
 
 The checkbox's label text.
 
-### `checked`
+#### `checked`
 Default: `false`
 
 Decides about the checkbox's state.

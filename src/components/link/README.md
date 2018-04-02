@@ -1,7 +1,7 @@
 # Link
 
 ## How to use
-```
+```html
 <vnt-link href="http://google.com">Google</vnt-link>
 ```
 
