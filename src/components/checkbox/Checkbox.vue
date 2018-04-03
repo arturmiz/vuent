@@ -43,7 +43,7 @@ export default {
 
 .vnt-checkbox__input {
   position: absolute;
-  clip-path: inset(20px 20px);
+  visibility: hidden;
 
   &:checked + .vnt-checkbox__tick {
     background: $accentColor;

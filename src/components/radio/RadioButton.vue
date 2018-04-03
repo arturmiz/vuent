@@ -51,7 +51,7 @@ export default {
 
 .vnt-radio__input {
   position: absolute;
-  clip-path: inset(20px 20px);
+  visibility: hidden;
 
   &:checked + .vnt-radio__icon {
     border-color: $accentColor;

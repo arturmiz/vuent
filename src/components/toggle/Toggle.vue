@@ -72,7 +72,7 @@ export default {
 
 .vnt-toggle__input {
   position: absolute;
-  clip-path: inset(20px 20px);
+  visibility: hidden;
 
   &:checked + .vnt-toggle__switch {
     background: $accentColor;
