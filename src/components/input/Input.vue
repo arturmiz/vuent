@@ -28,7 +28,7 @@ export default {
     },
     placeholder: {
       type: String,
-      default: 'Hint text'
+      default: ''
     },
     type: {
       type: String,
