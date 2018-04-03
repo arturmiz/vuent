@@ -102,4 +102,47 @@ describe('Checkbox', () => {
     expect(wrapper.html()).toMatchSnapshot();
   });
 
+  describe('when not disabled, updates passed checked prop', () => {
+
+    beforeAll(() => {
+      wrapper = mount(Checkbox, {
+        propsData: {
+          checked: false
+        }
+      });
+
+      const label = wrapper.find('label');
+      label.trigger('click');
+    });
+
+    test('event is emitted', () => {
+      expect(wrapper.emitted()['update:checked']).toBeDefined();
+    });
+
+    test('new checked state is emitted', () => {
+      expect(wrapper.emitted()['update:checked'][0]).toEqual([true]);
+    });
+
+  });
+
+  describe('when disabled, doesn\'t change state', () => {
+
+    beforeAll(() => {
+      wrapper = mount(Checkbox, {
+        propsData: {
+          checked: false,
+          disabled: true
+        }
+      });
+
+      const label = wrapper.find('label');
+      label.trigger('click');
+    });
+
+    test('event is not emitted', () => {
+      expect(wrapper.emitted()['update:checked']).toBeUndefined();
+    });
+
+  });
+
 });
