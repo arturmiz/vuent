@@ -1,0 +1,50 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Toggle by default renders correctly 1`] = `
+<div class="vnt-toggle"><span class="vnt-toggle__title">Toggle</span>
+    <label class="vnt-toggle__wrapper">
+        <input type="checkbox" class="vnt-toggle__input"> <span class="vnt-toggle__switch"></span> <span class="vnt-toggle__text vnt-toggle__text--off">Off</span> <span class="vnt-toggle__text vnt-toggle__text--on">On</span></label>
+</div>
+`;
+
+exports[`Toggle can be checked and disabled renders correctly 1`] = `
+<div class="vnt-toggle"><span class="vnt-toggle__title vnt-toggle__title--disabled">Toggle</span>
+    <label class="vnt-toggle__wrapper">
+        <input type="checkbox" disabled="disabled" class="vnt-toggle__input"> <span class="vnt-toggle__switch"></span> <span class="vnt-toggle__text vnt-toggle__text--off">Off</span> <span class="vnt-toggle__text vnt-toggle__text--on">On</span></label>
+</div>
+`;
+
+exports[`Toggle can be checked renders correctly 1`] = `
+<div class="vnt-toggle"><span class="vnt-toggle__title">Toggle</span>
+    <label class="vnt-toggle__wrapper">
+        <input type="checkbox" class="vnt-toggle__input"> <span class="vnt-toggle__switch"></span> <span class="vnt-toggle__text vnt-toggle__text--off">Off</span> <span class="vnt-toggle__text vnt-toggle__text--on">On</span></label>
+</div>
+`;
+
+exports[`Toggle can be disabled renders correctly 1`] = `
+<div class="vnt-toggle"><span class="vnt-toggle__title vnt-toggle__title--disabled">Toggle</span>
+    <label class="vnt-toggle__wrapper">
+        <input type="checkbox" disabled="disabled" class="vnt-toggle__input"> <span class="vnt-toggle__switch"></span> <span class="vnt-toggle__text vnt-toggle__text--off">Off</span> <span class="vnt-toggle__text vnt-toggle__text--on">On</span></label>
+</div>
+`;
+
+exports[`Toggle can have content set using slot 1`] = `
+<div class="vnt-toggle"><span class="vnt-toggle__title"><span>Custom content</span></span>
+    <label class="vnt-toggle__wrapper">
+        <input type="checkbox" class="vnt-toggle__input"> <span class="vnt-toggle__switch"></span> <span class="vnt-toggle__text vnt-toggle__text--off">Off</span> <span class="vnt-toggle__text vnt-toggle__text--on">On</span></label>
+</div>
+`;
+
+exports[`Toggle can have custom "Off" state label renders correctly 1`] = `
+<div class="vnt-toggle"><span class="vnt-toggle__title">Toggle</span>
+    <label class="vnt-toggle__wrapper">
+        <input type="checkbox" class="vnt-toggle__input"> <span class="vnt-toggle__switch"></span> <span class="vnt-toggle__text vnt-toggle__text--off">Custom Off</span> <span class="vnt-toggle__text vnt-toggle__text--on">On</span></label>
+</div>
+`;
+
+exports[`Toggle can have custom "On" state label renders correctly 1`] = `
+<div class="vnt-toggle"><span class="vnt-toggle__title">Toggle</span>
+    <label class="vnt-toggle__wrapper">
+        <input type="checkbox" class="vnt-toggle__input"> <span class="vnt-toggle__switch"></span> <span class="vnt-toggle__text vnt-toggle__text--off">Off</span> <span class="vnt-toggle__text vnt-toggle__text--on">Custom On</span></label>
+</div>
+`;
