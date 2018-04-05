@@ -15,7 +15,7 @@ describe('RadioButton', () => {
     });
 
     test('is not checked', () => {
-      expect(wrapper.vm.checked).toBe(false);
+      expect(wrapper.attributes().checked).toBe(undefined);
     });
 
     test('name is "radio"', () => {
@@ -56,18 +56,14 @@ describe('RadioButton', () => {
 
     beforeAll(() => {
       wrapper = mount(RadioButton, {
-        propsData: {
-          checked: true
+        attrs: {
+          checked: 'true'
         }
       });
     });
 
     test('renders correctly', () => {
       expect(wrapper.html()).toMatchSnapshot();
-    });
-
-    test('is checked', () => {
-      expect(wrapper.vm.checked).toBe(true);
     });
 
   });
@@ -76,8 +72,10 @@ describe('RadioButton', () => {
 
     beforeAll(() => {
       wrapper = mount(RadioButton, {
+        attrs: {
+          checked: 'true'
+        },
         propsData: {
-          checked: true,
           disabled: true
         }
       });
@@ -85,10 +83,6 @@ describe('RadioButton', () => {
 
     test('renders correctly', () => {
       expect(wrapper.html()).toMatchSnapshot();
-    });
-
-    test('is checked', () => {
-      expect(wrapper.vm.checked).toBe(true);
     });
 
     test('is disabled', () => {
@@ -122,6 +116,54 @@ describe('RadioButton', () => {
 
     test('rendered correctly', () => {
       expect(wrapper.html()).toMatchSnapshot();
+    });
+
+  });
+
+  describe('when not disabled, emits selected value', () => {
+
+    beforeAll(() => {
+      wrapper = mount(RadioButton, {
+        attrs: {
+          value: 'red'
+        },
+        propsData: {
+          disabled: false
+        }
+      });
+
+      const label = wrapper.find('label');
+      label.trigger('click');
+    });
+
+    test('event is emitted', () => {
+      expect(wrapper.emitted()['input']).toBeDefined();
+    });
+
+    test('new checked state is emitted', () => {
+      expect(wrapper.emitted()['input'][0]).toEqual(['red']);
+    });
+
+  });
+
+  describe('when disabled, doesn\'t emit selected value', () => {
+
+    beforeAll(() => {
+      wrapper = mount(RadioButton, {
+        attrs: {
+          value: 'blue'
+        },
+        propsData: {
+          disabled: true
+        }
+      });
+
+      const label = wrapper.find('label');
+      label.trigger('click');
+    });
+
+    test('event is not emitted', () => {
+      expect(wrapper.emitted()['input']).toBeUndefined();
     });
 
   });

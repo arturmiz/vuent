@@ -2,9 +2,10 @@
   <label class="vnt-radio">
     <input class="vnt-radio__input"
            type="radio"
-           :checked="checked"
            :disabled="disabled"
-           :name="name" />
+           :name="name"
+           v-bind="$attrs"
+           @change="toggle" />
     <span class="vnt-radio__icon"></span>
     <span class="vnt-radio__text">
       <slot>{{ label }}</slot>
@@ -17,21 +18,39 @@ export default {
   name: 'VntRadio',
 
   props: {
-    label: {
-      type: String,
-      default: 'Radio'
-    },
-    checked: {
-      type: Boolean,
-      default: false
-    },
     disabled: {
       type: Boolean,
       default: false
     },
+    label: {
+      type: String,
+      default: 'Radio'
+    },
     name: {
       type: String,
       default: 'radio'
+    }
+  },
+
+  mounted() {
+    if (!this.$vnode) {
+      return;
+    }
+
+    const vModel = this.$vnode.data.model || {};
+    const vModelValue = vModel.value;
+
+    if (!!vModelValue && vModelValue === this.$attrs.value) {
+      const input = this.$el.querySelector('input');
+      input.setAttribute('checked', true);
+    }
+  },
+
+  methods: {
+    toggle($event) {
+      if (!this.disabled) {
+        this.$emit('input', $event.target.value);
+      }
     }
   }
 };
