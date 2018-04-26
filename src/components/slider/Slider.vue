@@ -1,10 +1,10 @@
 <template>
   <div class="vnt-slider">
 
-    <span class="vnt-slider__title"
-          :class="{'vnt-slider__title--disabled': disabled}">
+    <label class="vnt-slider__title"
+           :class="{'vnt-slider__title--disabled': disabled}">
       <slot>{{ label }}</slot>
-    </span>
+    </label>
 
     <input class="vnt-slider__input"
            :disabled="disabled"
