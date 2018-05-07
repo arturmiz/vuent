@@ -18,7 +18,7 @@ Reporting issues, enhancements ideas, writing documentation etc. and, of course,
 5) Run (in a separate command line window) `npm run test:dev` or `yarn test:dev` to get tests results.
 
 ### Production
-6) Run `npm run build` or `yarn dev` to trigger build script that lints source code, runs tests and minifies Vuent's production version 🎉
+6) Run `npm run build` or `yarn build` to trigger build script that lints source code, runs tests and minifies Vuent's production version 🎉
 
 ## Contributing to README and Wiki
 By submitting a contribution to the README or the Wiki, you are contributing it under the [Creative Commons CC0 1.0 Universal Public Domain Dedication](http://creativecommons.org/publicdomain/zero/1.0/).
