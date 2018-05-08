@@ -1,5 +1,7 @@
 # Vuent
 
+[![Build Status](https://travis-ci.com/arturmiz/vuent.svg?branch=master)](https://travis-ci.com/arturmiz/vuent)
+
 > Status: In development
 
 Vuent is a set of reusable UI components for [Vue][vue] created according to Microsoft [Fluent Design][fluent], in particular [its official variation][fluent-uwp] about building [Universal Windows Platform (UWP)][uwp] applications.
