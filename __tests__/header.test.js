@@ -1,5 +1,5 @@
 import { mount } from 'vue-test-utils';
-import Header from '@/components/Header';
+import Header from '@/components/header';
 
 describe('Header', () => {
   let wrapper;

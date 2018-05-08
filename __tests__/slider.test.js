@@ -1,5 +1,5 @@
 import { mount } from 'vue-test-utils';
-import Slider from '@/components/Slider';
+import Slider from '@/components/slider';
 
 describe('Slider', () => {
   let wrapper;
