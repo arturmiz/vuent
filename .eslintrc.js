@@ -20,7 +20,7 @@ module.exports = {
     ],
     "linebreak-style": [
       "off",
-      "windows"
+      "unix"
     ],
     "quotes": [
       "error",
