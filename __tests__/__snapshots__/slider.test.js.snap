@@ -2,49 +2,49 @@
 
 exports[`Slider by default renders correctly 1`] = `
 <div class="vnt-slider">
-    <label class="vnt-slider__title">Slider</label>
-    <input max="100" min="0" type="range" class="vnt-slider__input">
+  <label class="vnt-slider__title">Slider</label>
+  <input max="100" min="0" type="range" class="vnt-slider__input">
 </div>
 `;
 
 exports[`Slider can be disabled renders correctly 1`] = `
 <div class="vnt-slider">
-    <label class="vnt-slider__title vnt-slider__title--disabled">Slider</label>
-    <input disabled="disabled" max="100" min="0" type="range" class="vnt-slider__input">
+  <label class="vnt-slider__title vnt-slider__title--disabled">Slider</label>
+  <input disabled="disabled" max="100" min="0" type="range" class="vnt-slider__input">
 </div>
 `;
 
 exports[`Slider can have content set using slot 1`] = `
 <div class="vnt-slider">
-    <label class="vnt-slider__title"><span>Custom content</span></label>
-    <input max="100" min="0" type="range" class="vnt-slider__input">
+  <label class="vnt-slider__title"><span>Custom content</span></label>
+  <input max="100" min="0" type="range" class="vnt-slider__input">
 </div>
 `;
 
 exports[`Slider can have custom label renders correctly 1`] = `
 <div class="vnt-slider">
-    <label class="vnt-slider__title">Custom Slider</label>
-    <input max="100" min="0" type="range" class="vnt-slider__input">
+  <label class="vnt-slider__title">Custom Slider</label>
+  <input max="100" min="0" type="range" class="vnt-slider__input">
 </div>
 `;
 
 exports[`Slider can have custom max renders correctly 1`] = `
 <div class="vnt-slider">
-    <label class="vnt-slider__title">Slider</label>
-    <input max="200" min="0" type="range" class="vnt-slider__input">
+  <label class="vnt-slider__title">Slider</label>
+  <input max="200" min="0" type="range" class="vnt-slider__input">
 </div>
 `;
 
 exports[`Slider can have custom min renders correctly 1`] = `
 <div class="vnt-slider">
-    <label class="vnt-slider__title">Slider</label>
-    <input max="100" min="15" type="range" class="vnt-slider__input">
+  <label class="vnt-slider__title">Slider</label>
+  <input max="100" min="15" type="range" class="vnt-slider__input">
 </div>
 `;
 
 exports[`Slider can have some other attribute set 1`] = `
 <div class="vnt-slider">
-    <label class="vnt-slider__title">Slider</label>
-    <input max="100" min="0" type="range" step="5" aria-label="a11y label" class="vnt-slider__input">
+  <label class="vnt-slider__title">Slider</label>
+  <input max="100" min="0" type="range" step="5" aria-label="a11y label" class="vnt-slider__input">
 </div>
 `;

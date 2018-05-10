@@ -2,26 +2,26 @@
 
 exports[`Checkbox by default renders correctly 1`] = `
 <label class="vnt-checkbox">
-    <input type="checkbox" class="vnt-checkbox__input"> <span class="vnt-checkbox__tick"></span> <span class="vnt-checkbox__text">Checkbox</span></label>
+  <input type="checkbox" class="vnt-checkbox__input"> <span class="vnt-checkbox__tick"></span> <span class="vnt-checkbox__text">Checkbox</span></label>
 `;
 
 exports[`Checkbox can be checked and disabled renders correctly 1`] = `
 <label class="vnt-checkbox">
-    <input type="checkbox" disabled="disabled" class="vnt-checkbox__input"> <span class="vnt-checkbox__tick"></span> <span class="vnt-checkbox__text">Checkbox</span></label>
+  <input type="checkbox" disabled="disabled" class="vnt-checkbox__input"> <span class="vnt-checkbox__tick"></span> <span class="vnt-checkbox__text">Checkbox</span></label>
 `;
 
 exports[`Checkbox can be checked renders correctly 1`] = `
 <label class="vnt-checkbox">
-    <input type="checkbox" class="vnt-checkbox__input"> <span class="vnt-checkbox__tick"></span> <span class="vnt-checkbox__text">Checkbox</span></label>
+  <input type="checkbox" class="vnt-checkbox__input"> <span class="vnt-checkbox__tick"></span> <span class="vnt-checkbox__text">Checkbox</span></label>
 `;
 
 exports[`Checkbox can be disabled renders correctly 1`] = `
 <label class="vnt-checkbox">
-    <input type="checkbox" disabled="disabled" class="vnt-checkbox__input"> <span class="vnt-checkbox__tick"></span> <span class="vnt-checkbox__text">Checkbox</span></label>
+  <input type="checkbox" disabled="disabled" class="vnt-checkbox__input"> <span class="vnt-checkbox__tick"></span> <span class="vnt-checkbox__text">Checkbox</span></label>
 `;
 
 exports[`Checkbox can have content set using slot 1`] = `
 <label class="vnt-checkbox">
-    <input type="checkbox" class="vnt-checkbox__input"> <span class="vnt-checkbox__tick"></span> <span class="vnt-checkbox__text"><span>Custom content</span></span>
+  <input type="checkbox" class="vnt-checkbox__input"> <span class="vnt-checkbox__tick"></span> <span class="vnt-checkbox__text"><span>Custom content</span></span>
 </label>
 `;

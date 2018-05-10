@@ -2,31 +2,31 @@
 
 exports[`RadioButton by default renders correctly 1`] = `
 <label class="vnt-radio">
-    <input type="radio" name="radio" class="vnt-radio__input"> <span class="vnt-radio__icon"></span> <span class="vnt-radio__text">Radio</span></label>
+  <input type="radio" name="radio" class="vnt-radio__input"> <span class="vnt-radio__icon"></span> <span class="vnt-radio__text">Radio</span></label>
 `;
 
 exports[`RadioButton can be checked and disabled renders correctly 1`] = `
 <label class="vnt-radio">
-    <input type="radio" disabled="disabled" name="radio" class="vnt-radio__input"> <span class="vnt-radio__icon"></span> <span class="vnt-radio__text">Radio</span></label>
+  <input type="radio" disabled="disabled" name="radio" class="vnt-radio__input"> <span class="vnt-radio__icon"></span> <span class="vnt-radio__text">Radio</span></label>
 `;
 
 exports[`RadioButton can be checked renders correctly 1`] = `
 <label class="vnt-radio">
-    <input type="radio" name="radio" class="vnt-radio__input"> <span class="vnt-radio__icon"></span> <span class="vnt-radio__text">Radio</span></label>
+  <input type="radio" name="radio" class="vnt-radio__input"> <span class="vnt-radio__icon"></span> <span class="vnt-radio__text">Radio</span></label>
 `;
 
 exports[`RadioButton can be disabled renders correctly 1`] = `
 <label class="vnt-radio">
-    <input type="radio" disabled="disabled" name="radio" class="vnt-radio__input"> <span class="vnt-radio__icon"></span> <span class="vnt-radio__text">Radio</span></label>
+  <input type="radio" disabled="disabled" name="radio" class="vnt-radio__input"> <span class="vnt-radio__icon"></span> <span class="vnt-radio__text">Radio</span></label>
 `;
 
 exports[`RadioButton can have content set using slot 1`] = `
 <label class="vnt-radio">
-    <input type="radio" name="radio" class="vnt-radio__input"> <span class="vnt-radio__icon"></span> <span class="vnt-radio__text"><span>Custom content</span></span>
+  <input type="radio" name="radio" class="vnt-radio__input"> <span class="vnt-radio__icon"></span> <span class="vnt-radio__text"><span>Custom content</span></span>
 </label>
 `;
 
 exports[`RadioButton can have name attribute rendered correctly 1`] = `
 <label class="vnt-radio">
-    <input type="radio" name="groupedRadios" class="vnt-radio__input"> <span class="vnt-radio__icon"></span> <span class="vnt-radio__text">Radio</span></label>
+  <input type="radio" name="groupedRadios" class="vnt-radio__input"> <span class="vnt-radio__icon"></span> <span class="vnt-radio__text">Radio</span></label>
 `;

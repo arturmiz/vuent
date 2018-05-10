@@ -4,25 +4,25 @@ exports[`Header by default renders correctly 1`] = `<div class="vnt-header"></di
 
 exports[`Header can have both header and subheader content set 1`] = `
 <div class="vnt-header">
-    <div class="vnt-header__header">Header</div>
-    <div class="vnt-header__subheader">Subheader</div>
+  <div class="vnt-header__header">Header</div>
+  <div class="vnt-header__subheader">Subheader</div>
 </div>
 `;
 
 exports[`Header can have main header content set using named slot 1`] = `
 <div class="vnt-header">
-    <div class="vnt-header__header">Header</div>
+  <div class="vnt-header__header">Header</div>
 </div>
 `;
 
 exports[`Header can have only main header content set 1`] = `
 <div class="vnt-header">
-    <div class="vnt-header__header">Header</div>
+  <div class="vnt-header__header">Header</div>
 </div>
 `;
 
 exports[`Header can have only subheader content set 1`] = `
 <div class="vnt-header">
-    <div class="vnt-header__subheader">Subheader</div>
+  <div class="vnt-header__subheader">Subheader</div>
 </div>
 `;

@@ -174,6 +174,12 @@
   version "0.0.30"
   resolved "https://registry.yarnpkg.com/@types/strip-json-comments/-/strip-json-comments-0.0.30.tgz#9aa30c04db212a9a0649d6ae6fd50accc40748a1"
 
+"@vue/test-utils@^1.0.0-beta.15":
+  version "1.0.0-beta.15"
+  resolved "https://registry.yarnpkg.com/@vue/test-utils/-/test-utils-1.0.0-beta.15.tgz#9f8d85b9f2312217c81d72eba97e176fba23da09"
+  dependencies:
+    lodash "^4.17.4"
+
 JSONStream@^1.0.4:
   version "1.3.2"
   resolved "https://registry.yarnpkg.com/JSONStream/-/JSONStream-1.3.2.tgz#c102371b6ec3a7cf3b847ca00c20bb0fce4c6dea"
@@ -2939,7 +2945,7 @@ jest-changed-files@^22.4.3:
   dependencies:
     throat "^4.0.0"
 
-jest-cli@^22.2.2:
+jest-cli@^22.4.3:
   version "22.4.3"
   resolved "https://registry.yarnpkg.com/jest-cli/-/jest-cli-22.4.3.tgz#bf16c4a5fb7edc3fa5b9bb7819e34139e88a72c7"
   dependencies:
@@ -3142,9 +3148,9 @@ jest-runtime@^22.4.3:
     write-file-atomic "^2.1.0"
     yargs "^10.0.3"
 
-jest-serializer-vue@~0.3.0:
-  version "0.3.0"
-  resolved "https://registry.yarnpkg.com/jest-serializer-vue/-/jest-serializer-vue-0.3.0.tgz#2128d0c1c83c3bcb2f4fb96104402626bb75506d"
+jest-serializer-vue@~1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/jest-serializer-vue/-/jest-serializer-vue-1.0.0.tgz#82514e9b3d94a17fe618df3ede84046090f94815"
   dependencies:
     pretty "2.0.0"
 
@@ -3191,12 +3197,12 @@ jest-worker@^22.4.3:
   dependencies:
     merge-stream "^1.0.1"
 
-jest@~22.2.1:
-  version "22.2.2"
-  resolved "https://registry.yarnpkg.com/jest/-/jest-22.2.2.tgz#26aca0f5e4eaa76d52f2792b14033a3d1e7be2bd"
+jest@~22.4.3:
+  version "22.4.3"
+  resolved "https://registry.yarnpkg.com/jest/-/jest-22.4.3.tgz#2261f4b117dc46d9a4a1a673d2150958dee92f16"
   dependencies:
     import-local "^1.0.0"
-    jest-cli "^22.2.2"
+    jest-cli "^22.4.3"
 
 js-base64@^2.1.8, js-base64@^2.1.9:
   version "2.4.3"
@@ -5572,9 +5578,9 @@ vue-eslint-parser@^2.0.1:
     esquery "^1.0.0"
     lodash "^4.17.4"
 
-vue-jest@~2.0.1:
-  version "2.0.1"
-  resolved "https://registry.yarnpkg.com/vue-jest/-/vue-jest-2.0.1.tgz#3fa14f1c129f5871c058d652a8e52106b918bff4"
+vue-jest@~2.5.0:
+  version "2.5.0"
+  resolved "https://registry.yarnpkg.com/vue-jest/-/vue-jest-2.5.0.tgz#9dcf902720fa47ba98e60eb771a02c13e6b4eb56"
   dependencies:
     babel-plugin-transform-es2015-modules-commonjs "^6.26.0"
     chalk "^2.1.0"
@@ -5587,7 +5593,7 @@ vue-jest@~2.0.1:
     tsconfig "^7.0.0"
     vue-template-es2015-compiler "^1.5.3"
 
-vue-template-compiler@^2.5.13:
+vue-template-compiler@~2.5.16:
   version "2.5.16"
   resolved "https://registry.yarnpkg.com/vue-template-compiler/-/vue-template-compiler-2.5.16.tgz#93b48570e56c720cdf3f051cc15287c26fbd04cb"
   dependencies:
@@ -5603,12 +5609,6 @@ vue-template-validator@^1.1.5:
   resolved "https://registry.yarnpkg.com/vue-template-validator/-/vue-template-validator-1.1.5.tgz#22d1ee77d0647c1ab14ff7eb01865942d9b3c458"
   dependencies:
     chalk "^1.1.1"
-
-vue-test-utils@^1.0.0-beta.11:
-  version "1.0.0-beta.11"
-  resolved "https://registry.yarnpkg.com/vue-test-utils/-/vue-test-utils-1.0.0-beta.11.tgz#41b7fa53e0061d16ecbe18cfeea197c909d4ab8a"
-  dependencies:
-    lodash "^4.17.4"
 
 vue@~2.5.13:
   version "2.5.16"

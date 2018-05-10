@@ -2,22 +2,22 @@
 
 exports[`Input by default renders correctly 1`] = `
 <label class="vnt-input">
-    <!---->
-    <input type="text" placeholder="" class="vnt-input__control">
+  <!---->
+  <input type="text" placeholder="" class="vnt-input__control">
 </label>
 `;
 
 exports[`Input can be a password field renders correctly 1`] = `
 <label class="vnt-input">
-    <!---->
-    <input type="password" placeholder="" class="vnt-input__control">
+  <!---->
+  <input type="password" placeholder="" class="vnt-input__control">
 </label>
 `;
 
 exports[`Input can be disabled renders correctly 1`] = `
 <label class="vnt-input">
-    <!---->
-    <input disabled="disabled" type="text" placeholder="" class="vnt-input__control">
+  <!---->
+  <input disabled="disabled" type="text" placeholder="" class="vnt-input__control">
 </label>
 `;
 
@@ -25,7 +25,7 @@ exports[`Input can be fully customized renders correctly 1`] = `
 <label class="vnt-input"><span class="vnt-input__text">
     Custom label
   </span>
-    <input type="number" placeholder="Custom hint" class="vnt-input__control">
+  <input type="number" placeholder="Custom hint" class="vnt-input__control">
 </label>
 `;
 
@@ -33,13 +33,13 @@ exports[`Input can have a custom label renders correctly 1`] = `
 <label class="vnt-input"><span class="vnt-input__text">
     Custom label
   </span>
-    <input type="text" placeholder="" class="vnt-input__control">
+  <input type="text" placeholder="" class="vnt-input__control">
 </label>
 `;
 
 exports[`Input can have a custom placeholder renders correctly 1`] = `
 <label class="vnt-input">
-    <!---->
-    <input type="text" placeholder="Custom hint" class="vnt-input__control">
+  <!---->
+  <input type="text" placeholder="Custom hint" class="vnt-input__control">
 </label>
 `;
