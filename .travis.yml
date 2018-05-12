@@ -2,7 +2,10 @@ language: node_js
 node_js:
   - "node"
   - "lts/*"
-script: yarn build
+script:
+  - yarn lint
+  - yarn test:ci
+  - rollup -c
 cache:
   yarn: true
 

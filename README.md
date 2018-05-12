@@ -1,6 +1,7 @@
 # Vuent
 
 [![Build Status](https://travis-ci.com/arturmiz/vuent.svg?branch=master)](https://travis-ci.com/arturmiz/vuent)
+[![codecov](https://codecov.io/gh/arturmiz/vuent/branch/master/graph/badge.svg)](https://codecov.io/gh/arturmiz/vuent)
 
 > Status: In development
 
