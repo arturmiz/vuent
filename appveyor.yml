@@ -1,0 +1,20 @@
+version: '{branch}-{build}'
+
+environment:
+  nodejs_version: "8"
+
+platform:
+  - x86
+  - x64
+
+install:
+  - ps: Install-Product node $env:nodejs_version $env:platform
+  - npm install
+
+test_script:
+  - node --version
+  - npm --version
+  - npm run test
+
+build_script:
+  - npm run build
