@@ -1,10 +1,10 @@
 <template>
-  <label class="vnt-checkbox"
-         @click="toggle">
+  <label class="vnt-checkbox">
     <input class="vnt-checkbox__input"
            type="checkbox"
            :checked="checked"
-           :disabled="disabled" />
+           :disabled="disabled"
+           @change="toggle" />
     <span class="vnt-checkbox__tick"></span>
     <span class="vnt-checkbox__text">
       <slot>{{ label }}</slot>
