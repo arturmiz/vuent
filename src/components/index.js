@@ -4,5 +4,6 @@ export { default as Header } from './header';
 export { default as Input } from './input';
 export { default as Link } from './link';
 export { default as RadioButton } from './radio';
+export { default as Select } from './select';
 export { default as Slider } from './slider';
 export { default as Toggle } from './toggle';

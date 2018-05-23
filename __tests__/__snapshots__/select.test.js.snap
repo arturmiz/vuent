@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Select by default renders correctly 1`] = `
+<div class="vnt-select">
+  <label class="vnt-select__title">Select</label>
+  <div role="combobox" class="vnt-select__control">
+    <div class="vnt-select__chosen"><span class="vnt-select__chosen-label"></span>
+      <svg role="presentation" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 11.777 6.416" class="vnt-select__options-toggle">
+        <path d="M6-3.9l5.361-5.361.527.527L6-2.848.111-8.736l.527-.527Z" transform="translate(-0.111 9.264)"></path>
+      </svg>
+    </div>
+    <ul role="listbox" class="vnt-select__options" style="display: none;">
+      <li class="vnt-select__options-item">List item 1</li>
+      <li class="vnt-select__options-item">List item 2</li>
+      <li class="vnt-select__options-item">List item 3 that has a much much much longer string than others</li>
+      <li class="vnt-select__options-item">List item 4</li>
+      <li class="vnt-select__options-item">List item 5</li>
+      <li class="vnt-select__options-item">List item 6</li>
+    </ul>
+  </div>
+</div>
+`;
+
+exports[`Select can have custom label renders correctly 1`] = `
+<div class="vnt-select">
+  <label class="vnt-select__title">Custom Select</label>
+  <div role="combobox" class="vnt-select__control">
+    <div class="vnt-select__chosen"><span class="vnt-select__chosen-label"></span>
+      <svg role="presentation" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 11.777 6.416" class="vnt-select__options-toggle">
+        <path d="M6-3.9l5.361-5.361.527.527L6-2.848.111-8.736l.527-.527Z" transform="translate(-0.111 9.264)"></path>
+      </svg>
+    </div>
+    <ul role="listbox" class="vnt-select__options" style="display: none;">
+      <li class="vnt-select__options-item">List item 1</li>
+      <li class="vnt-select__options-item">List item 2</li>
+      <li class="vnt-select__options-item">List item 3 that has a much much much longer string than others</li>
+      <li class="vnt-select__options-item">List item 4</li>
+      <li class="vnt-select__options-item">List item 5</li>
+      <li class="vnt-select__options-item">List item 6</li>
+    </ul>
+  </div>
+</div>
+`;
