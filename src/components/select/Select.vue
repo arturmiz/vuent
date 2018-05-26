@@ -1,7 +1,8 @@
 <template>
   <div class="vnt-select">
 
-    <label class="vnt-select__title">
+    <label class="vnt-select__title"
+           :class="{'vnt-select__title--disabled': disabled}">
       <slot>{{ label }}</slot>
     </label>
 
@@ -9,19 +10,12 @@
          role="combobox">
 
       <div class="vnt-select__chosen"
+           :class="{'vnt-select__chosen--disabled': disabled}"
            @click="toggleOptions">
-
         <span class="vnt-select__chosen-label"
               v-text="chosenText"></span>
-
-        <svg class="vnt-select__options-toggle"
-             role="presentation"
-             xmlns="http://www.w3.org/2000/svg"
-             viewBox="0 0 11.777 6.416">
-          <path d="M6-3.9l5.361-5.361.527.527L6-2.848.111-8.736l.527-.527Z"
-                transform="translate(-0.111 9.264)"/>
-        </svg>
-
+        <span class="vnt-select__options-toggle"
+              role="presentation"></span>
       </div>
 
       <ul class="vnt-select__options"
@@ -29,9 +23,11 @@
           v-show="isOpened">
 
         <li class="vnt-select__options-item"
+            role="listitem"
             v-for="option in options"
             :key="option.value"
             @click="selectValue(option)">{{ option.label }}</li>
+
       </ul>
     </div>
 
@@ -43,6 +39,10 @@ export default {
   name: 'VntSelect',
 
   props: {
+    disabled: {
+      type: Boolean,
+      default: false
+    },
     label: {
       type: String,
       default: 'Select'
@@ -81,12 +81,16 @@ export default {
 
   methods: {
     selectValue(option) {
-      this.$emit('input', option.value);
-      this.isOpened = false;
+      if (!this.disabled) {
+        this.$emit('input', option.value);
+        this.isOpened = false;
+      }
     },
 
     toggleOptions() {
-      this.isOpened = !this.isOpened;
+      if (!this.disabled) {
+        this.isOpened = !this.isOpened;
+      }
     }
   }
 };
@@ -106,6 +110,10 @@ export default {
   line-height: 30px;
   margin-bottom: 4px;
   color: #000100;
+
+  &--disabled {
+    color: lighten(#000, 60%);
+  }
 }
 
 .vnt-select__control {
@@ -115,15 +123,25 @@ export default {
 .vnt-select__chosen {
   @include component-base();
 
+  color: lighten(#000, 40%);
   height: 30px;
   line-height: 30px;
   display: flex;
   border: 2px solid lighten(#000, 60%);
   justify-content: space-between;
 
-  &:hover {
-    border-color: lighten(#000, 40%);
+  &--disabled {
+    background-color: lighten(#000, 80%);
+    border-color: #a3a3a3;
   }
+
+  &:not(&--disabled) {
+    &:hover {
+      border-color: lighten(#000, 40%);
+      color: lighten(#000, 20%);
+    }
+  }
+
 }
 
 .vnt-select__chosen-label {
@@ -133,16 +151,29 @@ export default {
   overflow: hidden;
 }
 
+@mixin icon-select-options-toggle($fillColor) {
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 11.777 6.416"><path fill="#{$fillColor}" d="M6-3.9l5.361-5.361.527.527L6-2.848.111-8.736l.527-.527Z" transform="translate(-0.111 9.264)"/></svg>');
+}
+
 .vnt-select__options-toggle {
+  @include icon-select-options-toggle( lighten(#000, 20%) );
+
+  background-position: center center;
+  background-repeat: no-repeat;
   width: 12px;
-  padding: 0 9px;
-  color: lighten(#000, 20%);
+  margin: 0 9px;
   cursor: pointer;
+
+  .vnt-select__chosen--disabled & {
+    @include icon-select-options-toggle(#7f7f7f);
+
+    cursor: auto;
+  }
 }
 
 .vnt-select__options {
   position: absolute;
-  border: 1px solid #ccc;
+  border: 1px solid lighten(#000, 80%);
   background: #f2f2f2;
   padding: 5px 0;
   margin: 0;
