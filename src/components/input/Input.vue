@@ -85,6 +85,7 @@ export default {
   }
 
   &:disabled {
+    background-color: transparent;
     border-color: #ccc;
     color: #999;
   }
