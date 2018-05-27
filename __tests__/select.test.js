@@ -18,6 +18,14 @@ describe('Select', () => {
       expect(wrapper.vm.label).toBe('Select');
     });
 
+    test('option\'s label is under "label" property', () => {
+      expect(wrapper.vm.optionText).toBe('label');
+    });
+
+    test('option\'s value is under "value" property', () => {
+      expect(wrapper.vm.optionValue).toBe('value');
+    });
+
     test('renders correctly', () => {
       expect(wrapper.html()).toMatchSnapshot();
     });
@@ -139,6 +147,50 @@ describe('Select', () => {
 
     test('renders correctly', () => {
       expect(wrapper.html()).toMatchSnapshot();
+    });
+
+  });
+
+  describe('can have custom optionText', () => {
+
+    beforeAll(() => {
+      wrapper = mount(Select, {
+        propsData: {
+          optionText: 'text',
+          options: [
+            { value: 1, text: 'List item 1'},
+            { value: 2, text: 'List item 2'},
+          ]
+        }
+      });
+    });
+
+    test('renders correctly', () => {
+      expect(wrapper.html()).toMatchSnapshot();
+    });
+
+  });
+
+  describe('can have custom optionValue', () => {
+
+    beforeAll(() => {
+      wrapper = mount(Select, {
+        propsData: {
+          optionValue: 'id',
+          options: [
+            { id: 123, label: 'List item 1'},
+            { id: 256, label: 'List item 2'},
+          ]
+        }
+      });
+
+      const option = wrapper.find('.vnt-select__options-item');
+      option.trigger('click');
+    });
+
+    test('correct value is resolved', () => {
+      const [[newValue]] = wrapper.emitted()['input'];
+      expect(newValue).toBe(123);
     });
 
   });

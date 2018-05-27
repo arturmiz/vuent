@@ -25,8 +25,8 @@
         <li class="vnt-select__options-item"
             role="listitem"
             v-for="option in options"
-            :key="option.value"
-            @click="selectValue(option)">{{ option.label }}</li>
+            :key="option[optionValue]"
+            @click="selectValue(option)">{{ option[optionText] }}</li>
 
       </ul>
     </div>
@@ -46,6 +46,14 @@ export default {
     label: {
       type: String,
       default: 'Select'
+    },
+    optionValue: {
+      type: String,
+      default: 'value'
+    },
+    optionText: {
+      type: String,
+      default: 'label'
     },
     options: {
       type: Array,
@@ -74,15 +82,15 @@ export default {
 
   computed: {
     chosenText() {
-      const chosenOption = this.options.find(option => option.value === this.value);
-      return chosenOption ? chosenOption.label : '';
+      const chosenOption = this.options.find(option => option[this.optionValue] === this.value);
+      return chosenOption ? chosenOption[this.optionText] : '';
     }
   },
 
   methods: {
     selectValue(option) {
       if (!this.disabled) {
-        this.$emit('input', option.value);
+        this.$emit('input', option[this.optionValue]);
         this.isOpened = false;
       }
     },
