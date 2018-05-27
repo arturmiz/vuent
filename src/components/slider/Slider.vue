@@ -129,16 +129,16 @@ export default {
     }
   }
 
-  &::-ms-thumb {
-    @include thumb;
-  }
-
   &::-webkit-slider-thumb {
     @include thumb;
 
     -webkit-appearance: none;
     margin-top: -11px;
     margin-bottom: 11px;
+  }
+
+  &::-ms-thumb {
+    @include thumb;
   }
 
   &::-moz-range-thumb {
