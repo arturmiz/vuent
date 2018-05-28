@@ -87,6 +87,16 @@ export default {
     }
   },
 
+  watch: {
+    isOpened(newIsOpened) {
+      if (newIsOpened) {
+        document.body.addEventListener('click', this.toggleOptions, true);
+      } else {
+        document.body.removeEventListener('click', this.toggleOptions, true);
+      }
+    }
+  },
+
   methods: {
     selectValue(option) {
       if (!this.disabled) {
