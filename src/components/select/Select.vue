@@ -58,14 +58,7 @@ export default {
     options: {
       type: Array,
       default() {
-        return [
-          { value: 1, label: 'List item 1'},
-          { value: 2, label: 'List item 2'},
-          { value: 3, label: 'List item 3 that has a much much much longer string than others'},
-          { value: 4, label: 'List item 4'},
-          { value: 5, label: 'List item 5'},
-          { value: 6, label: 'List item 6'},
-        ];
+        return [];
       }
     },
     value: {
