@@ -9,6 +9,7 @@ module.exports = {
         'input',
         'link',
         'radio',
+        'select',
         'slider',
         'toggle',
       ]
