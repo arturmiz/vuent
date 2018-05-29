@@ -150,6 +150,7 @@ export default {
     &:hover {
       border-color: lighten(#000, 40%);
       color: lighten(#000, 20%);
+      cursor: pointer;
     }
   }
 
@@ -163,7 +164,11 @@ export default {
 }
 
 @mixin icon-select-options-toggle($fillColor) {
-  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 11.777 6.416"><path fill="#{$fillColor}" d="M6-3.9l5.361-5.361.527.527L6-2.848.111-8.736l.527-.527Z" transform="translate(-0.111 9.264)"/></svg>');
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 11.777 6.416"><path class="vnt-select__options-toggle-arrow" d="M6-3.9l5.361-5.361.527.527L6-2.848.111-8.736l.527-.527Z" transform="translate(-0.111 9.264)"/></svg>');
+
+  .vnt-select__options-toggle-arrow {
+    fill: $fillColor;
+  }
 }
 
 .vnt-select__options-toggle {
@@ -173,12 +178,9 @@ export default {
   background-repeat: no-repeat;
   width: 12px;
   margin: 0 9px;
-  cursor: pointer;
 
   .vnt-select__chosen--disabled & {
     @include icon-select-options-toggle(#7f7f7f);
-
-    cursor: auto;
   }
 }
 
@@ -194,6 +196,7 @@ export default {
   width: 100%;
   box-sizing: border-box;
   z-index: 1;
+   -ms-overflow-style: none;
 }
 
 .vnt-select__options-item {
