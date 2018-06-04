@@ -4,5 +4,7 @@ export function isInstalled(localVue, plugin) {
 }
 
 export function countInstalledPlugins(localVue) {
-  return localVue._installedPlugins.length;
+  return localVue._installedPlugins
+    .filter(installedPlugin => !!installedPlugin.name).length;
+
 }
