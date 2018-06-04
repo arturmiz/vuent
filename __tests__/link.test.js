@@ -1,13 +1,21 @@
-import { mount } from '@vue/test-utils';
-import Link from '@/components/link';
+import { createLocalVue, mount } from '@vue/test-utils';
+import { VntLink } from '@/components';
+import { isInstalled } from './utils';
 
 describe('Link', () => {
   let wrapper;
 
+  test('can be installed separately', () => {
+    const localVue = createLocalVue();
+    localVue.use(VntLink);
+
+    expect(isInstalled(localVue, VntLink)).toBe(true);
+  });
+
   describe('by default', () => {
 
     beforeAll(() => {
-      wrapper = mount(Link);
+      wrapper = mount(VntLink);
     });
 
     test('renders correctly', () => {
@@ -27,7 +35,7 @@ describe('Link', () => {
   describe('can be disabled', () => {
 
     beforeAll(() => {
-      wrapper = mount(Link, {
+      wrapper = mount(VntLink, {
         propsData: {
           disabled: true
         }
@@ -47,7 +55,7 @@ describe('Link', () => {
   describe('can set target', () => {
 
     beforeAll(() => {
-      wrapper = mount(Link, {
+      wrapper = mount(VntLink, {
         propsData: {
           href: 'http://fluent.microsoft.com'
         }
@@ -67,7 +75,7 @@ describe('Link', () => {
   describe('can create proper link', () => {
 
     beforeAll(() => {
-      wrapper = mount(Link, {
+      wrapper = mount(VntLink, {
         propsData: {
           href: 'http://fluent.microsoft.com'
         },
@@ -86,7 +94,7 @@ describe('Link', () => {
   describe('when passed other standard href attributes', () => {
 
     test('passes correctly target attr', () => {
-      wrapper = mount(Link, {
+      wrapper = mount(VntLink, {
         propsData: {
           href: 'http://fluent.microsoft.com'
         },

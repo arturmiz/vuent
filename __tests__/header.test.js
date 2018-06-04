@@ -1,13 +1,21 @@
-import { mount } from '@vue/test-utils';
-import Header from '@/components/header';
+import { createLocalVue, mount } from '@vue/test-utils';
+import { VntHeader } from '@/components';
+import { isInstalled } from './utils';
 
 describe('Header', () => {
   let wrapper;
 
+  test('can be installed separately', () => {
+    const localVue = createLocalVue();
+    localVue.use(VntHeader);
+
+    expect(isInstalled(localVue, VntHeader)).toBe(true);
+  });
+
   describe('by default', () => {
 
     beforeAll(() => {
-      wrapper = mount(Header);
+      wrapper = mount(VntHeader);
     });
 
     test('renders correctly', () => {
@@ -17,7 +25,7 @@ describe('Header', () => {
   });
 
   test('can have only main header content set', () => {
-    wrapper = mount(Header, {
+    wrapper = mount(VntHeader, {
       slots: {
         default: 'Header'
       }
@@ -26,7 +34,7 @@ describe('Header', () => {
   });
 
   test('can have main header content set using named slot', () => {
-    wrapper = mount(Header, {
+    wrapper = mount(VntHeader, {
       slots: {
         header: 'Header'
       }
@@ -35,7 +43,7 @@ describe('Header', () => {
   });
 
   test('can have both header and subheader content set', () => {
-    wrapper = mount(Header, {
+    wrapper = mount(VntHeader, {
       slots: {
         header: 'Header',
         subheader: 'Subheader'
@@ -45,7 +53,7 @@ describe('Header', () => {
   });
 
   test('can have only subheader content set', () => {
-    wrapper = mount(Header, {
+    wrapper = mount(VntHeader, {
       slots: {
         subheader: 'Subheader'
       }

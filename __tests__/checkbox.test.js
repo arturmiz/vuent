@@ -1,13 +1,21 @@
-import { mount } from '@vue/test-utils';
-import Checkbox from '@/components/checkbox';
+import { createLocalVue, mount } from '@vue/test-utils';
+import { VntCheckbox } from '@/components';
+import { isInstalled } from './utils';
 
 describe('Checkbox', () => {
   let wrapper;
 
+  test('can be installed separately', () => {
+    const localVue = createLocalVue();
+    localVue.use(VntCheckbox);
+
+    expect(isInstalled(localVue, VntCheckbox)).toBe(true);
+  });
+
   describe('by default', () => {
 
     beforeAll(() => {
-      wrapper = mount(Checkbox);
+      wrapper = mount(VntCheckbox);
     });
 
     test('is not disabled', () => {
@@ -31,7 +39,7 @@ describe('Checkbox', () => {
   describe('can be disabled', () => {
 
     beforeAll(() => {
-      wrapper = mount(Checkbox, {
+      wrapper = mount(VntCheckbox, {
         propsData: {
           disabled: true
         }
@@ -51,7 +59,7 @@ describe('Checkbox', () => {
   describe('can be checked', () => {
 
     beforeAll(() => {
-      wrapper = mount(Checkbox, {
+      wrapper = mount(VntCheckbox, {
         propsData: {
           checked: true
         }
@@ -71,7 +79,7 @@ describe('Checkbox', () => {
   describe('can be checked and disabled', () => {
 
     beforeAll(() => {
-      wrapper = mount(Checkbox, {
+      wrapper = mount(VntCheckbox, {
         propsData: {
           checked: true,
           disabled: true
@@ -94,7 +102,7 @@ describe('Checkbox', () => {
   });
 
   test('can have content set using slot', () => {
-    wrapper = mount(Checkbox, {
+    wrapper = mount(VntCheckbox, {
       slots: {
         default: '<span>Custom content</span>'
       }
@@ -105,7 +113,7 @@ describe('Checkbox', () => {
   describe('when not disabled, updates passed checked prop', () => {
 
     beforeAll(() => {
-      wrapper = mount(Checkbox, {
+      wrapper = mount(VntCheckbox, {
         propsData: {
           checked: false
         }
@@ -129,7 +137,7 @@ describe('Checkbox', () => {
   describe('when disabled, doesn\'t change state', () => {
 
     beforeAll(() => {
-      wrapper = mount(Checkbox, {
+      wrapper = mount(VntCheckbox, {
         propsData: {
           checked: false,
           disabled: true
