@@ -1,13 +1,21 @@
-import { mount } from '@vue/test-utils';
-import Toggle from '@/components/toggle';
+import { createLocalVue, mount } from '@vue/test-utils';
+import { VntToggle } from '@/components';
+import { isInstalled } from './utils';
 
 describe('Toggle', () => {
   let wrapper;
 
+  test('can be installed separately', () => {
+    const localVue = createLocalVue();
+    localVue.use(VntToggle);
+
+    expect(isInstalled(localVue, VntToggle)).toBe(true);
+  });
+
   describe('by default', () => {
 
     beforeAll(() => {
-      wrapper = mount(Toggle);
+      wrapper = mount(VntToggle);
     });
 
     test('is not disabled', () => {
@@ -39,7 +47,7 @@ describe('Toggle', () => {
   describe('can be disabled', () => {
 
     beforeAll(() => {
-      wrapper = mount(Toggle, {
+      wrapper = mount(VntToggle, {
         propsData: {
           disabled: true
         }
@@ -59,7 +67,7 @@ describe('Toggle', () => {
   describe('can be checked', () => {
 
     beforeAll(() => {
-      wrapper = mount(Toggle, {
+      wrapper = mount(VntToggle, {
         propsData: {
           checked: true
         }
@@ -79,7 +87,7 @@ describe('Toggle', () => {
   describe('can have custom "Off" state label', () => {
 
     beforeAll(() => {
-      wrapper = mount(Toggle, {
+      wrapper = mount(VntToggle, {
         propsData: {
           labelOff: 'Custom Off'
         }
@@ -100,7 +108,7 @@ describe('Toggle', () => {
   describe('can have custom "On" state label', () => {
 
     beforeAll(() => {
-      wrapper = mount(Toggle, {
+      wrapper = mount(VntToggle, {
         propsData: {
           labelOn: 'Custom On'
         }
@@ -120,7 +128,7 @@ describe('Toggle', () => {
   describe('can be checked and disabled', () => {
 
     beforeAll(() => {
-      wrapper = mount(Toggle, {
+      wrapper = mount(VntToggle, {
         propsData: {
           checked: true,
           disabled: true
@@ -143,7 +151,7 @@ describe('Toggle', () => {
   });
 
   test('can have content set using slot', () => {
-    wrapper = mount(Toggle, {
+    wrapper = mount(VntToggle, {
       slots: {
         default: '<span>Custom content</span>'
       }
@@ -154,7 +162,7 @@ describe('Toggle', () => {
   describe('when not disabled, updates passed checked prop', () => {
 
     beforeAll(() => {
-      wrapper = mount(Toggle, {
+      wrapper = mount(VntToggle, {
         propsData: {
           checked: false
         }
@@ -178,7 +186,7 @@ describe('Toggle', () => {
   describe('when disabled, doesn\'t change state', () => {
 
     beforeAll(() => {
-      wrapper = mount(Toggle, {
+      wrapper = mount(VntToggle, {
         propsData: {
           checked: false,
           disabled: true

@@ -1,13 +1,21 @@
-import { mount } from '@vue/test-utils';
-import RadioButton from '@/components/radio';
+import { createLocalVue, mount } from '@vue/test-utils';
+import { VntRadio } from '@/components';
+import { isInstalled } from './utils';
 
 describe('RadioButton', () => {
   let wrapper;
 
+  test('can be installed separately', () => {
+    const localVue = createLocalVue();
+    localVue.use(VntRadio);
+
+    expect(isInstalled(localVue, VntRadio)).toBe(true);
+  });
+
   describe('by default', () => {
 
     beforeAll(() => {
-      wrapper = mount(RadioButton);
+      wrapper = mount(VntRadio);
     });
 
     test('is not disabled', () => {
@@ -35,7 +43,7 @@ describe('RadioButton', () => {
   describe('can be disabled', () => {
 
     beforeAll(() => {
-      wrapper = mount(RadioButton, {
+      wrapper = mount(VntRadio, {
         propsData: {
           disabled: true
         }
@@ -55,7 +63,7 @@ describe('RadioButton', () => {
   describe('can be checked', () => {
 
     beforeAll(() => {
-      wrapper = mount(RadioButton, {
+      wrapper = mount(VntRadio, {
         attrs: {
           checked: 'true'
         }
@@ -71,7 +79,7 @@ describe('RadioButton', () => {
   describe('can be checked and disabled', () => {
 
     beforeAll(() => {
-      wrapper = mount(RadioButton, {
+      wrapper = mount(VntRadio, {
         attrs: {
           checked: 'true'
         },
@@ -92,7 +100,7 @@ describe('RadioButton', () => {
   });
 
   test('can have content set using slot', () => {
-    wrapper = mount(RadioButton, {
+    wrapper = mount(VntRadio, {
       slots: {
         default: '<span>Custom content</span>'
       }
@@ -103,7 +111,7 @@ describe('RadioButton', () => {
   describe('can have name attribute', () => {
 
     beforeAll(() => {
-      wrapper = mount(RadioButton, {
+      wrapper = mount(VntRadio, {
         propsData: {
           name: 'groupedRadios'
         }
@@ -123,7 +131,7 @@ describe('RadioButton', () => {
   describe('when not disabled, emits selected value', () => {
 
     beforeAll(() => {
-      wrapper = mount(RadioButton, {
+      wrapper = mount(VntRadio, {
         attrs: {
           value: 'red'
         },
@@ -149,7 +157,7 @@ describe('RadioButton', () => {
   describe('when disabled, doesn\'t emit selected value', () => {
 
     beforeAll(() => {
-      wrapper = mount(RadioButton, {
+      wrapper = mount(VntRadio, {
         attrs: {
           value: 'blue'
         },

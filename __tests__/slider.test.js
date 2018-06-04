@@ -1,13 +1,21 @@
-import { mount } from '@vue/test-utils';
-import Slider from '@/components/slider';
+import { createLocalVue, mount } from '@vue/test-utils';
+import { VntSlider } from '@/components';
+import { isInstalled } from './utils';
 
 describe('Slider', () => {
   let wrapper;
 
+  test('can be installed separately', () => {
+    const localVue = createLocalVue();
+    localVue.use(VntSlider);
+
+    expect(isInstalled(localVue, VntSlider)).toBe(true);
+  });
+
   describe('by default', () => {
 
     beforeAll(() => {
-      wrapper = mount(Slider);
+      wrapper = mount(VntSlider);
     });
 
     test('is not disabled', () => {
@@ -39,7 +47,7 @@ describe('Slider', () => {
   describe('can be disabled', () => {
 
     beforeAll(() => {
-      wrapper = mount(Slider, {
+      wrapper = mount(VntSlider, {
         propsData: {
           disabled: true
         }
@@ -59,7 +67,7 @@ describe('Slider', () => {
   describe('can have custom label', () => {
 
     beforeAll(() => {
-      wrapper = mount(Slider, {
+      wrapper = mount(VntSlider, {
         propsData: {
           label: 'Custom Slider'
         }
@@ -79,7 +87,7 @@ describe('Slider', () => {
   describe('can have custom min', () => {
 
     beforeAll(() => {
-      wrapper = mount(Slider, {
+      wrapper = mount(VntSlider, {
         propsData: {
           min: 15
         }
@@ -99,7 +107,7 @@ describe('Slider', () => {
   describe('can have custom max', () => {
 
     beforeAll(() => {
-      wrapper = mount(Slider, {
+      wrapper = mount(VntSlider, {
         propsData: {
           max: 200
         }
@@ -117,7 +125,7 @@ describe('Slider', () => {
   });
 
   test('can have some other attribute set', () => {
-    wrapper = mount(Slider, {
+    wrapper = mount(VntSlider, {
       attrs: {
         step: '5',
         'aria-label': 'a11y label'
@@ -127,7 +135,7 @@ describe('Slider', () => {
   });
 
   test('can have content set using slot', () => {
-    wrapper = mount(Slider, {
+    wrapper = mount(VntSlider, {
       slots: {
         default: '<span>Custom content</span>'
       }
@@ -138,7 +146,7 @@ describe('Slider', () => {
   describe('when not disabled, updates passed value prop', () => {
 
     beforeAll(() => {
-      wrapper = mount(Slider, {
+      wrapper = mount(VntSlider, {
         propsData: {
           value: 30
         }
@@ -162,7 +170,7 @@ describe('Slider', () => {
   describe('when disabled, doesn\'t change state', () => {
 
     beforeAll(() => {
-      wrapper = mount(Slider, {
+      wrapper = mount(VntSlider, {
         propsData: {
           value: 3,
           disabled: true

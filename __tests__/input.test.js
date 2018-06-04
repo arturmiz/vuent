@@ -1,13 +1,21 @@
-import { mount } from '@vue/test-utils';
-import Input from '@/components/input';
+import { createLocalVue, mount } from '@vue/test-utils';
+import { VntInput } from '@/components';
+import { isInstalled } from './utils';
 
 describe('Input', () => {
   let wrapper;
 
+  test('can be installed separately', () => {
+    const localVue = createLocalVue();
+    localVue.use(VntInput);
+
+    expect(isInstalled(localVue, VntInput)).toBe(true);
+  });
+
   describe('by default', () => {
 
     beforeAll(() => {
-      wrapper = mount(Input);
+      wrapper = mount(VntInput);
     });
 
     test('has correct type', () => {
@@ -39,7 +47,7 @@ describe('Input', () => {
   describe('can be disabled', () => {
 
     beforeAll(() => {
-      wrapper = mount(Input, {
+      wrapper = mount(VntInput, {
         propsData: {
           disabled: true
         }
@@ -59,7 +67,7 @@ describe('Input', () => {
   describe('can have a custom label', () => {
 
     beforeAll(() => {
-      wrapper = mount(Input, {
+      wrapper = mount(VntInput, {
         propsData: {
           label: 'Custom label'
         }
@@ -79,7 +87,7 @@ describe('Input', () => {
   describe('can be a password field', () => {
 
     beforeAll(() => {
-      wrapper = mount(Input, {
+      wrapper = mount(VntInput, {
         propsData: {
           type: 'password'
         }
@@ -99,7 +107,7 @@ describe('Input', () => {
   describe('can have a custom placeholder', () => {
 
     beforeAll(() => {
-      wrapper = mount(Input, {
+      wrapper = mount(VntInput, {
         propsData: {
           placeholder: 'Custom hint'
         }
@@ -119,7 +127,7 @@ describe('Input', () => {
   describe('can be fully customized', () => {
 
     beforeAll(() => {
-      wrapper = mount(Input, {
+      wrapper = mount(VntInput, {
         propsData: {
           type: 'number',
           label: 'Custom label',
@@ -138,7 +146,7 @@ describe('Input', () => {
   describe('updates passed value', () => {
 
     beforeAll(() => {
-      wrapper = mount(Input, {
+      wrapper = mount(VntInput, {
         propsData: {
           value: '12345'
         }

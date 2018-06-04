@@ -1,13 +1,21 @@
-import { mount } from '@vue/test-utils';
-import Select from '@/components/select';
+import { createLocalVue, mount } from '@vue/test-utils';
+import { VntSelect } from '@/components';
+import { isInstalled } from './utils';
 
 describe('Select', () => {
   let wrapper;
 
+  test('can be installed separately', () => {
+    const localVue = createLocalVue();
+    localVue.use(VntSelect);
+
+    expect(isInstalled(localVue, VntSelect)).toBe(true);
+  });
+
   describe('by default', () => {
 
     beforeAll(() => {
-      wrapper = mount(Select);
+      wrapper = mount(VntSelect);
     });
 
     test('is not disabled', () => {
@@ -35,7 +43,7 @@ describe('Select', () => {
   describe('can be disabled', () => {
 
     beforeAll(() => {
-      wrapper = mount(Select, {
+      wrapper = mount(VntSelect, {
         propsData: {
           disabled: true,
           options: [
@@ -89,7 +97,7 @@ describe('Select', () => {
   describe('allows to select a new value', () => {
 
     beforeAll(() => {
-      wrapper = mount(Select, {
+      wrapper = mount(VntSelect, {
         propsData: {
           options: [
             { value: 1, label: 'List item 1'},
@@ -134,7 +142,7 @@ describe('Select', () => {
   describe('can have custom label', () => {
 
     beforeAll(() => {
-      wrapper = mount(Select, {
+      wrapper = mount(VntSelect, {
         propsData: {
           label: 'Custom Select'
         }
@@ -154,7 +162,7 @@ describe('Select', () => {
   describe('can have custom optionText', () => {
 
     beforeAll(() => {
-      wrapper = mount(Select, {
+      wrapper = mount(VntSelect, {
         propsData: {
           optionText: 'text',
           options: [
@@ -174,7 +182,7 @@ describe('Select', () => {
   describe('can have custom optionValue', () => {
 
     beforeAll(() => {
-      wrapper = mount(Select, {
+      wrapper = mount(VntSelect, {
         propsData: {
           optionValue: 'id',
           options: [
