@@ -10,6 +10,7 @@ module.exports = {
 
     sidebar: [
       ['/', 'Introduction'],
+      '/get-started',
     ],
 
     docsDir: 'docs',
