@@ -11,6 +11,12 @@ module.exports = {
     sidebar: [
       ['/', 'Introduction'],
       '/get-started',
+      {
+        title: 'Components',
+        children: [
+          '/components/input'
+        ]
+      }
     ],
 
     docsDir: 'docs',
