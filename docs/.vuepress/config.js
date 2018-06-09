@@ -22,7 +22,8 @@ module.exports = {
           '/components/checkbox',
           '/components/header',
           '/components/input',
-          '/components/link'
+          '/components/link',
+          '/components/radio',
         ]
       }
     ],
