@@ -3,6 +3,10 @@ module.exports = {
 
   evergreen: true,
 
+  head: [
+    ['link', { rel: 'icon', href: '/favicon.ico' }]
+  ],
+
   themeConfig: {
     repo: 'arturmiz/vuent',
 
