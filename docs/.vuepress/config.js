@@ -14,6 +14,7 @@ module.exports = {
       {
         title: 'Components',
         children: [
+          '/components/header',
           '/components/input',
           '/components/link'
         ]
