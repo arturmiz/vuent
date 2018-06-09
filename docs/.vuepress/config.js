@@ -15,6 +15,7 @@ module.exports = {
         title: 'Components',
         children: [
           '/components/button',
+          '/components/checkbox',
           '/components/header',
           '/components/input',
           '/components/link'
