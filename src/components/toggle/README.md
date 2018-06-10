@@ -19,10 +19,6 @@
 ```
 
 ## Properties
-#### `label`
-Default: `'Toggle'`
-
-The toggle's label text.
 
 #### `checked`
 Default: `false`
@@ -33,6 +29,11 @@ Decides about the toggle's state.
 Default: `false`
 
 Determines whether the toggle should be in disabled mode or not.
+
+#### `label`
+Default: `'Toggle'`
+
+The toggle's label text.
 
 #### `labelOff`
 Default: `'Off'`
