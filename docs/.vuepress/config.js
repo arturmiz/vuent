@@ -24,6 +24,7 @@ module.exports = {
           '/components/input',
           '/components/link',
           '/components/radio',
+          '/components/slider',
           '/components/toggle',
         ]
       }
