@@ -36,7 +36,7 @@
 
 ## Configuration
 
-Apart from following component's properties, the HTML standard attributes of `<input type="range" />` are also applicable.
+Apart from following component's properties, the HTML standard attributes of `<input type="range" />` (e.g. `step`) are also applicable.
 
 ### `disabled`
 Default: `false`
