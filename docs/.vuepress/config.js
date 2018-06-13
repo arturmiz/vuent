@@ -1,5 +1,7 @@
 module.exports = {
   title: 'Vuent',
+  description: 'Vue.js components implementing Microsoft Fluent Design',
+  dest: 'docs/dist',
 
   evergreen: true,
 
@@ -7,7 +9,11 @@ module.exports = {
     ['link', { rel: 'icon', href: '/favicon.ico' }]
   ],
 
+  ga: 'UA-104676924-2',
+
   themeConfig: {
+    docsDir: 'docs',
+    editLinks: true,
     repo: 'arturmiz/vuent',
 
     sidebarDepth: 4,
@@ -30,10 +36,6 @@ module.exports = {
         ]
       }
     ],
-
-    docsDir: 'docs',
-
-    editLinks: true,
 
   }
 };
