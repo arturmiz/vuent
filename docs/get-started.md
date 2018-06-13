@@ -54,3 +54,12 @@ import Vuent from 'vuent';
 
 Vue.use(Vuent);
 ```
+
+### Import what you need
+
+```js
+import Vue from 'vue';
+import { VntInput } from 'vuent/components';
+
+Vue.use(VntInput);
+```
