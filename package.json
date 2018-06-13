@@ -54,6 +54,7 @@
     "rollup-plugin-node-resolve": "~3.0.2",
     "rollup-plugin-uglify": "^3.0.0",
     "rollup-plugin-vue": "^3.0.0",
+    "sass-loader": "~7.0.3",
     "vue": "~2.5.13",
     "vue-jest": "~2.5.0",
     "vue-template-compiler": "~2.5.16",
