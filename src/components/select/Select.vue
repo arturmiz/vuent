@@ -163,24 +163,21 @@ export default {
   overflow: hidden;
 }
 
-@mixin icon-select-options-toggle($fillColor) {
-  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 11.777 6.416"><path class="vnt-select__options-toggle-arrow" d="M6-3.9l5.361-5.361.527.527L6-2.848.111-8.736l.527-.527Z" transform="translate(-0.111 9.264)"/></svg>');
-
-  .vnt-select__options-toggle-arrow {
-    fill: $fillColor;
-  }
-}
-
 .vnt-select__options-toggle {
-  @include icon-select-options-toggle( lighten(#000, 20%) );
-
-  background-position: center center;
-  background-repeat: no-repeat;
-  width: 12px;
-  margin: 0 9px;
+  width: 9px;
+  height: 9px;
+  box-sizing: border-box;
+  margin: 8px 9px;
+  border-width: 1px;
+  border-style: solid;
+  border-color:  lighten(#000, 20%);
+  border-top-color: transparent;
+  border-right-color: transparent;
+  transform: rotate(-45deg);
 
   .vnt-select__chosen--disabled & {
-    @include icon-select-options-toggle(#7f7f7f);
+    border-left-color: #7f7f7f;
+    border-bottom-color: #7f7f7f;
   }
 }
 
