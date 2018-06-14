@@ -68,6 +68,10 @@ import Vuent from 'vuent';
 Vue.use(Vuent);
 ```
 
+## Documentation
+
+Documentation and playground live examples are available on the Vuent's website - [https://vuentjs.org][vuent-website].
+
 ## Changelog
 
 Changes for released versions are documented in a [change log file][changelog-file].
@@ -86,3 +90,4 @@ Vuent is [MIT licensed](https://github.com/arturmiz/vuent/blob/master/LICENSE).
 [uwp]: https://developer.microsoft.com/en-us/windows/apps
 [contributing-file]: https://github.com/arturmiz/vuent/blob/master/.github/CONTRIBUTING.md
 [changelog-file]: https://github.com/arturmiz/vuent/blob/master/CHANGELOG.md]
+[vuent-website]: https://vuentjs.org
