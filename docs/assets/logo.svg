@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 209.776 118.063">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #f16464;
+      }
+
+      .cls-2 {
+        fill: #b82d26;
+      }
+    </style>
+  </defs>
+  <g transform="translate(2.378 -66.555) rotate(90)">
+    <g transform="translate(184.618 -207.398) rotate(90)">
+      <path class="cls-1" d="M141.373,64.99,125.587,92.252,109.8,64.99H57.23l68.357,118.063L193.943,64.99Z" transform="translate(-57.23 -64.99)"/>
+      <path class="cls-2" d="M153.3,64.99,137.51,92.252,121.723,64.99H96.5l41.01,70.836L178.526,64.99Z" transform="translate(-69.153 -64.99)"/>
+    </g>
+    <g transform="translate(66.555 2.378) rotate(-90)">
+      <path class="cls-1" d="M84.143,0,68.357,27.262,52.57,0H0L68.357,118.063,136.713,0Z"/>
+      <path class="cls-2" d="M56.8,0,41.01,27.262,25.223,0H0L41.01,70.836,82.026,0Z" transform="translate(27.347)"/>
+    </g>
+  </g>
+</svg>

@@ -18,3 +18,4 @@ test_script:
 
 build_script:
   - npm run build
+  - npm run docs:build

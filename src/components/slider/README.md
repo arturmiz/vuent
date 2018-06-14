@@ -18,15 +18,15 @@
 
 ## Properties
 
-#### `label`
-Default: `'Slider'`
-
-The slider's label text.
-
 #### `disabled`
 Default: `false`
 
 Determines whether the slider should be in disabled mode or not.
+
+#### `label`
+Default: `'Slider'`
+
+The slider's label text.
 
 #### `min`
 Default: `0`
