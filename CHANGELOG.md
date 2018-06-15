@@ -1,24 +1,15 @@
-# Changelog
+<a name="0.1.0"></a>
+# [0.1.0](https://github.com/arturmiz/vuent/compare/51dc34e...v0.1.0) (2018-06-06)
 
-All notable changes to this project will be documented in this file.
 
-The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
-and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
+### Features
 
-## [0.1.0] - 2018-06-06
-
-Initial release :tada:
-
-### Added
-
-- Button component.
-- Checkbox component.
-- Header component.
-- Input component.
-- Link component.
-- Radio component.
-- Select component.
-- Slider component.
-- Toggle component.
-
-[0.1.0]: https://github.com/arturmiz/vuent/compare/v0.1.0...HEAD
+* **button:** initial implementation ([51dc34e](https://github.com/arturmiz/vuent/commit/51dc34e))
+* **checkbox:** initial implementation ([6f30403](https://github.com/arturmiz/vuent/commit/6f30403))
+* **header:** initial implementation ([662b01f](https://github.com/arturmiz/vuent/commit/662b01f))
+* **input:** initial implementation ([eccbaae](https://github.com/arturmiz/vuent/commit/eccbaae))
+* **link:** initial implementation ([4b15fde](https://github.com/arturmiz/vuent/commit/4b15fde))
+* **radio:** initial implementation ([b8b4caa](https://github.com/arturmiz/vuent/commit/b8b4caa))
+* **select:** initial implementation ([#6](https://github.com/arturmiz/vuent/issues/6)) ([4ad4617](https://github.com/arturmiz/vuent/commit/4ad4617))
+* **slider:** initial implementation ([c8119e2](https://github.com/arturmiz/vuent/commit/c8119e2))
+* **toggle:** initial implementation ([8fb68ff](https://github.com/arturmiz/vuent/commit/8fb68ff))
