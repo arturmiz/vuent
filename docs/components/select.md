@@ -28,7 +28,7 @@ Determines whether the select component should be in disabled mode or not.
 
 ### `label`
 
-Default: `'Select'`
+Default: `''`
 
 The select's label text.
 

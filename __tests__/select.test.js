@@ -22,8 +22,8 @@ describe('Select', () => {
       expect(wrapper.vm.disabled).toBe(false);
     });
 
-    test('label text is "Select"', () => {
-      expect(wrapper.vm.label).toBe('Select');
+    test('label text is empty', () => {
+      expect(wrapper.vm.label).toBe('');
     });
 
     test('option\'s label is under "label" property', () => {
