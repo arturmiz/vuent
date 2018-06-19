@@ -13,7 +13,7 @@ install:
 
 test_script:
   - node --version
-  - npm --version
+  - yarn --version
   - yarn test
 
 build_script:
