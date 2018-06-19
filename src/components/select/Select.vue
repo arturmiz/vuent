@@ -8,7 +8,9 @@
     </label>
 
     <div class="vnt-select__control"
-         role="combobox">
+         role="combobox"
+         :aria-expanded="isOpened"
+         aria-autocomplete="none">
 
       <div class="vnt-select__chosen"
            :class="{'vnt-select__chosen--disabled': disabled}"
