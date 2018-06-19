@@ -9,13 +9,13 @@ platform:
 
 install:
   - ps: Install-Product node $env:nodejs_version $env:platform
-  - npm install
+  - yarn install --frozen-lockfile
 
 test_script:
   - node --version
   - npm --version
-  - npm run test
+  - yarn test
 
 build_script:
-  - npm run build
-  - npm run docs:build
+  - yarn build
+  - yarn docs:build
