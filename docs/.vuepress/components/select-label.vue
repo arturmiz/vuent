@@ -1,7 +1,7 @@
 <template>
   <div class="playground">
     <div style="max-width: 300px">
-      <vnt-select v-model="country" :options="countries" disabled></vnt-select>
+      <vnt-select v-model="country" :options="countries" label="Choose country"></vnt-select>
     </div>
     <div class="result">country: {{ country }}</div>
   </div>
@@ -11,13 +11,13 @@
 import { VntSelect } from '../../../src/components';
 
 export default {
-  name: 'SelectDisabled',
+  name: 'SelectLabel',
   components: {
     VntSelect
   },
   data() {
     return {
-      country: 'USA',
+      country: null,
       countries: [
         { label: 'Australia', value: 'AUS' },
         { label: 'Belgium', value: 'BEL' },

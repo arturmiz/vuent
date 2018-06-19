@@ -7,7 +7,7 @@
 <select-basic />
 
 ```html
-<vnt-select v-model="country" :options="countries" label="Choose country"></vnt-select>
+<vnt-select v-model="country" :options="countries"></vnt-select>
 ```
 
 ## Disabled
@@ -15,7 +15,15 @@
 <select-disabled />
 
 ```html
-<vnt-select v-model="color" :options="colors" label="Choose country" disabled></vnt-select>
+<vnt-select v-model="color" :options="colors" disabled></vnt-select>
+```
+
+## Custom label
+
+<select-label />
+
+```html
+<vnt-select v-model="country" :options="countries" label="Choose country"></vnt-select>
 ```
 
 ## Configuration
@@ -28,7 +36,7 @@ Determines whether the select component should be in disabled mode or not.
 
 ### `label`
 
-Default: `'Select'`
+Default: `''`
 
 The select's label text.
 

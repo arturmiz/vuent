@@ -1,6 +1,8 @@
 <template>
   <div class="playground">
-    <vnt-select v-model="country" :options="countries" label="Choose country"></vnt-select>
+    <div style="max-width: 300px">
+      <vnt-select v-model="country" :options="countries"></vnt-select>
+    </div>
     <div class="result">country: {{ country }}</div>
   </div>
 </template>

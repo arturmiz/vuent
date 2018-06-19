@@ -2,7 +2,8 @@
   <div class="vnt-select">
 
     <label class="vnt-select__title"
-           :class="{'vnt-select__title--disabled': disabled}">
+           :class="{'vnt-select__title--disabled': disabled}"
+           v-if="label">
       <slot>{{ label }}</slot>
     </label>
 
@@ -45,7 +46,7 @@ export default {
     },
     label: {
       type: String,
-      default: 'Select'
+      default: ''
     },
     optionValue: {
       type: String,

@@ -2,7 +2,7 @@
 
 exports[`Select allows to select a new value shows options list on click renders correctly 1`] = `
 <div class="vnt-select">
-  <label class="vnt-select__title">Select</label>
+  <!---->
   <div role="combobox" class="vnt-select__control">
     <div class="vnt-select__chosen"><span class="vnt-select__chosen-label"></span> <span role="presentation" class="vnt-select__options-toggle"></span></div>
     <ul role="listbox" class="vnt-select__options" style="">
@@ -15,7 +15,7 @@ exports[`Select allows to select a new value shows options list on click renders
 
 exports[`Select by default renders correctly 1`] = `
 <div class="vnt-select">
-  <label class="vnt-select__title">Select</label>
+  <!---->
   <div role="combobox" class="vnt-select__control">
     <div class="vnt-select__chosen"><span class="vnt-select__chosen-label"></span> <span role="presentation" class="vnt-select__options-toggle"></span></div>
     <ul role="listbox" class="vnt-select__options" style="display: none;"></ul>
@@ -25,7 +25,7 @@ exports[`Select by default renders correctly 1`] = `
 
 exports[`Select can be disabled renders correctly 1`] = `
 <div class="vnt-select">
-  <label class="vnt-select__title vnt-select__title--disabled">Select</label>
+  <!---->
   <div role="combobox" class="vnt-select__control">
     <div class="vnt-select__chosen vnt-select__chosen--disabled"><span class="vnt-select__chosen-label"></span> <span role="presentation" class="vnt-select__options-toggle"></span></div>
     <ul role="listbox" class="vnt-select__options" style="display: none;">
@@ -38,7 +38,7 @@ exports[`Select can be disabled renders correctly 1`] = `
 
 exports[`Select can be disabled then does not allow to show options list renders correctly 1`] = `
 <div class="vnt-select">
-  <label class="vnt-select__title vnt-select__title--disabled">Select</label>
+  <!---->
   <div role="combobox" class="vnt-select__control">
     <div class="vnt-select__chosen vnt-select__chosen--disabled"><span class="vnt-select__chosen-label"></span> <span role="presentation" class="vnt-select__options-toggle"></span></div>
     <ul role="listbox" class="vnt-select__options" style="display: none;">
@@ -61,7 +61,7 @@ exports[`Select can have custom label renders correctly 1`] = `
 
 exports[`Select can have custom optionText renders correctly 1`] = `
 <div class="vnt-select">
-  <label class="vnt-select__title">Select</label>
+  <!---->
   <div role="combobox" class="vnt-select__control">
     <div class="vnt-select__chosen"><span class="vnt-select__chosen-label"></span> <span role="presentation" class="vnt-select__options-toggle"></span></div>
     <ul role="listbox" class="vnt-select__options" style="display: none;">
