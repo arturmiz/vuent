@@ -17,9 +17,17 @@ Vuent is a set of reusable UI components for [Vue][vue] created according to Mic
 
 The project aims to help developers build [UWP][uwp] or web apps with Fluent's look'n'feel leveraging [Vue][vue] as a framework for UI/view layer.
 
+## Installation
+
+```bash
+npm install vuent --save
+```
+
+For more details visit [Get Started](/get-started) guide.
+
 ## Changelog
 
-Changes for released versions are documented in a [change log file][changelog-file].
+Changes for released versions are documented in [CHANGELOG][changelog-file] file.
 
 ## Contributing
 

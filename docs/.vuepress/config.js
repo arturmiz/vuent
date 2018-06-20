@@ -23,6 +23,7 @@ module.exports = {
       '/get-started',
       {
         title: 'Components',
+        collapsible: false,
         children: [
           '/components/button',
           '/components/checkbox',
