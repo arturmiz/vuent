@@ -18,6 +18,13 @@
   "bugs": {
     "url": "https://github.com/arturmiz/vuent/issues"
   },
+  "keywords": [
+    "components",
+    "fluent",
+    "fluent-design",
+    "frontend",
+    "vue"
+  ],
   "scripts": {
     "build": "npm run lint && npm run test && rollup -c",
     "commitmsg": "commitlint -e $GIT_PARAMS",
