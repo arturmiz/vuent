@@ -2,7 +2,8 @@ import resolve from 'rollup-plugin-node-resolve';
 import commonjs from 'rollup-plugin-commonjs';
 import babel from 'rollup-plugin-babel';
 import vue from 'rollup-plugin-vue';
-import uglify from 'rollup-plugin-uglify';
+import { uglify } from 'rollup-plugin-uglify';
+import css from 'rollup-plugin-css-only';
 import pkg from './package.json';
 
 const input = 'src/index.js';
@@ -31,11 +32,15 @@ export default [
       resolve(),
       commonjs(),
       vue({
-        css: 'dist/vuent.css',
-        compileTemplate: true,
-        compileOptions: {
-          preserveWhitespace: false
+        css: false,
+        template: {
+          compilerOptions: {
+            preserveWhitespace: false
+          }
         }
+      }),
+      css({
+        output: 'dist/vuent.css',
       }),
       babel({
         exclude: 'node_modules/**',
@@ -55,9 +60,10 @@ export default [
       resolve(),
       vue({
         css: false,
-        compileTemplate: true,
-        compileOptions: {
-          preserveWhitespace: false
+        template: {
+          compilerOptions: {
+            preserveWhitespace: false
+          }
         }
       }),
     ],
