@@ -44,6 +44,12 @@ Default: `[]`
 
 An array of options to choose from.
 
+#### `placeholder`
+
+Default: `''`
+
+Placeholder text visible when no value selected.
+
 #### `value`
 
 Default: `undefined`

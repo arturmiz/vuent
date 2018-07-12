@@ -34,6 +34,10 @@ describe('Select', () => {
       expect(wrapper.vm.optionValue).toBe('value');
     });
 
+    test('placeholder is empty', () => {
+      expect(wrapper.vm.placeholder).toBe('');
+    });
+
     test('renders correctly', () => {
       expect(wrapper.html()).toMatchSnapshot();
     });
@@ -199,6 +203,26 @@ describe('Select', () => {
     test('correct value is resolved', () => {
       const [[newValue]] = wrapper.emitted()['input'];
       expect(newValue).toBe(123);
+    });
+
+  });
+
+  describe('can have placeholder set', () => {
+
+    beforeAll(() => {
+      wrapper = mount(VntSelect, {
+        propsData: {
+          placeholder: 'Choose something'
+        }
+      });
+    });
+
+    test('is correct', () => {
+      expect(wrapper.vm.placeholder).toBe('Choose something');
+    });
+
+    test('renders correctly', () => {
+      expect(wrapper.html()).toMatchSnapshot();
     });
 
   });
