@@ -71,3 +71,13 @@ exports[`Select can have custom optionText renders correctly 1`] = `
   </div>
 </div>
 `;
+
+exports[`Select can have placeholder set renders correctly 1`] = `
+<div class="vnt-select">
+  <!---->
+  <div role="combobox" class="vnt-select__control">
+    <div class="vnt-select__chosen"><span class="vnt-select__chosen-label">Choose something</span> <span role="presentation" class="vnt-select__options-toggle"></span></div>
+    <ul role="listbox" class="vnt-select__options" style="display: none;"></ul>
+  </div>
+</div>
+`;
