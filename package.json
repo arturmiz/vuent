@@ -1,7 +1,7 @@
 {
   "name": "vuent",
   "version": "0.2.0",
-  "description": "Vue.js components implementing Microsoft's Fluent Design",
+  "description": "Vue.js components implementing Microsoft Fluent Design",
   "author": {
     "name": "Artur Mizera",
     "email": "arturkoduje@outlook.com"
@@ -10,7 +10,7 @@
   "main": "dist/vuent.cjs.js",
   "module": "dist/vuent.esm.js",
   "browser": "dist/vuent.umd.js",
-  "homepage": "http://vuentjs.org",
+  "homepage": "https://vuentjs.org",
   "repository": {
     "type": "git",
     "url": "https://github.com/arturmiz/vuent"
@@ -70,6 +70,6 @@
     "vue": "~2.5.13",
     "vue-jest": "~2.5.0",
     "vue-template-compiler": "~2.5.16",
-    "vuepress": "~0.10.1"
+    "vuepress": "~0.11.0"
   }
 }
