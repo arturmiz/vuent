@@ -10,6 +10,30 @@
 <vnt-autosuggest v-model="country" placeholder="Type something..."></vnt-autosuggest>
 ```
 
+## Disabled
+
+<autosuggest-disabled />
+
+```html
+<vnt-autosuggest v-model="country" disabled></vnt-autosuggest>
+```
+
+## Placeholder
+
+<autosuggest-placeholder />
+
+```html
+<vnt-autosuggest v-model="country" placeholder="Type something..."></vnt-autosuggest>
+```
+
+## Custom label
+
+<autosuggest-label />
+
+```html
+<vnt-autosuggest v-model="country" label="Country"></vnt-autosuggest>
+```
+
 ## Configuration
 
 ### `disabled`
@@ -38,5 +62,5 @@ Default: `''`
 Can be used instead of `v-model` as following:
 
 ```html
-<vnt-input :value.sync="message" ...></vnt-input>
+<vnt-autosuggest :value.sync="message" ...></vnt-autosuggest>
 ```
