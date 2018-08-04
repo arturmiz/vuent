@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Auto-suggest by default renders correctly 1`] = `
+<div class="vnt-autosuggest">
+  <!---->
+  <div role="combobox" class="vnt-autosuggest__control">
+    <input type="text" placeholder="" class="vnt-autosuggest__input">
+    <ul role="listbox" class="vnt-select__options" style="display: none;"></ul>
+  </div>
+</div>
+`;
+
+exports[`Auto-suggest can be disabled renders correctly 1`] = `
+<div class="vnt-autosuggest">
+  <!---->
+  <div role="combobox" class="vnt-autosuggest__control">
+    <input type="text" disabled="disabled" placeholder="" class="vnt-autosuggest__input">
+    <ul role="listbox" class="vnt-select__options" style="display: none;"></ul>
+  </div>
+</div>
+`;
+
+exports[`Auto-suggest can have a custom placeholder renders correctly 1`] = `
+<div class="vnt-autosuggest">
+  <!---->
+  <div role="combobox" class="vnt-autosuggest__control">
+    <input type="text" placeholder="Type something" class="vnt-autosuggest__input">
+    <ul role="listbox" class="vnt-select__options" style="display: none;"></ul>
+  </div>
+</div>
+`;
+
+exports[`Auto-suggest can have custom label renders correctly 1`] = `
+<div class="vnt-autosuggest">
+  <label class="vnt-autosuggest__label">
+    Custom Auto-suggest
+  </label>
+  <div role="combobox" class="vnt-autosuggest__control">
+    <input type="text" placeholder="" class="vnt-autosuggest__input">
+    <ul role="listbox" class="vnt-select__options" style="display: none;"></ul>
+  </div>
+</div>
+`;
