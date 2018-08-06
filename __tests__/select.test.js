@@ -82,7 +82,7 @@ describe('Select', () => {
     describe('then does not allow to select a new value', () => {
 
       beforeAll(() => {
-        const control = wrapper.find('.vnt-select__options-item');
+        const control = wrapper.find('.vnt-dropdown-options__item');
         control.trigger('click');
       });
 
@@ -127,7 +127,7 @@ describe('Select', () => {
     describe('allows to select a new value', () => {
 
       beforeAll(() => {
-        const option = wrapper.find('.vnt-select__options-item');
+        const option = wrapper.find('.vnt-dropdown-options__item');
         option.trigger('click');
       });
 
@@ -192,7 +192,7 @@ describe('Select', () => {
         }
       });
 
-      const option = wrapper.find('.vnt-select__options-item');
+      const option = wrapper.find('.vnt-dropdown-options__item');
       option.trigger('click');
     });
 

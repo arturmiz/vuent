@@ -16,17 +16,10 @@
              :value="value"
              @input="input" />
 
-      <ul class="vnt-select__options"
-          role="listbox"
-          v-show="showHints">
+      <vnt-dropdown-options :options="hints"
+                            :opened.sync="showHints"
+                            @on-select="selectHint" />
 
-        <li class="vnt-select__options-item"
-            role="listitem"
-            v-for="option in hints"
-            :key="option"
-            @click="selectHint(option)">{{ option }}</li>
-
-      </ul>
     </div>
 
   </div>
@@ -74,8 +67,14 @@
 </style>
 
 <script>
+import VntDropdownOptions from '../select/Options.vue';
+
 export default {
   name: 'VntAutosuggest',
+
+  components: {
+    VntDropdownOptions
+  },
 
   props: {
     disabled: {
@@ -112,14 +111,6 @@ export default {
   watch: {
     hints(hints) {
       this.showHints = hints.length > 0;
-    },
-
-    showHints(hintsVisible) {
-      if (hintsVisible) {
-        document.body.addEventListener('click', this.hideHints, true);
-      } else {
-        document.body.removeEventListener('click', this.hideHints, true);
-      }
     }
   },
 
@@ -138,13 +129,6 @@ export default {
     selectHint(option) {
       if (!this.disabled) {
         this.$emit('input', option);
-        this.showHints = false;
-      }
-    },
-
-    hideHints() {
-      if (!this.disabled) {
-        this.showHints = false;
       }
     }
 
