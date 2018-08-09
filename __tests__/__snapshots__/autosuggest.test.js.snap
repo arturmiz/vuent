@@ -30,6 +30,18 @@ exports[`Auto-suggest can have a custom placeholder renders correctly 1`] = `
 </div>
 `;
 
+exports[`Auto-suggest can have custom label and be disabled renders correctly 1`] = `
+<div class="vnt-autosuggest">
+  <label class="vnt-autosuggest__label vnt-autosuggest__label--disabled">
+    Custom Auto-suggest
+  </label>
+  <div role="combobox" class="vnt-autosuggest__control">
+    <input type="text" disabled="disabled" placeholder="" class="vnt-autosuggest__input">
+    <ul role="listbox" class="vnt-dropdown-options" style="display: none;"></ul>
+  </div>
+</div>
+`;
+
 exports[`Auto-suggest can have custom label renders correctly 1`] = `
 <div class="vnt-autosuggest">
   <label class="vnt-autosuggest__label">

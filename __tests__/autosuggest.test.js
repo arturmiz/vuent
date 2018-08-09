@@ -116,4 +116,21 @@ describe('Auto-suggest', () => {
 
   });
 
+  describe('can have custom label and be disabled', () => {
+
+    beforeAll(() => {
+      wrapper = mount(VntAutosuggest, {
+        propsData: {
+          disabled: true,
+          label: 'Custom Auto-suggest'
+        }
+      });
+    });
+
+    test('renders correctly', () => {
+      expect(wrapper.html()).toMatchSnapshot();
+    });
+
+  });
+
 });

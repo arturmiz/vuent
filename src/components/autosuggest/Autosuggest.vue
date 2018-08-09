@@ -2,6 +2,7 @@
   <div class="vnt-autosuggest">
 
     <label class="vnt-autosuggest__label"
+           :class="{'vnt-autosuggest__label--disabled': disabled}"
            v-if="label">
       {{ label }}
     </label>
@@ -40,6 +41,10 @@
   display: block;
   padding: 10px 0;
   line-height: 20px;
+
+  &--disabled {
+    color: #999;
+}
 }
 
 .vnt-autosuggest__control {
@@ -67,7 +72,7 @@
 </style>
 
 <script>
-import VntDropdownOptions from '../select/Options.vue';
+import VntDropdownOptions from '../dropdown/Options.vue';
 
 export default {
   name: 'VntAutosuggest',

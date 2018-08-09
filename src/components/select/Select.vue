@@ -31,7 +31,7 @@
 </template>
 
 <script>
-import VntDropdownOptions from './Options.vue';
+import VntDropdownOptions from '../dropdown/Options.vue';
 
 export default {
   name: 'VntSelect',
