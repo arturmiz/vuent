@@ -21,25 +21,26 @@
               role="presentation"></span>
       </div>
 
-      <ul class="vnt-select__options"
-          role="listbox"
-          v-show="isOpened">
+      <vnt-dropdown-options :options="options"
+                            :option-value="optionValue"
+                            :option-text="optionText"
+                            :opened.sync="isOpened"
+                            @on-select="selectValue" />
 
-        <li class="vnt-select__options-item"
-            role="listitem"
-            v-for="option in options"
-            :key="option[optionValue]"
-            @click="selectValue(option)">{{ option[optionText] }}</li>
-
-      </ul>
     </div>
 
   </div>
 </template>
 
 <script>
+import VntDropdownOptions from '../dropdown/Options.vue';
+
 export default {
   name: 'VntSelect',
+
+  components: {
+    VntDropdownOptions
+  },
 
   props: {
     disabled: {
@@ -87,21 +88,10 @@ export default {
     }
   },
 
-  watch: {
-    isOpened(newIsOpened) {
-      if (newIsOpened) {
-        document.body.addEventListener('click', this.toggleOptions, true);
-      } else {
-        document.body.removeEventListener('click', this.toggleOptions, true);
-      }
-    }
-  },
-
   methods: {
     selectValue(option) {
       if (!this.disabled) {
         this.$emit('input', option[this.optionValue]);
-        this.isOpened = false;
       }
     },
 
@@ -177,7 +167,7 @@ export default {
   margin: 8px 9px;
   border-width: 1px;
   border-style: solid;
-  border-color:  lighten(#000, 20%);
+  border-color: lighten(#000, 20%);
   border-top-color: transparent;
   border-right-color: transparent;
   transform: rotate(-45deg);
@@ -188,31 +178,4 @@ export default {
   }
 }
 
-.vnt-select__options {
-  position: absolute;
-  border: 1px solid lighten(#000, 80%);
-  background: #f2f2f2;
-  padding: 5px 0;
-  margin: 0;
-  max-height: 190px;
-  overflow-x: hidden;
-  overflow-y: auto;
-  width: 100%;
-  box-sizing: border-box;
-  z-index: 10;
-   -ms-overflow-style: none;
-}
-
-.vnt-select__options-item {
-  @include component-base();
-
-  line-height: 20px;
-  color: #000100;
-  cursor: pointer;
-  display: block;
-  padding: 8px 12px;
-  text-overflow: ellipsis;
-  overflow: hidden;
-  white-space: nowrap;
-}
 </style>

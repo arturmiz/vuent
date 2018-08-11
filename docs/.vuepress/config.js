@@ -25,6 +25,7 @@ module.exports = {
         title: 'Components',
         collapsible: false,
         children: [
+          '/components/autosuggest',
           '/components/button',
           '/components/checkbox',
           '/components/header',
