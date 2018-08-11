@@ -22,7 +22,7 @@ Default: `''`
 The control's label text.
 
 #### `placeholder`
-Default: `'Hint text'`
+Default: `''`
 
 The input's placeholder text.
 

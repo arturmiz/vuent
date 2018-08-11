@@ -39,7 +39,7 @@
 <input-placeholder />
 
 ```html
-<vnt-input v-model="message" placeholder></vnt-input>
+<vnt-input v-model="message" placeholder="Type message here"></vnt-input>
 ```
 
 ## Configuration
@@ -55,7 +55,7 @@ Default: `''`
 The control's label text.
 
 ### `placeholder`
-Default: `'Hint text'`
+Default: `''`
 
 The input's placeholder text.
 
