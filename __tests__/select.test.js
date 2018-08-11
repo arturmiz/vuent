@@ -34,6 +34,10 @@ describe('Select', () => {
       expect(wrapper.vm.optionValue).toBe('value');
     });
 
+    test('chosen value text is empty', () => {
+      expect(wrapper.vm.chosenText).toBe('');
+    });
+
     test('placeholder is empty', () => {
       expect(wrapper.vm.placeholder).toBe('');
     });
@@ -86,7 +90,7 @@ describe('Select', () => {
     describe('then does not allow to select a new value', () => {
 
       beforeAll(() => {
-        const control = wrapper.find('.vnt-select__options-item');
+        const control = wrapper.find('.vnt-dropdown-options__item');
         control.trigger('click');
       });
 
@@ -131,14 +135,40 @@ describe('Select', () => {
     describe('allows to select a new value', () => {
 
       beforeAll(() => {
-        const option = wrapper.find('.vnt-select__options-item');
+        const option = wrapper.find('.vnt-dropdown-options__item');
         option.trigger('click');
       });
 
-      test('event is emitted', () => {
-        expect(wrapper.emitted()['input']).toHaveLength(1);
+      test('correct value is resolved is emitted', () => {
+        const [[eventValue]] = wrapper.emitted()['input'];
+        expect(eventValue).toBe(1);
       });
 
+    });
+
+  });
+
+  describe('chosen label text', () => {
+
+    beforeAll(() => {
+      wrapper = mount(VntSelect, {
+        propsData: {
+          options: [
+            { value: 1, label: 'List item 1'},
+            { value: 2, label: 'List item 2'},
+          ]
+        }
+      });
+    });
+
+    test('for a value that exist in the options list', () => {
+      wrapper.vm.value = 1;
+      expect(wrapper.vm.chosenText).toBe('List item 1');
+    });
+
+    test('for a value that doesn\'t exist in the options list', () => {
+      wrapper.vm.value = 3;
+      expect(wrapper.vm.chosenText).toBe('');
     });
 
   });
@@ -196,7 +226,7 @@ describe('Select', () => {
         }
       });
 
-      const option = wrapper.find('.vnt-select__options-item');
+      const option = wrapper.find('.vnt-dropdown-options__item');
       option.trigger('click');
     });
 

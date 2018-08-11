@@ -3,6 +3,7 @@ module.exports = {
   rules: {
     'scope-enum': [2, 'always',
       [
+        'autosuggest',
         'button',
         'checkbox',
         'header',
