@@ -14,7 +14,9 @@
            :class="{'vnt-select__chosen--disabled': disabled}"
            @click="toggleOptions">
         <span class="vnt-select__chosen-label"
-              v-text="chosenText"></span>
+              v-if="chosenText">{{ chosenText }}</span>
+        <span class="vnt-select__chosen-label"
+              v-else>{{ placeholder }}</span>
         <span class="vnt-select__options-toggle"
               role="presentation"></span>
       </div>
@@ -62,6 +64,10 @@ export default {
       default() {
         return [];
       }
+    },
+    placeholder: {
+      type: String,
+      default: ''
     },
     value: {
       type: [Number, String, Object],

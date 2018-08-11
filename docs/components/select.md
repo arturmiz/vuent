@@ -26,6 +26,14 @@
 <vnt-select v-model="country" :options="countries" label="Choose country"></vnt-select>
 ```
 
+## Placeholder
+
+<select-placeholder />
+
+```html
+<vnt-select v-model="country" :options="countries" placeholder="Choose country"></vnt-select>
+```
+
 ## Configuration
 
 ### `disabled`
@@ -57,6 +65,12 @@ Name of property containing an option's value.
 Default: `[]`
 
 An array of options to choose from.
+
+### `placeholder`
+
+Default: `''`
+
+Placeholder text visible when no value selected.
 
 ### `value`
 
