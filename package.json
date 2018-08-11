@@ -70,6 +70,6 @@
     "vue": "~2.5.13",
     "vue-jest": "~2.5.0",
     "vue-template-compiler": "~2.5.16",
-    "vuepress": "~0.11.0"
+    "vuepress": "~0.10.1"
   }
 }
