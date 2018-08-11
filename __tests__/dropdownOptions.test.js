@@ -184,4 +184,11 @@ describe('DropdownOptions', () => {
 
   });
 
+  test('hide emits opened change', () => {
+    wrapper.vm.hide();
+
+    const [[eventValue]] = wrapper.emitted()['update:opened'];
+    expect(eventValue).toBe(false);
+  });
+
 });

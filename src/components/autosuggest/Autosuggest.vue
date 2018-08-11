@@ -121,14 +121,17 @@ export default {
 
   methods: {
     input($event) {
-      const query = $event.target.value;
+      const query = $event.value;
       this.$emit('input', query);
       this.lookup(query);
     },
 
     lookup(query) {
+      const lookupQuery = query.toLocaleLowerCase();
       this.hints = this.options
-        .filter((option) => String(option).toLocaleLowerCase().indexOf(query) > -1);
+        .filter((option) =>
+          String(option).toLocaleLowerCase().indexOf(lookupQuery) > -1)
+        .sort();
     },
 
     selectHint(option) {

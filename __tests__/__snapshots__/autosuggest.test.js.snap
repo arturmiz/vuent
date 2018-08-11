@@ -20,6 +20,16 @@ exports[`Auto-suggest can be disabled renders correctly 1`] = `
 </div>
 `;
 
+exports[`Auto-suggest can be disabled when value has changed renders correctly 1`] = `
+<div class="vnt-autosuggest">
+  <!---->
+  <div role="combobox" class="vnt-autosuggest__control">
+    <input type="text" disabled="disabled" placeholder="" class="vnt-autosuggest__input">
+    <ul role="listbox" class="vnt-dropdown-options" style="display: none;"></ul>
+  </div>
+</div>
+`;
+
 exports[`Auto-suggest can have a custom placeholder renders correctly 1`] = `
 <div class="vnt-autosuggest">
   <!---->
@@ -50,6 +60,29 @@ exports[`Auto-suggest can have custom label renders correctly 1`] = `
   <div role="combobox" class="vnt-autosuggest__control">
     <input type="text" placeholder="" class="vnt-autosuggest__input">
     <ul role="listbox" class="vnt-dropdown-options" style="display: none;"></ul>
+  </div>
+</div>
+`;
+
+exports[`Auto-suggest when user types something that doesn't match any option renders correctly 1`] = `
+<div class="vnt-autosuggest">
+  <!---->
+  <div role="combobox" class="vnt-autosuggest__control">
+    <input type="text" placeholder="" class="vnt-autosuggest__input">
+    <ul role="listbox" class="vnt-dropdown-options" style="display: none;"></ul>
+  </div>
+</div>
+`;
+
+exports[`Auto-suggest when user types something that match any option renders correctly 1`] = `
+<div class="vnt-autosuggest">
+  <!---->
+  <div role="combobox" class="vnt-autosuggest__control">
+    <input type="text" placeholder="" class="vnt-autosuggest__input">
+    <ul role="listbox" class="vnt-dropdown-options" style="">
+      <li role="listitem" class="vnt-dropdown-options__item">Australia</li>
+      <li role="listitem" class="vnt-dropdown-options__item">Austria</li>
+    </ul>
   </div>
 </div>
 `;
