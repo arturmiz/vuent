@@ -38,6 +38,10 @@ describe('Select', () => {
       expect(wrapper.vm.placeholder).toBe('');
     });
 
+    test('chosen value text is empty', () => {
+      expect(wrapper.vm.chosenText).toBe('');
+    });
+
     test('renders correctly', () => {
       expect(wrapper.html()).toMatchSnapshot();
     });
@@ -135,10 +139,36 @@ describe('Select', () => {
         option.trigger('click');
       });
 
-      test('event is emitted', () => {
-        expect(wrapper.emitted()['input']).toHaveLength(1);
+      test('correct value is resolved is emitted', () => {
+        const [[eventValue]] = wrapper.emitted()['input'];
+        expect(eventValue).toBe(1);
       });
 
+    });
+
+  });
+
+  describe('chosen label text', () => {
+
+    beforeAll(() => {
+      wrapper = mount(VntSelect, {
+        propsData: {
+          options: [
+            { value: 1, label: 'List item 1'},
+            { value: 2, label: 'List item 2'},
+          ]
+        }
+      });
+    });
+
+    test('for a value that exist in the options list', () => {
+      wrapper.vm.value = 1;
+      expect(wrapper.vm.chosenText).toBe('List item 1');
+    });
+
+    test('for a value that doesn\'t exist in the options list', () => {
+      wrapper.vm.value = 3;
+      expect(wrapper.vm.chosenText).toBe('');
     });
 
   });
