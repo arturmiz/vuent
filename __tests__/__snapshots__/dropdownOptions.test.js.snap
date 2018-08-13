@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DropdownOptions by default renders correctly 1`] = `<ul role="listbox" class="vnt-dropdown-options" style="display: none;"></ul>`;
+
+exports[`DropdownOptions when opened renders correctly 1`] = `
+<ul role="listbox" class="vnt-dropdown-options" style="">
+  <li role="listitem" class="vnt-dropdown-options__item">List item 1</li>
+  <li role="listitem" class="vnt-dropdown-options__item">List item 2</li>
+  <li role="listitem" class="vnt-dropdown-options__item">List item 3</li>
+</ul>
+`;
+
+exports[`DropdownOptions when options array is a list of objects renders correctly 1`] = `
+<ul role="listbox" class="vnt-dropdown-options" style="display: none;">
+  <li role="listitem" class="vnt-dropdown-options__item">List item 1</li>
+  <li role="listitem" class="vnt-dropdown-options__item">List item 2</li>
+  <li role="listitem" class="vnt-dropdown-options__item">List item 3</li>
+</ul>
+`;
+
+exports[`DropdownOptions when options array is a simple list renders correctly 1`] = `
+<ul role="listbox" class="vnt-dropdown-options" style="">
+  <li role="listitem" class="vnt-dropdown-options__item">List item 1</li>
+  <li role="listitem" class="vnt-dropdown-options__item">List item 2</li>
+  <li role="listitem" class="vnt-dropdown-options__item">List item 3</li>
+</ul>
+`;

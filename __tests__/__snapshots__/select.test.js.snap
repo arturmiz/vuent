@@ -5,9 +5,9 @@ exports[`Select allows to select a new value shows options list on click renders
   <!---->
   <div role="combobox" class="vnt-select__control">
     <div class="vnt-select__chosen"><span class="vnt-select__chosen-label"></span> <span role="presentation" class="vnt-select__options-toggle"></span></div>
-    <ul role="listbox" class="vnt-select__options" style="">
-      <li role="listitem" class="vnt-select__options-item">List item 1</li>
-      <li role="listitem" class="vnt-select__options-item">List item 2</li>
+    <ul role="listbox" class="vnt-dropdown-options" style="">
+      <li role="listitem" class="vnt-dropdown-options__item">List item 1</li>
+      <li role="listitem" class="vnt-dropdown-options__item">List item 2</li>
     </ul>
   </div>
 </div>
@@ -18,7 +18,7 @@ exports[`Select by default renders correctly 1`] = `
   <!---->
   <div role="combobox" class="vnt-select__control">
     <div class="vnt-select__chosen"><span class="vnt-select__chosen-label"></span> <span role="presentation" class="vnt-select__options-toggle"></span></div>
-    <ul role="listbox" class="vnt-select__options" style="display: none;"></ul>
+    <ul role="listbox" class="vnt-dropdown-options" style="display: none;"></ul>
   </div>
 </div>
 `;
@@ -28,9 +28,9 @@ exports[`Select can be disabled renders correctly 1`] = `
   <!---->
   <div role="combobox" class="vnt-select__control">
     <div class="vnt-select__chosen vnt-select__chosen--disabled"><span class="vnt-select__chosen-label"></span> <span role="presentation" class="vnt-select__options-toggle"></span></div>
-    <ul role="listbox" class="vnt-select__options" style="display: none;">
-      <li role="listitem" class="vnt-select__options-item">List item 1</li>
-      <li role="listitem" class="vnt-select__options-item">List item 2</li>
+    <ul role="listbox" class="vnt-dropdown-options" style="display: none;">
+      <li role="listitem" class="vnt-dropdown-options__item">List item 1</li>
+      <li role="listitem" class="vnt-dropdown-options__item">List item 2</li>
     </ul>
   </div>
 </div>
@@ -41,9 +41,9 @@ exports[`Select can be disabled then does not allow to show options list renders
   <!---->
   <div role="combobox" class="vnt-select__control">
     <div class="vnt-select__chosen vnt-select__chosen--disabled"><span class="vnt-select__chosen-label"></span> <span role="presentation" class="vnt-select__options-toggle"></span></div>
-    <ul role="listbox" class="vnt-select__options" style="display: none;">
-      <li role="listitem" class="vnt-select__options-item">List item 1</li>
-      <li role="listitem" class="vnt-select__options-item">List item 2</li>
+    <ul role="listbox" class="vnt-dropdown-options" style="display: none;">
+      <li role="listitem" class="vnt-dropdown-options__item">List item 1</li>
+      <li role="listitem" class="vnt-dropdown-options__item">List item 2</li>
     </ul>
   </div>
 </div>
@@ -54,7 +54,7 @@ exports[`Select can have custom label renders correctly 1`] = `
   <label class="vnt-select__title">Custom Select</label>
   <div role="combobox" class="vnt-select__control">
     <div class="vnt-select__chosen"><span class="vnt-select__chosen-label"></span> <span role="presentation" class="vnt-select__options-toggle"></span></div>
-    <ul role="listbox" class="vnt-select__options" style="display: none;"></ul>
+    <ul role="listbox" class="vnt-dropdown-options" style="display: none;"></ul>
   </div>
 </div>
 `;
@@ -64,9 +64,9 @@ exports[`Select can have custom optionText renders correctly 1`] = `
   <!---->
   <div role="combobox" class="vnt-select__control">
     <div class="vnt-select__chosen"><span class="vnt-select__chosen-label"></span> <span role="presentation" class="vnt-select__options-toggle"></span></div>
-    <ul role="listbox" class="vnt-select__options" style="display: none;">
-      <li role="listitem" class="vnt-select__options-item">List item 1</li>
-      <li role="listitem" class="vnt-select__options-item">List item 2</li>
+    <ul role="listbox" class="vnt-dropdown-options" style="display: none;">
+      <li role="listitem" class="vnt-dropdown-options__item">List item 1</li>
+      <li role="listitem" class="vnt-dropdown-options__item">List item 2</li>
     </ul>
   </div>
 </div>
@@ -77,7 +77,7 @@ exports[`Select can have placeholder set renders correctly 1`] = `
   <!---->
   <div role="combobox" class="vnt-select__control">
     <div class="vnt-select__chosen"><span class="vnt-select__chosen-label">Choose something</span> <span role="presentation" class="vnt-select__options-toggle"></span></div>
-    <ul role="listbox" class="vnt-select__options" style="display: none;"></ul>
+    <ul role="listbox" class="vnt-dropdown-options" style="display: none;"></ul>
   </div>
 </div>
 `;
