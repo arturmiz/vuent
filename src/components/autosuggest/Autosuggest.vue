@@ -15,7 +15,8 @@
              :disabled="disabled"
              :placeholder="placeholder"
              :value="value"
-             @input="input" />
+             @input="input"
+             v-bind="$attrs" />
 
       <vnt-dropdown-options :options="hints"
                             :opened.sync="showHints"
@@ -44,7 +45,7 @@
 
   &--disabled {
     color: #999;
-}
+  }
 }
 
 .vnt-autosuggest__control {

@@ -71,7 +71,6 @@ describe('DropdownOptions', () => {
     beforeAll(() => {
       wrapper = mount(VntDropdownOptions, {
         propsData: {
-          opened: true,
           options: [
             'List item 1',
             'List item 2',
@@ -81,12 +80,41 @@ describe('DropdownOptions', () => {
       });
     });
 
+    test('adds click listener when once it\'s visible', () => {
+      const tempAddEvent = document.body.addEventListener;
+      const addEvent = jest.fn();
+      document.body.addEventListener = addEvent;
+
+      wrapper.vm.opened = true;
+
+      expect(addEvent).toHaveBeenCalledWith('click', wrapper.vm.hide, true);
+
+      document.body.addEventListener = tempAddEvent;
+    });
+
     test('is visible', () => {
+      wrapper.vm.opened = true;
+
       expect(wrapper.find('.vnt-dropdown-options').isVisible()).toBe(true);
     });
 
     test('renders correctly', () => {
+      wrapper.vm.opened = true;
+
       expect(wrapper.html()).toMatchSnapshot();
+    });
+
+    test('removes click listener when has been closed', () => {
+      const tempRemoveEvent = document.body.removeEventListener;
+      const removeEvent = jest.fn();
+      document.body.removeEventListener = removeEvent;
+
+      wrapper.vm.opened = true;
+      wrapper.vm.opened = false;
+
+      expect(removeEvent).toHaveBeenCalledWith('click', wrapper.vm.hide, true);
+
+      document.body.removeEventListener = tempRemoveEvent;
     });
 
   });
