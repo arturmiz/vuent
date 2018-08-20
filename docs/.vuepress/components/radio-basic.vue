@@ -2,6 +2,7 @@
   <div class="playground">
     <vnt-radio name="abc" value="123" v-model="radioValue">Radio 1</vnt-radio>
     <vnt-radio name="abc" value="456" v-model="radioValue">Radio 2</vnt-radio>
+    <vnt-radio name="abc" value="789" v-model="radioValue">Radio 3</vnt-radio>
     <div class="result">radioValue: {{ radioValue }}</div>
   </div>
 </template>
@@ -16,7 +17,7 @@ export default {
   },
   data() {
     return {
-      radioValue: '123'
+      radioValue: '456'
     }
   }
 }

@@ -9,6 +9,7 @@
 ```html
 <vnt-radio name="abc" value="123" v-model="radioValue">Radio 1</vnt-radio>
 <vnt-radio name="abc" value="456" v-model="radioValue">Radio 2</vnt-radio>
+<vnt-radio name="abc" value="789" v-model="radioValue">Radio 3</vnt-radio>
 ```
 
 ## Disabled

@@ -2,6 +2,7 @@
   <label class="vnt-radio">
     <input class="vnt-radio__input"
            type="radio"
+           :checked="checked"
            :disabled="disabled"
            :name="name"
            v-bind="$attrs"
@@ -17,7 +18,16 @@
 export default {
   name: 'VntRadio',
 
+  model: {
+    prop: 'model',
+    event: 'input'
+  },
+
   props: {
+    model: {
+      type: [String, Number, Boolean, Object],
+      default: undefined
+    },
     disabled: {
       type: Boolean,
       default: false
@@ -32,17 +42,9 @@ export default {
     }
   },
 
-  mounted() {
-    if (!this.$vnode) {
-      return;
-    }
-
-    const vModel = this.$vnode.data.model || {};
-    const vModelValue = vModel.value;
-
-    if (!!vModelValue && vModelValue === this.$attrs.value) {
-      const input = this.$el.querySelector('input');
-      input.setAttribute('checked', true);
+  computed: {
+    checked() {
+      return this.$attrs.value === this.model;
     }
   },
 
