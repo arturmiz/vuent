@@ -165,12 +165,20 @@ describe('RadioButton', () => {
           disabled: true
         }
       });
-
-      const label = wrapper.find('label');
-      label.trigger('click');
     });
 
     test('event is not emitted', () => {
+      const label = wrapper.find('label');
+      label.trigger('click');
+
+      expect(wrapper.emitted()['input']).toBeUndefined();
+    });
+
+    test('toggle doesn\'t emit event', () => {
+      const toggleResult = wrapper.vm.toggle({
+        target: { value: 'blue' }
+      });
+      expect(toggleResult).toBeUndefined();
       expect(wrapper.emitted()['input']).toBeUndefined();
     });
 
