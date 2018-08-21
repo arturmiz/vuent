@@ -1,7 +1,7 @@
 # Vuent
 
 <p align="center">
-  <img src="docs/assets/logo.svg" alt="Vuent" width="280" />
+  <img src="https://vuentjs.org/logo.svg" alt="Vuent" width="280" />
 </p>
 
 [![Build Status](https://travis-ci.com/arturmiz/vuent.svg?branch=master)](https://travis-ci.com/arturmiz/vuent)
