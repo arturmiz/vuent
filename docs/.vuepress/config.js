@@ -18,12 +18,16 @@ module.exports = {
 
     sidebarDepth: 4,
 
+    nav: [
+      { text: 'Twitter', link: 'https://twitter.com/VuentJS' }
+    ],
+
     sidebar: [
       ['/', 'Introduction'],
       '/get-started',
       {
         title: 'Components',
-        collapsible: false,
+        collapsable: false,
         children: [
           '/components/autosuggest',
           '/components/button',
