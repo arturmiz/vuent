@@ -66,10 +66,10 @@
     "rollup-plugin-node-resolve": "~3.3.0",
     "rollup-plugin-uglify": "~4.0.0",
     "rollup-plugin-vue": "~4.3.0",
-    "sass-loader": "~7.0.3",
+    "sass-loader": "~7.1.0",
     "vue": "~2.5.13",
     "vue-jest": "~2.5.0",
     "vue-template-compiler": "~2.5.16",
-    "vuepress": "~0.10.1"
+    "vuepress": "~0.14.2"
   }
 }

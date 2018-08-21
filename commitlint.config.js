@@ -13,6 +13,7 @@ module.exports = {
         'select',
         'slider',
         'toggle',
+        'website'
       ]
     ]
   }
