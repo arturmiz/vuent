@@ -1,3 +1,19 @@
+<a name="0.3.0"></a>
+# [0.3.0](https://github.com/arturmiz/vuent/compare/v0.2.0...v0.3.0) (2018-08-22)
+
+
+### Bug Fixes
+
+* **radio:** checked calculation simplified ([#27](https://github.com/arturmiz/vuent/issues/27)) ([5478e7a](https://github.com/arturmiz/vuent/commit/5478e7a))
+
+
+### Features
+
+* **autosuggest:** initial implementation ([#26](https://github.com/arturmiz/vuent/issues/26)) ([c1467ef](https://github.com/arturmiz/vuent/commit/c1467ef))
+* **select:** placeholder support ([#23](https://github.com/arturmiz/vuent/issues/23)) ([baeb16e](https://github.com/arturmiz/vuent/commit/baeb16e))
+
+
+
 <a name="0.2.0"></a>
 # [0.2.0](https://github.com/arturmiz/vuent/compare/v0.1.0...v0.2.0) (2018-06-20)
 
