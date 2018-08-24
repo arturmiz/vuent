@@ -9,7 +9,8 @@
            :type="type"
            :placeholder="placeholder"
            :value="value"
-           @input="input" />
+           @input="input"
+           v-bind="$attrs" />
   </label>
 </template>
 
