@@ -6,6 +6,7 @@ script:
   - yarn lint
   - yarn test:ci
   - rollup -c
+  - yarn min:css
   - yarn docs:build
 cache:
   yarn: true
