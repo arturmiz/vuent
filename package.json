@@ -54,6 +54,7 @@
     "babel-preset-env": "~1.6.1",
     "codecov": "~3.0.2",
     "conventional-changelog-cli": "~2.0.1",
+    "css-mqpacker": "~7.0.0",
     "cssnano": "~4.1.0",
     "eslint": "~4.16.0",
     "eslint-plugin-jest": "~21.7.0",
