@@ -5,6 +5,7 @@ import vue from 'rollup-plugin-vue';
 import { uglify } from 'rollup-plugin-uglify';
 import css from 'rollup-plugin-css-only';
 import pkg from './package.json';
+import cssnano from 'cssnano';
 
 const input = 'src/index.js';
 
@@ -37,6 +38,13 @@ export default [
           compilerOptions: {
             preserveWhitespace: false
           }
+        },
+        style: {
+          postcssPlugins: [
+            cssnano({
+              preset: 'default'
+            })
+          ]
         }
       }),
       css({

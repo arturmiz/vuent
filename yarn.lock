@@ -883,11 +883,25 @@
     source-map "^0.5.6"
     vue-template-es2015-compiler "^1.6.0"
 
-"@vue/component-compiler@^3.3.2":
-  version "3.4.1"
-  resolved "https://registry.yarnpkg.com/@vue/component-compiler/-/component-compiler-3.4.1.tgz#95300d90222bdf95d633b2215a2bc2aa1792177d"
+"@vue/component-compiler-utils@^2.1.0":
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/@vue/component-compiler-utils/-/component-compiler-utils-2.2.0.tgz#bbbb7ed38a9a8a7c93abe7ef2e54a90a04b631b4"
   dependencies:
-    "@vue/component-compiler-utils" "^1.2.1"
+    consolidate "^0.15.1"
+    hash-sum "^1.0.2"
+    lru-cache "^4.1.2"
+    merge-source-map "^1.1.0"
+    postcss "^6.0.20"
+    postcss-selector-parser "^3.1.1"
+    prettier "1.13.7"
+    source-map "^0.5.6"
+    vue-template-es2015-compiler "^1.6.0"
+
+"@vue/component-compiler@^3.4.4":
+  version "3.6.0"
+  resolved "https://registry.yarnpkg.com/@vue/component-compiler/-/component-compiler-3.6.0.tgz#8db313e50eaa2903cef5aac68c37a09364dba79d"
+  dependencies:
+    "@vue/component-compiler-utils" "^2.1.0"
     clean-css "^4.1.11"
     hash-sum "^1.0.2"
     postcss-modules-sync "^1.0.0"
@@ -7765,6 +7779,10 @@ preserve@^0.2.0:
   version "0.2.0"
   resolved "https://registry.yarnpkg.com/preserve/-/preserve-0.2.0.tgz#815ed1f6ebc65926f865b310c0713bcb3315ce4b"
 
+prettier@1.13.7:
+  version "1.13.7"
+  resolved "https://registry.yarnpkg.com/prettier/-/prettier-1.13.7.tgz#850f3b8af784a49a6ea2d2eaa7ed1428a34b7281"
+
 prettier@^1.13.0:
   version "1.13.4"
   resolved "https://registry.yarnpkg.com/prettier/-/prettier-1.13.4.tgz#31bbae6990f13b1093187c731766a14036fa72e6"
@@ -8441,12 +8459,12 @@ rollup-plugin-uglify@~4.0.0:
     uglify-js "^3.3.25"
 
 rollup-plugin-vue@~4.3.0:
-  version "4.3.0"
-  resolved "https://registry.yarnpkg.com/rollup-plugin-vue/-/rollup-plugin-vue-4.3.0.tgz#075085cb7edc373770378b8216248174b9951a58"
+  version "4.3.2"
+  resolved "https://registry.yarnpkg.com/rollup-plugin-vue/-/rollup-plugin-vue-4.3.2.tgz#0bdf0cf677565b0ac2358d590f177b6b4ded8cce"
   dependencies:
     "@babel/runtime" "^7.0.0-beta.46"
-    "@vue/component-compiler" "^3.3.2"
-    "@vue/component-compiler-utils" "^1.2.1"
+    "@vue/component-compiler" "^3.4.4"
+    "@vue/component-compiler-utils" "^2.1.0"
     debug "^2.6.0"
     hash-sum "^1.0.2"
     querystring "^0.2.0"
