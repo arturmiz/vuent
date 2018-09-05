@@ -1,6 +1,6 @@
 <template>
   <label class="vnt-input">
-    <span class="vnt-input__text"
+    <span class="vnt-input__label"
           v-if="label">
       {{ label }}
     </span>
@@ -60,7 +60,7 @@ export default {
   margin: 10px 0;
 }
 
-.vnt-input__text {
+.vnt-input__label {
   display: block;
   padding: 10px 0;
   line-height: 20px;

@@ -22,7 +22,7 @@ exports[`Input can be disabled renders correctly 1`] = `
 `;
 
 exports[`Input can be fully customized renders correctly 1`] = `
-<label class="vnt-input"><span class="vnt-input__text">
+<label class="vnt-input"><span class="vnt-input__label">
     Custom label
   </span>
   <input type="number" placeholder="Custom hint" class="vnt-input__control">
@@ -30,7 +30,7 @@ exports[`Input can be fully customized renders correctly 1`] = `
 `;
 
 exports[`Input can have a custom label renders correctly 1`] = `
-<label class="vnt-input"><span class="vnt-input__text">
+<label class="vnt-input"><span class="vnt-input__label">
     Custom label
   </span>
   <input type="text" placeholder="" class="vnt-input__control">
