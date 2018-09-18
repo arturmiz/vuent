@@ -41,7 +41,7 @@
     "version": "conventional-changelog -p angular -i CHANGELOG.md -s && git add CHANGELOG.md"
   },
   "peerDependencies": {
-    "vue": "~2.5.13"
+    "vue": "~2.5.x"
   },
   "devDependencies": {
     "@babel/core": "~7.1.0",
@@ -72,9 +72,9 @@
     "rollup-plugin-terser": "~3.0.0",
     "rollup-plugin-vue": "~4.3.2",
     "sass-loader": "~7.1.0",
-    "vue": "~2.5.13",
+    "vue": "2.5.16",
     "vue-jest": "~2.5.0",
-    "vue-template-compiler": "~2.5.16",
+    "vue-template-compiler": "2.5.16",
     "vuepress": "~0.14.2"
   }
 }
