@@ -1,19 +1,11 @@
 {
   "presets": [
-    ["env", {
-        "modules": false,
-        "targets": {
-          "browsers": [
-            "defaults",
-            "not ie 11"
-          ]
-        }
-    }]
+    ["@babel/env"]
   ],
   "env": {
     "test": {
       "presets": [
-        ["env", "jest"]
+        ["@babel/env", { "targets": { "node": "current" }}]
       ]
     }
   }

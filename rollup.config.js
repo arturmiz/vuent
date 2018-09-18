@@ -2,7 +2,7 @@ import resolve from 'rollup-plugin-node-resolve';
 import commonjs from 'rollup-plugin-commonjs';
 import babel from 'rollup-plugin-babel';
 import vue from 'rollup-plugin-vue';
-import { uglify } from 'rollup-plugin-uglify';
+import { terser as uglify } from 'rollup-plugin-terser';
 import css from 'rollup-plugin-css-only';
 import pkg from './package.json';
 
@@ -43,8 +43,7 @@ export default [
         output: 'dist/vuent.css',
       }),
       babel({
-        exclude: 'node_modules/**',
-        plugins: ['external-helpers']
+        exclude: 'node_modules/**'
       }),
       production && uglify()
     ],
@@ -54,7 +53,7 @@ export default [
     input,
     output: [
       { file: pkg.main, format: 'cjs' },
-      { file: pkg.module, format: 'es' }
+      { file: pkg.module, format: 'esm' }
     ],
     plugins: [
       resolve(),
