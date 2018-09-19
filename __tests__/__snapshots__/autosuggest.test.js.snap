@@ -86,3 +86,20 @@ exports[`Auto-suggest when user types something that match any option renders co
   </div>
 </div>
 `;
+
+exports[`Auto-suggest when user types something that turns out to be nullable renders correctly 1`] = `
+<div class="vnt-autosuggest">
+  <!---->
+  <div role="combobox" class="vnt-autosuggest__control">
+    <input type="text" placeholder="" class="vnt-autosuggest__input">
+    <ul role="listbox" class="vnt-dropdown-options" style="">
+      <li role="listitem" class="vnt-dropdown-options__item">Australia</li>
+      <li role="listitem" class="vnt-dropdown-options__item">Austria</li>
+      <li role="listitem" class="vnt-dropdown-options__item">Canada</li>
+      <li role="listitem" class="vnt-dropdown-options__item">France</li>
+      <li role="listitem" class="vnt-dropdown-options__item">Germany</li>
+      <li role="listitem" class="vnt-dropdown-options__item">United States</li>
+    </ul>
+  </div>
+</div>
+`;

@@ -280,6 +280,59 @@ describe('Auto-suggest', () => {
 
     });
 
+    describe('that turns out to be nullable', () => {
+
+      beforeAll(() => {
+        wrapper = mount(VntAutosuggest, {
+          propsData: {
+            value: '',
+            options: [
+              'Austria',
+              'Canada',
+              'Australia',
+              'Germany',
+              'France',
+              'United States',
+            ]
+          }
+        });
+
+        const input = wrapper.find('.vnt-autosuggest__input');
+        input.trigger('input', { value: null });
+      });
+
+      test('returns all hints', () => {
+        const expectedHints = [
+          'Australia',
+          'Austria',
+          'Canada',
+          'France',
+          'Germany',
+          'United States'
+        ];
+        expect(wrapper.vm.hints).toEqual(expectedHints);
+      });
+
+      test('event is emitted', () => {
+        const [[eventValue]] = wrapper.emitted()['input'];
+        expect(eventValue).toBe('');
+      });
+
+      test('hints list is shown', () => {
+        expect(wrapper.vm.showHints).toBe(true);
+      });
+
+      test('hints list is visible', () => {
+        const list = wrapper.find('.vnt-dropdown-options');
+        expect(list.isVisible()).toBe(true);
+      });
+
+      test('renders correctly', () => {
+        expect(wrapper.html()).toMatchSnapshot();
+      });
+
+    });
+
   });
 
   describe('when selects a hint', () => {
