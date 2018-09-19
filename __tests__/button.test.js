@@ -34,6 +34,15 @@ describe('Button', () => {
       expect(wrapper.html()).toMatchSnapshot();
     });
 
+    test('click invokes default handler', () => {
+      const clickSpy = jest.spyOn(wrapper.vm, 'click');
+      wrapper.find('button').trigger('click');
+
+      expect(clickSpy).toBeCalled();
+
+      clickSpy.mockRestore();
+    });
+
   });
 
   describe('can be disabled', () => {
