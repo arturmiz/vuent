@@ -26,7 +26,7 @@ jobs:
       versionSpec: '8.x'
     displayName: 'Install Node.js'
 
-  - script: |
+  - powershell: |
       yarn install --frozen-lockfile
       yarn build
     displayName: 'yarn install and build'
