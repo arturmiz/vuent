@@ -4,8 +4,8 @@
   <img src="https://vuentjs.org/logo.svg" alt="Vuent" width="280" />
 </p>
 
+[![Build Status](https://dev.azure.com/vuent/vuent/_apis/build/status/arturmiz.vuent)](https://dev.azure.com/vuent/vuent/_build/latest?definitionId=1)
 [![Build Status](https://travis-ci.com/arturmiz/vuent.svg?branch=master)](https://travis-ci.com/arturmiz/vuent)
-[![Build status](https://ci.appveyor.com/api/projects/status/4skkgpjpg1j8nhi6/branch/master?svg=true)](https://ci.appveyor.com/project/arturmiz/vuent/branch/master)
 [![codecov](https://codecov.io/gh/arturmiz/vuent/branch/master/graph/badge.svg)](https://codecov.io/gh/arturmiz/vuent)
 [![License](https://img.shields.io/npm/l/vuent.svg)](https://www.npmjs.com/package/vuent)
 [![Version](https://img.shields.io/npm/v/vuent.svg)](https://www.npmjs.com/package/vuent)

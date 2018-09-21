@@ -1,0 +1,46 @@
+# https://docs.microsoft.com/vsts/pipelines/languages/javascript
+
+jobs:
+- job: Linux
+  pool:
+    vmImage: 'ubuntu-16.04'
+
+  steps:
+  - task: NodeTool@0
+    inputs:
+      versionSpec: '8.x'
+    displayName: 'Install Node.js'
+
+  - script: |
+      yarn install --frozen-lockfile
+      yarn build
+    displayName: 'yarn install and build'
+
+- job: Windows
+  pool:
+    vmImage: 'vs2017-win2016'
+
+  steps:
+  - task: NodeTool@0
+    inputs:
+      versionSpec: '8.x'
+    displayName: 'Install Node.js'
+
+  - powershell: |
+      yarn install --frozen-lockfile
+      yarn build
+    displayName: 'yarn install and build'
+
+- job: website
+  pool:
+    vmImage: 'ubuntu-16.04'
+
+  steps:
+  - task: NodeTool@0
+    inputs:
+      versionSpec: '8.x'
+    displayName: 'Install Node.js'
+
+  - script: |
+      yarn install --frozen-lockfile
+      yarn docs:build
