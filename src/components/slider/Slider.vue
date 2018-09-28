@@ -99,7 +99,7 @@ export default {
   }
 
   &::-ms-fill-lower {
-    background: $accentColor;
+    background: var(--vnt-accent-color, $fallbackAccentColor);
   }
 
   &::-moz-range-track {
@@ -116,7 +116,7 @@ export default {
   }
 
   @mixin thumb() {
-    background: $accentColor;
+    background: var(--vnt-accent-color, $fallbackAccentColor);
     height: 24px;
     width: 8px;
     border-radius: 4px;

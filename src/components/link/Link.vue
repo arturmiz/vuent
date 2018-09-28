@@ -33,7 +33,7 @@ export default {
 .vnt-link {
   @include component-base();
 
-  color: $accentColor;
+  color: var(--vnt-accent-color, $fallbackAccentColor);
   text-decoration: underline;
   cursor: pointer;
 

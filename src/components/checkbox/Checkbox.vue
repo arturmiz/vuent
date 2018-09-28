@@ -46,8 +46,8 @@ export default {
   visibility: hidden;
 
   &:checked + .vnt-checkbox__tick {
-    background: $accentColor;
-    border-color: $accentColor;
+    background: var(--vnt-accent-color, $fallbackAccentColor);
+    border-color: var(--vnt-accent-color, $fallbackAccentColor);
   }
 
   &:disabled + .vnt-checkbox__tick {
