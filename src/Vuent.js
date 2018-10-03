@@ -1,4 +1,5 @@
 import * as components from './components';
+import vnt from './components/Vnt.vue';
 
 class Vuent {
 
@@ -8,6 +9,12 @@ class Vuent {
       components;
 
     Object.values(comps).forEach(component => Vue.use(component));
+
+    if (options.accentColor) {
+      vnt.setAccentColor(options.accentColor);
+    }
+
+    Vue.prototype.$vuent = vnt;
   }
 
 }
