@@ -75,8 +75,8 @@ export default {
   visibility: hidden;
 
   &:checked + .vnt-toggle__switch {
-    background: $accentColor;
-    border-color: $accentColor;
+    background: var(--vnt-accent-color, $fallbackAccentColor);
+    border-color: var(--vnt-accent-color, $fallbackAccentColor);
 
     &:after {
       background: #fff;

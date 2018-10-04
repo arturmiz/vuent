@@ -75,7 +75,7 @@ export default {
   visibility: hidden;
 
   &:checked + .vnt-radio__icon {
-    border-color: $accentColor;
+    border-color: var(--vnt-accent-color, $fallbackAccentColor);
 
     &:after {
       content: '';

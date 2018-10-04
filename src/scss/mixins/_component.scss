@@ -27,7 +27,7 @@
   }
 
   &:focus {
-    border-color: $accentColor;
+    border-color: var(--vnt-accent-color, $fallbackAccentColor);
     outline: 0;
   }
 }

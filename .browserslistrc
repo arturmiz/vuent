@@ -1,6 +1,16 @@
-> 0.5%
+> 1%
 last 2 versions
+Chrome >= 49
+Safari >= 10.1
+iOS >= 9.3
+Firefox >= 54
 Firefox ESR
-not dead
-not ie 11
+Edge >= 16
+Opera >= 54
+not IE 11
 not ie_mob 11
+not and_qq 1.2
+not baidu 7.12
+not Android < 60
+not OperaMini all
+not dead

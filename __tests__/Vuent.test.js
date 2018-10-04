@@ -1,4 +1,4 @@
-import { createLocalVue } from '@vue/test-utils';
+import { createLocalVue, mount } from '@vue/test-utils';
 import { isInstalled, countInstalledPlugins } from './utils';
 
 import {
@@ -15,6 +15,7 @@ import {
 } from '@/components';
 
 import Vuent from '@/';
+import vnt from '@/components/Vnt.vue';
 
 describe('Vuent', () => {
   let localVue;
@@ -43,6 +44,13 @@ describe('Vuent', () => {
       expect(countInstalledPlugins(localVue)).toBe(10);
     });
 
+    test('has $vuent instance object', () => {
+      const wrapper = mount(VntButton, {
+        localVue,
+      });
+      expect(wrapper.vm.$vuent).toBe(vnt);
+    });
+
   });
 
   describe('when custom configured', () => {
@@ -54,6 +62,18 @@ describe('Vuent', () => {
       expect(isInstalled(localVue, VntButton)).toBe(true);
       expect(isInstalled(localVue, VntLink)).toBe(true);
       expect(countInstalledPlugins(localVue)).toBe(2);
+    });
+
+    test('sets given accent color', () => {
+      const spy = jest.spyOn(vnt, 'setAccentColor').mockImplementation(() => {});
+
+      Vuent.install(localVue, {
+        accentColor: '#f0f0f0'
+      });
+
+      expect(spy).toHaveBeenCalledWith('#f0f0f0');
+
+      spy.mockRestore();
     });
 
   });

@@ -1,3 +1,4 @@
+import './Vnt.vue';
 export { default as VntAutosuggest } from './autosuggest';
 export { default as VntButton } from './button';
 export { default as VntCheckbox } from './checkbox';
