@@ -1,0 +1,8 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Tabs by default renders correctly 1`] = `
+<div class="vnt-tabs">
+  <ul class="vnt-tabs__navigation"></ul>
+  <div class="vnt-tabs__container"></div>
+</div>
+`;

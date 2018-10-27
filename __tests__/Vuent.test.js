@@ -11,7 +11,8 @@ import {
   VntRadio,
   VntSelect,
   VntSlider,
-  VntToggle
+  VntToggle,
+  VntTabs,
 } from '@/components';
 
 import Vuent from '@/';
@@ -41,7 +42,8 @@ describe('Vuent', () => {
       expect(isInstalled(localVue, VntSelect)).toBe(true);
       expect(isInstalled(localVue, VntSlider)).toBe(true);
       expect(isInstalled(localVue, VntToggle)).toBe(true);
-      expect(countInstalledPlugins(localVue)).toBe(10);
+      expect(isInstalled(localVue, VntTabs)).toBe(true);
+      expect(countInstalledPlugins(localVue)).toBe(11);
     });
 
     test('has $vuent instance object', () => {
