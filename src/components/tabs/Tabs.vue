@@ -33,6 +33,7 @@
 
 .vnt-tabs__tab {
   display: none;
+  margin: 15px 0;
 
   &--active {
     display: block;

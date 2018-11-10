@@ -38,6 +38,7 @@ module.exports = {
           '/components/radio',
           '/components/select',
           '/components/slider',
+          '/components/tabs',
           '/components/toggle',
         ]
       }
