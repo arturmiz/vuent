@@ -8,4 +8,5 @@ export { default as VntLink } from './link';
 export { default as VntRadio } from './radio';
 export { default as VntSelect } from './select';
 export { default as VntSlider } from './slider';
+export { default as VntTabs } from './tabs';
 export { default as VntToggle } from './toggle';

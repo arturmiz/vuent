@@ -12,6 +12,7 @@ module.exports = {
         'radio',
         'select',
         'slider',
+        'tabs',
         'toggle',
         'website'
       ]
