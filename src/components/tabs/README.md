@@ -15,5 +15,3 @@
     </vnt-tab>
   </vnt-tabs>
 ```
-
-## Properties

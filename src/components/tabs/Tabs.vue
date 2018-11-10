@@ -31,10 +31,6 @@
   }
 }
 
-.vnt-tabs__container {
-
-}
-
 .vnt-tabs__tab {
   display: none;
 
@@ -45,6 +41,9 @@
 </style>
 
 <script>
+const ACTIVE_HEADER_CLASS = 'vnt-tabs__header--active';
+const ACTIVE_TAB_CLASS = 'vnt-tabs__tab--active';
+
 export default {
   name: 'VntTabs',
 
@@ -55,18 +54,15 @@ export default {
   },
 
   methods: {
-    switchTab(index) {
+    switchTab(tabIndex) {
       for(let i=0; i < this.length; i++) {
-        this.$refs['nav-' + i].setAttribute('class', 'vnt-tabs__header');
-        this.$refs['tab-' + i].setAttribute('class', 'vnt-tabs__tab');
+        this.$refs[`nav-${i}`].classList.remove(ACTIVE_HEADER_CLASS);
+        this.$refs[`tab-${i}`].classList.remove(ACTIVE_TAB_CLASS);
       }
 
-      this.$refs['nav-' + index].setAttribute('class',
-        `${this.$refs['nav-' + index].getAttribute('class')} vnt-tabs__header--active`);
-
-      this.$refs['tab-' + index].setAttribute('class',
-        `${this.$refs['tab-' + index].getAttribute('class')} vnt-tabs__tab--active`);
-    },
+      this.$refs[`nav-${tabIndex}`].classList.add(ACTIVE_HEADER_CLASS);
+      this.$refs[`tab-${tabIndex}`].classList.add(ACTIVE_TAB_CLASS);
+    }
   },
 
   render(createElement) {
@@ -83,7 +79,7 @@ export default {
         const header = createElement('li', {
           staticClass: 'vnt-tabs__header',
           class: {
-            'vnt-tabs__header--active': isActive
+            [ACTIVE_HEADER_CLASS]: isActive
           },
           on: {
             click: this.switchTab.bind(this, index)
@@ -97,7 +93,7 @@ export default {
         const content = createElement('div', {
           staticClass: 'vnt-tabs__tab',
           class: {
-            'vnt-tabs__tab--active': isActive
+            [ACTIVE_TAB_CLASS]: isActive
           },
           ref: `tab-${index}`,
           key: `tab-${index}`
