@@ -84,6 +84,7 @@ export default {
 .vnt-dropdown-options {
   position: absolute;
   border: 1px solid lighten(#000, 80%);
+  border-top: 0;
   background: #f2f2f2;
   padding: 5px 0;
   margin: 0;
@@ -107,5 +108,9 @@ export default {
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
+
+  &:hover {
+    background: #dfdfdf;
+  }
 }
 </style>
