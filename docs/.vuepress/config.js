@@ -41,7 +41,14 @@ module.exports = {
           '/components/tabs',
           '/components/toggle',
         ]
-      }
+      },
+      {
+        title: 'Configuration',
+        collapsable: false,
+        children: [
+          '/configuration/accent-color'
+        ]
+      },
     ],
 
   }
