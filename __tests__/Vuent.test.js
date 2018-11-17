@@ -66,16 +66,50 @@ describe('Vuent', () => {
       expect(countInstalledPlugins(localVue)).toBe(2);
     });
 
-    test('sets given accent color', () => {
-      const spy = jest.spyOn(vnt, 'setAccentColor').mockImplementation(() => {});
+    describe('sets given accent color', () => {
+      let spy;
 
-      Vuent.install(localVue, {
-        accentColor: '#f0f0f0'
+      beforeEach(() => {
+        spy = jest.spyOn(vnt, 'setAccentColor').mockImplementation(() => {});
       });
 
-      expect(spy).toHaveBeenCalledWith('#f0f0f0');
+      test('using Vuent.install', () => {
+        Vuent.install(localVue, {
+          accentColor: '#f0f0f0'
+        });
 
-      spy.mockRestore();
+        expect(spy).toHaveBeenCalledWith('#f0f0f0');
+      });
+
+      test('using Vue.use', () => {
+        localVue.use(Vuent, {
+          accentColor: '#ff0000'
+        });
+
+        expect(spy).toHaveBeenCalledWith('#ff0000');
+      });
+
+      test('using $vuent instance', () => {
+        const testComponent = {
+          name: 'AppTest',
+          template: '<div></div>',
+          mounted() {
+            this.$vuent.setAccentColor('#ffff00');
+          }
+        };
+
+        localVue.use(Vuent);
+        mount(testComponent, {
+          localVue
+        });
+
+        expect(spy).toHaveBeenCalledWith('#ffff00');
+      });
+
+      afterEach(() => {
+        spy.mockRestore();
+      });
+
     });
 
   });
