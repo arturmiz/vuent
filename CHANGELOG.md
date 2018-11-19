@@ -1,3 +1,20 @@
+<a name="0.4.0"></a>
+# [0.4.0](https://github.com/arturmiz/vuent/compare/v0.3.0...v0.4.0) (2018-11-19)
+
+
+### Bug Fixes
+
+* **input:** additional attributes applied to input ([dd1dfc0](https://github.com/arturmiz/vuent/commit/dd1dfc0))
+* **select:** hover background for options ([#30](https://github.com/arturmiz/vuent/issues/30)) ([47c67f6](https://github.com/arturmiz/vuent/commit/47c67f6))
+
+
+### Features
+
+* accent color controlled via css variable ([#34](https://github.com/arturmiz/vuent/issues/34)) ([64d2032](https://github.com/arturmiz/vuent/commit/64d2032))
+* **tabs:** initial implementation ([#39](https://github.com/arturmiz/vuent/issues/39)) ([6903324](https://github.com/arturmiz/vuent/commit/6903324))
+
+
+
 <a name="0.3.0"></a>
 # [0.3.0](https://github.com/arturmiz/vuent/compare/v0.2.0...v0.3.0) (2018-08-22)
 
