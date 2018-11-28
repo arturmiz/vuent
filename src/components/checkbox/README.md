@@ -3,7 +3,7 @@
 ## How to use
 ```html
 <!-- Unchecked -->
-<vnt-checkbox>Option</vnt-checkbox>
+<vnt-checkbox v-model="checkedBoolean">Option</vnt-checkbox>
 
 <!-- Checked -->
 <vnt-checkbox checked>Option</vnt-checkbox>
