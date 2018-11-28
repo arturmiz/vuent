@@ -1,6 +1,6 @@
 <template>
   <div class="playground">
-    <vnt-checkbox :checked.sync="isChecked" disabled></vnt-checkbox>
+    <vnt-checkbox v-model="isChecked" disabled></vnt-checkbox>
     <div class="result">isChecked: {{ isChecked }}</div>
   </div>
 </template>

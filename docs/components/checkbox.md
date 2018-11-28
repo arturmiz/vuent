@@ -7,7 +7,7 @@
 <checkbox-basic />
 
 ```html
-<vnt-checkbox :checked.sync="isChecked"></vnt-checkbox>
+<vnt-checkbox v-model="isChecked"></vnt-checkbox>
 ```
 
 ## Checked
@@ -23,7 +23,7 @@
 <checkbox-disabled />
 
 ```html
-<vnt-checkbox :checked.sync="isChecked" disabled></vnt-checkbox>
+<vnt-checkbox v-model="isChecked" disabled></vnt-checkbox>
 ```
 
 ## Custom label

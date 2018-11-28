@@ -2,8 +2,7 @@
 
 ## How to use
 ```html
-<!-- Unchecked -->
-<vnt-checkbox>Option</vnt-checkbox>
+<vnt-checkbox v-model="checkedBoolean">Option</vnt-checkbox>
 
 <!-- Checked -->
 <vnt-checkbox checked>Option</vnt-checkbox>
@@ -16,10 +15,6 @@
 ```
 
 ## Properties
-#### `label`
-Default: `'Checkbox'`
-
-The checkbox's label text.
 
 #### `checked`
 Default: `false`
@@ -30,3 +25,8 @@ Decides about the checkbox's state.
 Default: `false`
 
 Determines whether the checkbox should be in disabled mode or not.
+
+#### `label`
+Default: `'Checkbox'`
+
+The checkbox's label text.
