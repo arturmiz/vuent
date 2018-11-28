@@ -4,6 +4,7 @@
            type="checkbox"
            :checked="checked"
            :disabled="disabled"
+           v-bind="$attrs"
            @change="toggle" />
     <span class="vnt-checkbox__tick"></span>
     <span class="vnt-checkbox__text">
