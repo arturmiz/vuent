@@ -1,6 +1,6 @@
 <template>
   <div class="playground">
-    <vnt-toggle v-model="isChecked" disabled></vnt-toggle>
+    <vnt-toggle checked></vnt-toggle>
   </div>
 </template>
 
@@ -8,14 +8,9 @@
 import { VntToggle } from '../../../src/components';
 
 export default {
-  name: 'ToggleDisabled',
+  name: 'ToggleChecked',
   components: {
     VntToggle
-  },
-  data() {
-    return {
-      isChecked: false
-    }
   }
 }
 </script>
