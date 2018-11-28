@@ -7,7 +7,15 @@
 <toggle-basic />
 
 ```html
-<vnt-toggle :checked.sync="isChecked"></vnt-toggle>
+<vnt-toggle v-model="isChecked"></vnt-toggle>
+```
+
+## Checked
+
+<toggle-checked />
+
+```html
+<vnt-toggle checked></vnt-toggle>
 ```
 
 ## Disabled
@@ -15,7 +23,7 @@
 <toggle-disabled />
 
 ```html
-<vnt-toggle :checked.sync="isChecked" disabled></vnt-toggle>
+<vnt-toggle v-model="isChecked" disabled></vnt-toggle>
 ```
 
 ## Custom label
@@ -23,7 +31,7 @@
 <toggle-label />
 
 ```html
-<vnt-toggle :checked.sync="isChecked">Custom label</vnt-toggle>
+<vnt-toggle v-model="isChecked">Custom label</vnt-toggle>
 ```
 
 ## Custom On/Off labels
@@ -31,7 +39,7 @@
 <toggle-on-off-labels />
 
 ```html
-<vnt-toggle :checked.sync="isChecked" label-on="Yes" label-off="No"></vnt-toggle>
+<vnt-toggle v-model="isChecked" label-on="Yes" label-off="No"></vnt-toggle>
 ```
 
 ## Configuration

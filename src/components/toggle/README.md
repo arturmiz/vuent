@@ -2,8 +2,7 @@
 
 ## How to use
 ```html
-<!-- Unchecked -->
-<vnt-toggle>Option</vnt-toggle>
+<vnt-toggle v-model="checkedBoolean">Option</vnt-toggle>
 
 <!-- Checked -->
 <vnt-toggle checked>Option</vnt-toggle>

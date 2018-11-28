@@ -1,6 +1,6 @@
 <template>
   <div class="playground">
-    <vnt-toggle :checked.sync="isChecked">Custom label</vnt-toggle>
+    <vnt-toggle v-model="isChecked">Custom label</vnt-toggle>
     <div class="result">isChecked: {{ isChecked }}</div>
   </div>
 </template>
