@@ -1,4 +1,9 @@
 export default {
+  model: {
+    prop: 'checked',
+    event: 'change'
+  },
+
   props: {
     checked: {
       type: Boolean,
@@ -13,7 +18,7 @@ export default {
   methods: {
     toggle() {
       if (!this.disabled) {
-        this.$emit('update:checked', !this.checked);
+        this.$emit('change', !this.checked);
       }
     }
   }
