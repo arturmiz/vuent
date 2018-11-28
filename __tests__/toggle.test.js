@@ -173,11 +173,11 @@ describe('Toggle', () => {
     });
 
     test('event is emitted', () => {
-      expect(wrapper.emitted()['update:checked']).toHaveLength(1);
+      expect(wrapper.emitted()['change']).toHaveLength(1);
     });
 
     test('new checked state is emitted', () => {
-      const [updateChecked] = wrapper.emitted()['update:checked'];
+      const [updateChecked] = wrapper.emitted()['change'];
       expect(updateChecked).toEqual([true]);
     });
 
@@ -198,7 +198,7 @@ describe('Toggle', () => {
     });
 
     test('event is not emitted', () => {
-      expect(wrapper.emitted()['update:checked']).toBeUndefined();
+      expect(wrapper.emitted()['change']).toBeUndefined();
     });
 
   });
