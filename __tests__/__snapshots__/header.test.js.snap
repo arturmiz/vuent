@@ -1,28 +1,28 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Header by default renders correctly 1`] = `<div class="vnt-header"></div>`;
+exports[`Header by default renders correctly 1`] = `<hgroup class="vnt-header"></hgroup>`;
 
 exports[`Header can have both header and subheader content set 1`] = `
-<div class="vnt-header">
-  <div class="vnt-header__header">Header</div>
-  <div class="vnt-header__subheader">Subheader</div>
-</div>
+<hgroup class="vnt-header">
+  <h1 class="vnt-header__header">Header</h1>
+  <h2 class="vnt-header__subheader">Subheader</h2>
+</hgroup>
 `;
 
 exports[`Header can have main header content set using named slot 1`] = `
-<div class="vnt-header">
-  <div class="vnt-header__header">Header</div>
-</div>
+<hgroup class="vnt-header">
+  <h1 class="vnt-header__header">Header</h1>
+</hgroup>
 `;
 
 exports[`Header can have only main header content set 1`] = `
-<div class="vnt-header">
-  <div class="vnt-header__header">Header</div>
-</div>
+<hgroup class="vnt-header">
+  <h1 class="vnt-header__header">Header</h1>
+</hgroup>
 `;
 
 exports[`Header can have only subheader content set 1`] = `
-<div class="vnt-header">
-  <div class="vnt-header__subheader">Subheader</div>
-</div>
+<hgroup class="vnt-header">
+  <h2 class="vnt-header__subheader">Subheader</h2>
+</hgroup>
 `;
