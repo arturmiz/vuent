@@ -7,7 +7,7 @@ export default {
     let subheader = null;
 
     if (this.$slots.header || this.$slots.default) {
-      header = createElement('div', {
+      header = createElement('h1', {
         attrs: {
           class: 'vnt-header__header'
         }
@@ -15,14 +15,14 @@ export default {
     }
 
     if (this.$slots.subheader) {
-      subheader = createElement('div', {
+      subheader = createElement('h2', {
         attrs: {
           class: 'vnt-header__subheader'
         }
       }, this.$slots.subheader);
     }
 
-    return createElement('div', {
+    return createElement('hgroup', {
       attrs: {
         class: 'vnt-header'
       }
@@ -39,6 +39,7 @@ export default {
 
   color: #000100;
   font-weight: 300;
+  margin: 8px 0;
 }
 
 %clear-margin {
@@ -53,6 +54,7 @@ export default {
   @extend %clear-margin;
 
   font-size: 46px;
+  font-weight: 300;
   line-height: 62px;
 }
 
@@ -60,6 +62,7 @@ export default {
   @extend %clear-margin;
 
   font-size: 34px;
+  font-weight: 300;
   line-height: 46px;
 }
 </style>
