@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Rating by default renders correctly 1`] = `
+<div tabindex="0" aria-label="0" class="vnt-rating">
+  <label aria-label="5" tabindex="0" class="vnt-rating__star vnt-rating__star--off">★</label>
+  <label aria-label="4" tabindex="0" class="vnt-rating__star vnt-rating__star--off">★</label>
+  <label aria-label="3" tabindex="0" class="vnt-rating__star vnt-rating__star--off">★</label>
+  <label aria-label="2" tabindex="0" class="vnt-rating__star vnt-rating__star--off">★</label>
+  <label aria-label="1" tabindex="0" class="vnt-rating__star vnt-rating__star--off">★</label>
+</div>
+`;
+
+exports[`Rating can be disabled renders correctly 1`] = `
+<div tabindex="0" aria-disabled="true" aria-label="3" class="vnt-rating vnt-rating--disabled">
+  <label aria-disabled="true" aria-label="5" tabindex="0" class="vnt-rating__star vnt-rating__star--off">★</label>
+  <label aria-disabled="true" aria-label="4" tabindex="0" class="vnt-rating__star vnt-rating__star--off">★</label>
+  <label aria-disabled="true" aria-label="3" tabindex="0" class="vnt-rating__star">★</label>
+  <label aria-disabled="true" aria-label="2" tabindex="0" class="vnt-rating__star">★</label>
+  <label aria-disabled="true" aria-label="1" tabindex="0" class="vnt-rating__star">★</label>
+</div>
+`;
+
+exports[`Rating when not 0 value provided renders correctly 1`] = `
+<div tabindex="0" aria-label="2.64" class="vnt-rating">
+  <label aria-label="5" tabindex="0" class="vnt-rating__star vnt-rating__star--off">★</label>
+  <label aria-label="4" tabindex="0" class="vnt-rating__star vnt-rating__star--off">★</label>
+  <label aria-label="3" tabindex="0" class="vnt-rating__star vnt-rating__star--off">★</label>
+  <label aria-label="2" tabindex="0" class="vnt-rating__star">★</label>
+  <label aria-label="1" tabindex="0" class="vnt-rating__star">★</label>
+</div>
+`;

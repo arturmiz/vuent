@@ -5,11 +5,13 @@
        :aria-disabled="disabled"
        :aria-label="value">
     <label class="vnt-rating__star"
-           aria-hidden="true"
-           @click="rate(n)"
            v-for="n in stars"
            :key="n"
-           :class="{'vnt-rating__star--off': n > starsValue}">&#9733;</label>
+           :class="{'vnt-rating__star--off': n > starsValue}"
+           :aria-disabled="disabled"
+           :aria-label="n"
+           tabindex="0"
+           @click="rate(n)">&#9733;</label>
   </div>
 </template>
 
