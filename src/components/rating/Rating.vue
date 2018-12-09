@@ -1,6 +1,8 @@
 <template>
   <div class="vnt-rating"
+       :class="{'vnt-rating--disabled': disabled}"
        tabindex="0"
+       :aria-disabled="disabled"
        :aria-label="value">
     <label class="vnt-rating__star"
            aria-hidden="true"
@@ -69,19 +71,38 @@ export default {
 }
 
 .vnt-rating__star {
-  color: var(--vnt-accent-color, $fallbackAccentColor);
   display: inline-block;
   padding: 0 2px;
-  cursor: pointer;
 
-  &--off {
-    color: lighten(#000, 60%);
+  .vnt-rating & {
+    cursor: pointer;
+    color: var(--vnt-accent-color, $fallbackAccentColor);
+
+    &:hover,
+    &:hover ~ .vnt-rating__star,
+    &--off:hover {
+      color: var(--vnt-accent-color, $fallbackAccentColor);
+    }
+
+    &--off {
+      color: lighten(#000, 80%);
+    }
   }
 
-  &:hover,
-  &--off:hover,
-  &:hover ~ & {
-    color: var(--vnt-accent-color, $fallbackAccentColor);
+  .vnt-rating--disabled & {
+    cursor: auto;
+    color: lighten(#000, 60%);
+
+    &:hover,
+    &:hover ~ .vnt-rating__star {
+      color: lighten(#000, 60%);
+    }
+
+    &--off,
+    &--off:hover,
+    &:hover ~ .vnt-rating__star--off {
+      color: lighten(#000, 80%);
+    }
   }
 }
 </style>
