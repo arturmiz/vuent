@@ -10,6 +10,7 @@ module.exports = {
         'input',
         'link',
         'radio',
+        'rating',
         'select',
         'slider',
         'tabs',

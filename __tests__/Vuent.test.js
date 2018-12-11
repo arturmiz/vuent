@@ -9,6 +9,7 @@ import {
   VntInput,
   VntLink,
   VntRadio,
+  VntRating,
   VntSelect,
   VntSlider,
   VntToggle,
@@ -39,11 +40,12 @@ describe('Vuent', () => {
       expect(isInstalled(localVue, VntInput)).toBe(true);
       expect(isInstalled(localVue, VntLink)).toBe(true);
       expect(isInstalled(localVue, VntRadio)).toBe(true);
+      expect(isInstalled(localVue, VntRating)).toBe(true);
       expect(isInstalled(localVue, VntSelect)).toBe(true);
       expect(isInstalled(localVue, VntSlider)).toBe(true);
       expect(isInstalled(localVue, VntToggle)).toBe(true);
       expect(isInstalled(localVue, VntTabs)).toBe(true);
-      expect(countInstalledPlugins(localVue)).toBe(11);
+      expect(countInstalledPlugins(localVue)).toBe(12);
     });
 
     test('has $vuent instance object', () => {
