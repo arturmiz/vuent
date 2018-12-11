@@ -1,14 +1,17 @@
 <template>
   <div class="vnt-rating"
-       :class="{'vnt-rating--disabled': disabled}"
+       :class="{'vnt-rating--disabled': disabled,
+                'vnt-rating--readonly': readonly}"
        tabindex="0"
        :aria-disabled="disabled"
+       :aria-readonly="readonly"
        :aria-label="value">
     <label class="vnt-rating__star"
            v-for="n in stars"
            :key="n"
            :class="{'vnt-rating__star--off': n > starsValue}"
            :aria-disabled="disabled"
+           :aria-readonly="readonly"
            :aria-label="n"
            tabindex="0"
            @click="rate(n)">&#9733;</label>
@@ -36,6 +39,14 @@ export default {
     max: {
       type: Number,
       default: 5
+    },
+    readonly: {
+      type: Boolean,
+      default: false
+    },
+    value: {
+      type: Number,
+      default: 0
     }
   },
 
@@ -52,7 +63,7 @@ export default {
 
   methods: {
     rate(n) {
-      if (!this.disabled) {
+      if (!(this.disabled || this.readonly)) {
         this.$emit('change', n);
       }
     }
@@ -91,13 +102,13 @@ export default {
     }
   }
 
-  .vnt-rating--disabled & {
+  @mixin nonInteractive($starColor) {
     cursor: auto;
-    color: lighten(#000, 60%);
+    color: $starColor;
 
     &:hover,
     &:hover ~ .vnt-rating__star {
-      color: lighten(#000, 60%);
+      color: $starColor;
     }
 
     &--off,
@@ -106,5 +117,14 @@ export default {
       color: lighten(#000, 80%);
     }
   }
+
+  .vnt-rating--readonly & {
+    @include nonInteractive(#000);
+  }
+
+  .vnt-rating--disabled & {
+    @include nonInteractive(lighten(#000, 60%));
+  }
+
 }
 </style>

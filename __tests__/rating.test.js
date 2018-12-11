@@ -22,6 +22,10 @@ describe('Rating', () => {
       expect(wrapper.vm.disabled).toBe(false);
     });
 
+    test('is not readonly', () => {
+      expect(wrapper.vm.readonly).toBe(false);
+    });
+
     test('stars number is 5', () => {
       expect(wrapper.vm.max).toBe(5);
     });
@@ -77,7 +81,7 @@ describe('Rating', () => {
 
   });
 
-  describe('when not disabled, updates rating', () => {
+  describe('when neither disabled nor readonly, updates rating', () => {
 
     beforeAll(() => {
       wrapper = mount(VntRating, {
@@ -108,6 +112,26 @@ describe('Rating', () => {
         propsData: {
           value: 2,
           disabled: true
+        }
+      });
+
+      const label = wrapper.find('label[aria-label="3"]');
+      label.trigger('click');
+    });
+
+    test('event is not emitted', () => {
+      expect(wrapper.emitted()['change']).toBeUndefined();
+    });
+
+  });
+
+  describe('when in readonly mode, doesn\'t change rating', () => {
+
+    beforeAll(() => {
+      wrapper = mount(VntRating, {
+        propsData: {
+          value: 2,
+          readonly: true
         }
       });
 
