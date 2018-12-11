@@ -32,10 +32,6 @@ export default {
       type: Boolean,
       default: false
     },
-    value: {
-      type: Number,
-      default: 0
-    },
     max: {
       type: Number,
       default: 5
