@@ -27,14 +27,14 @@ Determines whether the rating should be in disabled mode or not.
 #### `readonly`
 Default: `false`
 
-Determines whether the rating is in a read-only mode or note.
+Determines whether the rating control should be in read-only mode or not.
 
 #### `max`
 Default: `5`
 
-Number of stars available.
+Controls the number of stars.
 
 #### `value`
 Default: `0`
 
-Sets the rating's value.
+Sets the rating's initial value.

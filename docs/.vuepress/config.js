@@ -36,6 +36,7 @@ module.exports = {
           '/components/input',
           '/components/link',
           '/components/radio',
+          '/components/rating',
           '/components/select',
           '/components/slider',
           '/components/tabs',
