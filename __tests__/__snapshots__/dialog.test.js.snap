@@ -1,3 +1,4 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Dialog by default renders correctly 1`] = `undefined`;
+exports[`Dialog by default nothing is rendered as dialog should be hidden 1`] = `undefined`;
+
