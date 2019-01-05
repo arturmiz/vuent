@@ -13,16 +13,16 @@ The simplest and the fastest way to get started with Vuent is to add `<script>` 
   <title>Vuent Demo</title>
 
   <link href="https://unpkg.com/vuent/dist/vuent.css" type="text/css" rel="stylesheet" media="screen" />
+
+  <script src="https://unpkg.com/vue@2.5.13/dist/vue.js" defer></script>
+  <script src="https://unpkg.com/vuent/dist/vuent.umd.js" defer></script>
+  <script src="main.js" defer></script>
 </head>
 <body>
   <div id="app">
     <p>{{ message }}</p>
 
     <vnt-input v-model="message" label="Text field"></vnt-input>
-
-    <script src="https://unpkg.com/vue@2.5.13/dist/vue.js"></script>
-    <script src="https://unpkg.com/vuent/dist/vuent.umd.js"></script>
-    <script src="main.js"></script>
   </div>
 </body>
 </html>
