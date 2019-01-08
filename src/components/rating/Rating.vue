@@ -3,6 +3,7 @@
        :class="{'vnt-rating--disabled': disabled,
                 'vnt-rating--readonly': readonly}"
        tabindex="0"
+       role="radiogroup"
        :aria-disabled="disabled"
        :aria-readonly="readonly"
        :aria-label="value">
@@ -13,6 +14,7 @@
            :aria-disabled="disabled"
            :aria-readonly="readonly"
            :aria-label="n"
+           role="radio"
            tabindex="0"
            @click="rate(n)">&#9733;</label>
   </div>

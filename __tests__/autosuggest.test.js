@@ -298,7 +298,7 @@ describe('Auto-suggest', () => {
         });
 
         const input = wrapper.find('.vnt-autosuggest__input');
-        input.trigger('input', { value: null });
+        input.trigger('input', { value: undefined });
       });
 
       test('returns all hints', () => {

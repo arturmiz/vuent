@@ -3,6 +3,7 @@
 @mixin component-base() {
   font-family: $font;
   font-size: 15px;
+  color: #000100;
 }
 
 @mixin component-input() {
@@ -22,8 +23,8 @@
 
   &:disabled {
     background-color: transparent;
-    border-color: #ccc;
-    color: #999;
+    border-color: #ccc; // lighten(#000, 80%);
+    color: #999; // lighten(#000, 60%);
   }
 
   &:focus {

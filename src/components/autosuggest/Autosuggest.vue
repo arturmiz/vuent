@@ -8,6 +8,7 @@
     </label>
 
     <div class="vnt-autosuggest__control"
+         :class="{'vnt-autosuggest__control--focused-not-empty': hasFocusAndValue}"
          role="combobox">
 
       <input class="vnt-autosuggest__input"
@@ -16,6 +17,8 @@
              :placeholder="placeholder"
              :value="value"
              @input="input"
+             @focus="focus"
+             @blur="blur"
              v-bind="$attrs" />
 
       <vnt-dropdown-options :options="hints"
@@ -62,6 +65,12 @@
     position: relative;
     margin-left: -24px;
   }
+
+  &--focused-not-empty {
+    &::after {
+      display: none;
+    }
+  }
 }
 
 .vnt-autosuggest__input {
@@ -71,7 +80,11 @@
 
   &::-ms-clear {
     display: none;
-}
+  }
+
+  .vnt-autosuggest__control--focused-not-empty & {
+    padding-right: 0;
+  }
 }
 </style>
 
@@ -114,7 +127,14 @@ export default {
     return {
       hints: [],
       showHints: false,
+      hasFocus: false
     };
+  },
+
+  computed: {
+    hasFocusAndValue() {
+      return this.hasFocus && String(this.value).length > 0;
+    }
   },
 
   watch: {
@@ -128,6 +148,18 @@ export default {
       const query = value || target.value;
       this.$emit('input', query);
       this.lookup(query);
+    },
+
+    focus() {
+      this.toggleFocus();
+    },
+
+    blur() {
+      this.toggleFocus();
+    },
+
+    toggleFocus() {
+      this.hasFocus = !this.hasFocus;
     },
 
     lookup(query = '') {
