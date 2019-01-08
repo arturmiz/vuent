@@ -2,3 +2,16 @@
 
 exports[`Dialog by default nothing is rendered as dialog should be hidden 1`] = `undefined`;
 
+exports[`Dialog by default, when opened renders correctly 1`] = `
+<div class="vnt-dialog-overlay">
+  <div role="alertdialog" tabindex="0" class="vnt-dialog">
+    <h1 class="vnt-dialog__title"></h1>
+    <p class="vnt-dialog__content"></p>
+    <div class="vnt-dialog__actions">
+      <button type="button" class="vnt-button">
+        Cancel
+      </button>
+    </div>
+  </div>
+</div>
+`;

@@ -2,7 +2,7 @@
   <div class="vnt-dialog-overlay"
        v-if="opened">
     <div class="vnt-dialog"
-         role="alert"
+         role="alertdialog"
          tabindex="0"
          ref="dialog"
          @keyup.esc="hide">
@@ -21,6 +21,10 @@
 
 <script>
 import VntButton from '../button';
+
+const BTN_PREFIX = 'vnt-dialog-btn-';
+const PRIMARY_BTN = `${BTN_PREFIX}primary`;
+const DISMISS_BTN = `${BTN_PREFIX}dismiss`;
 
 export default {
   name: 'VntDialog',
@@ -47,7 +51,7 @@ export default {
   data() {
     return {
       buttons: [
-        { label: 'Cancel', tag: 'vnt-dialog-btn-dismiss' }
+        { label: 'Cancel', tag: DISMISS_BTN }
       ]
     };
   },
@@ -66,20 +70,19 @@ export default {
     const slots = this.$slots.default || [];
 
     slots
-      .filter((slot) => slot.tag && slot.tag.startsWith('vnt-dialog-btn-'))
+      .filter((slot) => slot.tag && slot.tag.startsWith(BTN_PREFIX))
       .forEach(({tag, data, children}) => {
-        const attrs = data.attrs;
+        const { attrs } = data;
 
         const btn = {
           tag,
           label: children[0].text,
           result: attrs.result,
-          isDefault: Object.keys(attrs).includes('default')
         };
 
-        if (tag === 'vnt-dialog-btn-primary') {
+        if (tag === PRIMARY_BTN) {
           this.buttons.unshift(btn);
-        } else if (tag === 'vnt-dialog-btn-dismiss') {
+        } else if (tag === DISMISS_BTN) {
           const dismissBtn = this.buttons.find(btn => btn.tag === tag);
           if (dismissBtn) {
             Object.assign(dismissBtn, btn);
@@ -99,8 +102,7 @@ export default {
 
     buttonClick(result) {
       return function() {
-        // TODO: do something with result
-        console.log(result);
+        this.$emit('result', result);
         this.hide();
       };
     }
@@ -134,13 +136,13 @@ export default {
 }
 
 .vnt-dialog__title {
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 400;
   margin: 0;
 }
 
 .vnt-dialog__content {
-  margin: 16px 0;
+  margin: 16px 0 24px;
 }
 
 .vnt-dialog__actions {

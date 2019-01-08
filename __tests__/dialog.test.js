@@ -36,4 +36,27 @@ describe('Dialog', () => {
 
   });
 
+  describe('by default, when opened', () => {
+
+    beforeAll(() => {
+      wrapper = mount(VntDialog, {
+        propsData: {
+          opened: true
+        }
+      });
+    });
+
+    test('closes on ESC key', () => {
+      wrapper.find('.vnt-dialog').trigger('keyup.esc');
+
+      const [[eventValue]] = wrapper.emitted()['update:opened'];
+      expect(eventValue).toBe(false);
+    });
+
+    test('renders correctly', () => {
+      expect(wrapper.html()).toMatchSnapshot();
+    });
+
+  });
+
 });
