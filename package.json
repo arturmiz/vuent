@@ -61,7 +61,7 @@
     "eslint-plugin-vue": "~4.2.0",
     "husky": "~0.14.3",
     "jest": "~22.4.3",
-    "jest-serializer-vue": "~1.0.0",
+    "jest-serializer-vue": "~2.0.2",
     "node-sass": "~4.9.2",
     "postcss-cli": "~6.0.0",
     "rollup": "~0.66.0",
