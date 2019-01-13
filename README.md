@@ -74,6 +74,20 @@ import Vuent from 'vuent';
 Vue.use(Vuent);
 ```
 
+### Vue CLI 3
+
+If you're using Vue CLI 3 in your project, simply run in terminal:
+
+```
+vue add vuent
+```
+
+Then in your project's main file tell Vue to use Vuent:
+
+```js
+Vue.use(Vuent);
+```
+
 ## Documentation
 
 Documentation and playground with live examples are available on the Vuent's website - [https://vuentjs.org][vuent-website].

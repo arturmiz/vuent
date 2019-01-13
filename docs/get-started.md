@@ -54,3 +54,17 @@ import Vuent from 'vuent';
 
 Vue.use(Vuent);
 ```
+
+## Vue CLI 3
+
+If you're using Vue CLI 3 in your project, simply run in terminal:
+
+```bash
+vue add vuent
+```
+
+Vuent will be added to `dependencies` of your project's `package.json` file, installed and entry point file will be extended with Vuent's import. The only thing left is to tell Vue to use Vuent:
+
+```js
+Vue.use(Vuent);
+```
