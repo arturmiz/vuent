@@ -43,7 +43,7 @@ exports[`Slider can have custom min renders correctly 1`] = `
 `;
 
 exports[`Slider can have some other attribute set 1`] = `
-<div class="vnt-slider">
+<div class="vnt-slider" step="5" aria-label="a11y label">
   <label class="vnt-slider__title">Slider</label>
   <input max="100" min="0" type="range" step="5" aria-label="a11y label" class="vnt-slider__input">
 </div>

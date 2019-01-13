@@ -6,12 +6,12 @@ exports[`RadioButton by default renders correctly 1`] = `
 `;
 
 exports[`RadioButton can be checked and disabled renders correctly 1`] = `
-<label class="vnt-radio">
+<label class="vnt-radio" checked="checked">
   <input type="radio" disabled="disabled" name="radio" class="vnt-radio__input"> <span class="vnt-radio__icon"></span> <span class="vnt-radio__text">Radio</span></label>
 `;
 
 exports[`RadioButton can be checked renders correctly 1`] = `
-<label class="vnt-radio">
+<label class="vnt-radio" checked="checked">
   <input type="radio" name="radio" class="vnt-radio__input"> <span class="vnt-radio__icon"></span> <span class="vnt-radio__text">Radio</span></label>
 `;
 
