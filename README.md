@@ -30,16 +30,16 @@ The following snippets can get you up and running with simple demo containing ba
   <title>Vuent Demo</title>
 
   <link href="https://unpkg.com/vuent/dist/vuent.css" type="text/css" rel="stylesheet" media="screen" />
+
+  <script src="https://unpkg.com/vue@2.5.13/dist/vue.js" defer></script>
+  <script src="https://unpkg.com/vuent/dist/vuent.umd.js" defer></script>
+  <script src="main.js" defer></script>
 </head>
 <body>
   <div id="app">
     <p>{{ message }}</p>
 
     <vnt-input v-model="message" label="Text field"></vnt-input>
-
-    <script src="https://unpkg.com/vue@2.5.13/dist/vue.js"></script>
-    <script src="https://unpkg.com/vuent/dist/vuent.umd.js"></script>
-    <script src="main.js"></script>
   </div>
 </body>
 </html>
@@ -71,6 +71,20 @@ Once Vuent is installed in your project, somewhere in your JavaScript code use i
 import Vue from 'vue';
 import Vuent from 'vuent';
 
+Vue.use(Vuent);
+```
+
+### Vue CLI 3
+
+If you're using Vue CLI 3 in your project, simply run in terminal:
+
+```
+vue add vuent
+```
+
+Then in your project's main file tell Vue to use Vuent:
+
+```js
 Vue.use(Vuent);
 ```
 
