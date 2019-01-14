@@ -2,9 +2,10 @@
   <div class="vnt-dialog-overlay"
        v-if="opened">
     <div class="vnt-dialog"
-         role="alertdialog"
+         role="dialog"
          tabindex="0"
          ref="dialog"
+         :aria-label="title"
          @keyup.esc="hide">
       <h1 class="vnt-dialog__title">{{ title }}</h1>
       <p class="vnt-dialog__content">{{ content }}</p>
@@ -81,16 +82,18 @@ export default {
         };
 
         if (tag === PRIMARY_BTN) {
-          this.buttons.unshift(btn);
+          this.buttons = [btn, ...this.buttons];
         } else if (tag === DISMISS_BTN) {
-          const dismissBtn = this.buttons.find(btn => btn.tag === tag);
-          if (dismissBtn) {
-            Object.assign(dismissBtn, btn);
-          } else {
-            this.buttons.push(btn);
-          }
+          const nonDismissBtns = this.buttons.filter(btn => btn.tag !== tag);
+          this.buttons = [...nonDismissBtns, btn];
         } else {
-          this.buttons.splice(1, 0, btn);
+          const [leftBtn, ...buttons] = this.buttons;
+
+          if (leftBtn.tag === PRIMARY_BTN) {
+            this.buttons = [leftBtn, btn, ...buttons];
+          } else {
+            this.buttons = [btn, leftBtn, ...buttons];
+          }
         }
       });
   },
@@ -132,7 +135,7 @@ export default {
   display: block;
   padding: 24px;
   min-width: 400px;
-  border: 2px solid var(--vnt-accent-color, $fallbackAccentColor);
+  border: 1px solid var(--vnt-accent-color, $fallbackAccentColor);
 }
 
 .vnt-dialog__title {
