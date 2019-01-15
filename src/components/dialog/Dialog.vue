@@ -12,6 +12,7 @@
       <div class="vnt-dialog__actions">
         <vnt-button v-for="button in buttons"
                     :key="button.tag"
+                    :ref="button.tag"
                     :click="buttonClick(button.result)">
           {{ button.label }}
         </vnt-button>
@@ -103,8 +104,8 @@ export default {
       this.$emit('update:opened', false);
     },
 
-    buttonClick(result) {
-      return function() {
+    buttonClick(result = null) {
+      return () => {
         this.$emit('result', result);
         this.hide();
       };

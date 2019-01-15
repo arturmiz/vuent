@@ -5,6 +5,17 @@ import { isInstalled } from './utils';
 describe('Dialog', () => {
   let wrapper;
 
+  function emittedResult(wrapper, i = 0) {
+    const { result } = wrapper.emitted();
+    const [eventValue] = result[i];
+    return eventValue;
+  }
+
+  function openedResult(wrapper) {
+    const [[eventValue]] = wrapper.emitted()['update:opened'];
+    return eventValue;
+  }
+
   test('can be installed separately', () => {
     const localVue = createLocalVue();
     localVue.use(VntDialog);
@@ -49,12 +60,52 @@ describe('Dialog', () => {
     test('closes on ESC key', () => {
       wrapper.find({ ref: 'dialog' }).trigger('keyup.esc');
 
-      const [[eventValue]] = wrapper.emitted()['update:opened'];
-      expect(eventValue).toBe(false);
+      expect(openedResult(wrapper)).toBe(false);
     });
 
     test('renders correctly', () => {
       expect(wrapper).toMatchSnapshot();
+    });
+
+    describe('default dismiss button clicked', () => {
+
+      beforeAll(() => {
+        wrapper.find({ ref: 'vnt-dialog-btn-dismiss' }).trigger('click');
+      });
+
+      test('emits correct result', () => {
+        expect(emittedResult(wrapper)).toBe(null);
+      });
+
+      test('closes dialog', () => {
+        expect(openedResult(wrapper)).toBe(false);
+      });
+
+    });
+
+  });
+
+  describe('when opened after initialization', () => {
+
+    beforeAll(() => {
+      wrapper.setProps({ opened: true });
+    });
+
+    describe('on ESC key pressed', () => {
+
+      test('emits correct result', () => {
+        expect(emittedResult(wrapper)).toBe(null);
+      });
+
+      test('closes dialog', (done) => {
+        wrapper.vm.$nextTick(() => {
+          wrapper.find({ ref: 'dialog' }).trigger('keyup.esc');
+
+          expect(openedResult(wrapper)).toBe(false);
+          done();
+        });
+      });
+
     });
 
   });
@@ -96,6 +147,22 @@ describe('Dialog', () => {
       expect(wrapper).toMatchSnapshot();
     });
 
+    describe('dismiss button clicked', () => {
+
+      beforeAll(() => {
+        wrapper.find({ ref: 'vnt-dialog-btn-dismiss' }).trigger('click');
+      });
+
+      test('emits correct result', () => {
+        expect(emittedResult(wrapper)).toBe('cancel');
+      });
+
+      test('closes dialog', () => {
+        expect(openedResult(wrapper)).toBe(false);
+      });
+
+    });
+
   });
 
   describe('when custom primary button given', () => {
@@ -117,6 +184,38 @@ describe('Dialog', () => {
       expect(wrapper).toMatchSnapshot();
     });
 
+    describe('primary button clicked', () => {
+
+      beforeAll(() => {
+        wrapper.find({ ref: 'vnt-dialog-btn-primary' }).trigger('click');
+      });
+
+      test('emits correct result', () => {
+        expect(emittedResult(wrapper)).toBe('ok');
+      });
+
+      test('closes dialog', () => {
+        expect(openedResult(wrapper)).toBe(false);
+      });
+
+    });
+
+    describe('dismiss button clicked', () => {
+
+      beforeAll(() => {
+        wrapper.find({ ref: 'vnt-dialog-btn-dismiss' }).trigger('click');
+      });
+
+      test('emits correct result', () => {
+        expect(emittedResult(wrapper, 1)).toBe(null);
+      });
+
+      test('closes dialog', () => {
+        expect(openedResult(wrapper)).toBe(false);
+      });
+
+    });
+
   });
 
   describe('when custom secondary button given', () => {
@@ -136,6 +235,38 @@ describe('Dialog', () => {
 
     test('renders correctly', () => {
       expect(wrapper).toMatchSnapshot();
+    });
+
+    describe('secondary button clicked', () => {
+
+      beforeAll(() => {
+        wrapper.find({ ref: 'vnt-dialog-btn-secondary' }).trigger('click');
+      });
+
+      test('emits correct result', () => {
+        expect(emittedResult(wrapper)).toBe('skip');
+      });
+
+      test('closes dialog', () => {
+        expect(openedResult(wrapper)).toBe(false);
+      });
+
+    });
+
+    describe('dismiss button clicked', () => {
+
+      beforeAll(() => {
+        wrapper.find({ ref: 'vnt-dialog-btn-dismiss' }).trigger('click');
+      });
+
+      test('emits correct result', () => {
+        expect(emittedResult(wrapper, 1)).toBe(null);
+      });
+
+      test('closes dialog', () => {
+        expect(openedResult(wrapper)).toBe(false);
+      });
+
     });
 
   });
@@ -162,6 +293,22 @@ describe('Dialog', () => {
 
       test('renders correctly', () => {
         expect(wrapper).toMatchSnapshot();
+      });
+
+      describe('dismiss button clicked', () => {
+
+        beforeAll(() => {
+          wrapper.find({ ref: 'vnt-dialog-btn-dismiss' }).trigger('click');
+        });
+
+        test('emits correct result', () => {
+          expect(emittedResult(wrapper)).toBe(null);
+        });
+
+        test('closes dialog', () => {
+          expect(openedResult(wrapper)).toBe(false);
+        });
+
       });
 
     });
@@ -213,6 +360,54 @@ describe('Dialog', () => {
 
     test('renders correctly', () => {
       expect(wrapper).toMatchSnapshot();
+    });
+
+    describe('primary button clicked', () => {
+
+      beforeAll(() => {
+        wrapper.find({ ref: 'vnt-dialog-btn-primary' }).trigger('click');
+      });
+
+      test('emits correct result', () => {
+        expect(emittedResult(wrapper)).toBe('ok');
+      });
+
+      test('closes dialog', () => {
+        expect(openedResult(wrapper)).toBe(false);
+      });
+
+    });
+
+    describe('secondary button clicked', () => {
+
+      beforeAll(() => {
+        wrapper.find({ ref: 'vnt-dialog-btn-secondary' }).trigger('click');
+      });
+
+      test('emits correct result', () => {
+        expect(emittedResult(wrapper, 1)).toBe('skip');
+      });
+
+      test('closes dialog', () => {
+        expect(openedResult(wrapper)).toBe(false);
+      });
+
+    });
+
+    describe('dismiss button clicked', () => {
+
+      beforeAll(() => {
+        wrapper.find({ ref: 'vnt-dialog-btn-dismiss' }).trigger('click');
+      });
+
+      test('emits correct result', () => {
+        expect(emittedResult(wrapper, 2)).toBe('cancel');
+      });
+
+      test('closes dialog', () => {
+        expect(openedResult(wrapper)).toBe(false);
+      });
+
     });
 
   });
