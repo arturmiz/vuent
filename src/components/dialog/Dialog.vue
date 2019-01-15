@@ -6,7 +6,7 @@
          tabindex="0"
          ref="dialog"
          :aria-label="title"
-         @keyup.esc="hide">
+         @keyup.esc="dismiss">
       <h1 class="vnt-dialog__title">{{ title }}</h1>
       <p class="vnt-dialog__content">{{ content }}</p>
       <div class="vnt-dialog__actions">
@@ -102,6 +102,11 @@ export default {
   methods: {
     hide() {
       this.$emit('update:opened', false);
+    },
+
+    dismiss() {
+      this.$emit('result', null);
+      this.hide();
     },
 
     buttonClick(result = null) {

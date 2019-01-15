@@ -87,19 +87,28 @@ describe('Dialog', () => {
 
   describe('when opened after initialization', () => {
 
-    beforeAll(() => {
-      wrapper.setProps({ opened: true });
+    beforeEach(() => {
+      wrapper = mount(VntDialog);
     });
 
     describe('on ESC key pressed', () => {
 
-      test('emits correct result', () => {
-        expect(emittedResult(wrapper)).toBe(null);
+      test('emits correct result', (done) => {
+        wrapper.setProps({ opened: true });
+
+        wrapper.vm.$nextTick(() => {
+          wrapper.find('div:focus').trigger('keyup.esc');
+
+          expect(emittedResult(wrapper)).toBe(null);
+          done();
+        });
       });
 
       test('closes dialog', (done) => {
+        wrapper.setProps({ opened: true });
+
         wrapper.vm.$nextTick(() => {
-          wrapper.find({ ref: 'dialog' }).trigger('keyup.esc');
+          wrapper.find('div:focus').trigger('keyup.esc');
 
           expect(openedResult(wrapper)).toBe(false);
           done();
