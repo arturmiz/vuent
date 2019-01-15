@@ -6,6 +6,7 @@ module.exports = {
         'autosuggest',
         'button',
         'checkbox',
+        'dialog',
         'header',
         'input',
         'link',
