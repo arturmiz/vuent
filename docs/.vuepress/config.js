@@ -32,6 +32,7 @@ module.exports = {
           '/components/autosuggest',
           '/components/button',
           '/components/checkbox',
+          '/components/dialog',
           '/components/header',
           '/components/input',
           '/components/link',
