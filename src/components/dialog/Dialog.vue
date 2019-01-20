@@ -9,7 +9,9 @@
          @keyup.esc="dismiss">
       <h1 class="vnt-dialog__title">{{ title }}</h1>
       <p class="vnt-dialog__content">{{ content }}</p>
-      <div class="vnt-dialog__actions">
+      <div class="vnt-dialog__actions"
+           :class="{'vnt-dialog__actions--single': buttons.length === 1,
+                    'vnt-dialog__actions--three': buttons.length === 3}">
         <vnt-button v-for="button in buttons"
                     :key="button.tag"
                     :ref="button.tag"
@@ -127,10 +129,12 @@ export default {
   height: 100vh;
   position: fixed;
   top: 0;
+  left: 0;
   display: flex;
   align-items: center;
   justify-content: center;
   background: transparent;
+  z-index: 10000;
 }
 
 .vnt-dialog {
@@ -141,6 +145,7 @@ export default {
   display: block;
   padding: 24px;
   min-width: 400px;
+  max-width: 50vw;
   border: 1px solid var(--vnt-accent-color, $fallbackAccentColor);
 }
 
@@ -157,7 +162,23 @@ export default {
 .vnt-dialog__actions {
   display: flex;
   flex: 1 1 auto;
+  flex-wrap: nowrap;
   justify-content: space-between;
+
+  .vnt-button {
+    width: 50%;
+    padding: 0 8px;
+  }
+
+  &--single {
+      justify-content: flex-end;
+  }
+
+  &--three {
+    .vnt-button {
+      width: 33%;
+    }
+  }
 }
 
 </style>
