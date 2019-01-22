@@ -30,6 +30,10 @@ describe('Link', () => {
       expect(wrapper.vm.disabled).toBe(false);
     });
 
+    test('click handler is undefined', () => {
+      expect(wrapper.vm.click).toBeUndefined();
+    });
+
   });
 
   describe('can be disabled', () => {
@@ -89,6 +93,13 @@ describe('Link', () => {
       expect(wrapper.html()).toMatchSnapshot();
     });
 
+    test('click handler is not invoked', () => {
+      const mockClick = jest.fn();
+      wrapper.vm.handlerClick = mockClick;
+      wrapper.find('a').trigger('click');
+      expect(mockClick).not.toBeCalled();
+    });
+
   });
 
   describe('when passed other standard href attributes', () => {
@@ -106,6 +117,37 @@ describe('Link', () => {
       // TODO: replace with following once https://github.com/vuejs/vue-test-utils/issues/146 is fixed
       // expect(wrapper.html()).toMatchSnapshot();
       expect(wrapper.vm.$attrs.target).toBe('_blank');
+    });
+
+  });
+
+  test('when clicked invokes passed handler', () => {
+    const mockClick = jest.fn();
+    wrapper = mount(VntLink, {
+      propsData: {
+        click: mockClick
+      }
+    });
+    wrapper.find('a').trigger('click');
+    expect(mockClick).toBeCalled();
+  });
+
+  describe('when both href and click handler passed', () => {
+
+    test('invokes the click handler', () => {
+      const mockClick = jest.fn();
+      wrapper = mount(VntLink, {
+        propsData: {
+          click: mockClick,
+          href: 'http://fluent.microsoft.com'
+        }
+      });
+      wrapper.find('a').trigger('click');
+      expect(mockClick).toBeCalled();
+    });
+
+    test('renders correctly', () => {
+      expect(wrapper.html()).toMatchSnapshot();
     });
 
   });
