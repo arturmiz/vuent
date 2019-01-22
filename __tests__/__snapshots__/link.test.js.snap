@@ -7,3 +7,5 @@ exports[`Link can be disabled renders correctly 1`] = `<span class="vnt-link vnt
 exports[`Link can create proper link renders correctly 1`] = `<a href="http://fluent.microsoft.com" class="vnt-link">Fluent</a>`;
 
 exports[`Link can set target renders correctly 1`] = `<a href="http://fluent.microsoft.com" class="vnt-link">hyperlink</a>`;
+
+exports[`Link when both href and click handler passed renders correctly 1`] = `<a href="http://fluent.microsoft.com" class="vnt-link">hyperlink</a>`;
