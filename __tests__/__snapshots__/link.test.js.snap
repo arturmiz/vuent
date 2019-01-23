@@ -9,3 +9,5 @@ exports[`Link can create proper link renders correctly 1`] = `<a href="http://fl
 exports[`Link can set target renders correctly 1`] = `<a href="http://fluent.microsoft.com" class="vnt-link">hyperlink</a>`;
 
 exports[`Link when both href and click handler passed renders correctly 1`] = `<a href="http://fluent.microsoft.com" class="vnt-link">hyperlink</a>`;
+
+exports[`Link when passed other standard href attributes passes correctly target attr 1`] = `<a href="http://fluent.microsoft.com" class="vnt-link" target="_blank">hyperlink</a>`;

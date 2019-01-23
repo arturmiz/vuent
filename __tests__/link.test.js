@@ -114,9 +114,7 @@ describe('Link', () => {
         }
       });
 
-      // TODO: replace with following once https://github.com/vuejs/vue-test-utils/issues/146 is fixed
-      // expect(wrapper.html()).toMatchSnapshot();
-      expect(wrapper.vm.$attrs.target).toBe('_blank');
+      expect(wrapper.html()).toMatchSnapshot();
     });
 
   });
