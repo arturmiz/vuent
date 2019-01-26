@@ -10,8 +10,7 @@
       <h1 class="vnt-dialog__title">{{ title }}</h1>
       <p class="vnt-dialog__content">{{ content }}</p>
       <div class="vnt-dialog__actions"
-           :class="{'vnt-dialog__actions--single': buttons.length === 1,
-                    'vnt-dialog__actions--three': buttons.length === 3}">
+           :class="{'vnt-dialog__actions--single': buttons.length === 1}">
         <vnt-button v-for="button in buttons"
                     :key="button.tag"
                     :ref="button.tag"
@@ -161,23 +160,17 @@ export default {
 
 .vnt-dialog__actions {
   display: flex;
-  flex: 1 1 auto;
   flex-wrap: nowrap;
   justify-content: space-between;
 
   .vnt-button {
-    width: 50%;
+    flex: 1 1 0;
+    max-width: 50%;
     padding: 0 8px;
   }
 
   &--single {
       justify-content: flex-end;
-  }
-
-  &--three {
-    .vnt-button {
-      width: 33%;
-    }
   }
 }
 
