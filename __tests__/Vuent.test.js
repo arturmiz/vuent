@@ -1,3 +1,12 @@
+
+const useFn = jest.fn();
+
+Object.defineProperty(window, 'Vue', {
+  value: {
+    use: useFn
+  }
+});
+
 import { createLocalVue, mount } from '@vue/test-utils';
 import { isInstalled, countInstalledPlugins } from './utils';
 
@@ -55,6 +64,11 @@ describe('Vuent', () => {
         localVue,
       });
       expect(wrapper.vm.$vuent).toBe(vnt);
+    });
+
+    test('if global Vue available, registers Vuent', () => {
+      console.log('window.Vue:', window.Vue);
+      expect(useFn).toHaveBeenCalled();
     });
 
   });
