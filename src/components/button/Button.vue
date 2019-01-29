@@ -44,6 +44,10 @@ export default {
   border: 1px solid #ccc;
   color: #000100;
 
+  & ~ & {
+    margin-left: 4px;
+  }
+
   &:hover {
     border-color: #979797;
   }
