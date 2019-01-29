@@ -1,3 +1,22 @@
+<a name="0.5.0"></a>
+# [0.5.0](https://github.com/arturmiz/vuent/compare/v0.4.0...v0.5.0) (2019-01-29)
+
+
+### Bug Fixes
+
+* **button:** missing space between buttons ([5ddefc2](https://github.com/arturmiz/vuent/commit/5ddefc2))
+* **checkbox:** v-model support ([#41](https://github.com/arturmiz/vuent/issues/41)) ([ad9c4be](https://github.com/arturmiz/vuent/commit/ad9c4be))
+* **header:** using h1 and h2 instead of pure divs to improve a11y ([#42](https://github.com/arturmiz/vuent/issues/42)) ([1b118b5](https://github.com/arturmiz/vuent/commit/1b118b5))
+
+
+### Features
+
+* **dialog:** initial implementation ([#45](https://github.com/arturmiz/vuent/issues/45)) ([c28c872](https://github.com/arturmiz/vuent/commit/c28c872))
+* **link:** custom function click handler ([#51](https://github.com/arturmiz/vuent/issues/51)) ([2221095](https://github.com/arturmiz/vuent/commit/2221095))
+* **rating:** initial implementation ([#44](https://github.com/arturmiz/vuent/issues/44)) ([ac94bc0](https://github.com/arturmiz/vuent/commit/ac94bc0))
+
+
+
 <a name="0.4.0"></a>
 # [0.4.0](https://github.com/arturmiz/vuent/compare/v0.3.0...v0.4.0) (2018-11-19)
 
