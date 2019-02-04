@@ -12,7 +12,9 @@ exports[`Dialog by default, when opened renders correctly 1`] = `
 
     </p>
     <div class="vnt-dialog__actions vnt-dialog__actions--single">
-      <button type="button" class="vnt-button">Cancel</button>
+      <button type="button" class="vnt-button">
+        Cancel
+      </button>
     </div>
   </div>
 </div>
@@ -28,7 +30,9 @@ exports[`Dialog when custom dismiss button given renders correctly 1`] = `
       This operation is not allowed.
     </p>
     <div class="vnt-dialog__actions vnt-dialog__actions--single">
-      <button type="button" class="vnt-button">Close</button>
+      <button type="button" class="vnt-button">
+        Close
+      </button>
     </div>
   </div>
 </div>
@@ -44,9 +48,15 @@ exports[`Dialog when custom primary and secondary buttons given in mixed order r
       Are you sure you want to delete this item?
     </p>
     <div class="vnt-dialog__actions">
-      <button type="button" class="vnt-button">Delete</button>
-      <button type="button" class="vnt-button">Ask later</button>
-      <button type="button" class="vnt-button">Cancel</button>
+      <button type="button" class="vnt-button">
+        Delete
+      </button>
+      <button type="button" class="vnt-button">
+        Ask later
+      </button>
+      <button type="button" class="vnt-button">
+        Cancel
+      </button>
     </div>
   </div>
 </div>
@@ -62,9 +72,15 @@ exports[`Dialog when custom primary and secondary buttons given in rendering ord
       Are you sure you want to delete this item?
     </p>
     <div class="vnt-dialog__actions">
-      <button type="button" class="vnt-button">Delete</button>
-      <button type="button" class="vnt-button">Ask later</button>
-      <button type="button" class="vnt-button">Cancel</button>
+      <button type="button" class="vnt-button">
+        Delete
+      </button>
+      <button type="button" class="vnt-button">
+        Ask later
+      </button>
+      <button type="button" class="vnt-button">
+        Cancel
+      </button>
     </div>
   </div>
 </div>
@@ -80,8 +96,12 @@ exports[`Dialog when custom primary button given renders correctly 1`] = `
       Are you sure you want to delete this item?
     </p>
     <div class="vnt-dialog__actions">
-      <button type="button" class="vnt-button">Delete</button>
-      <button type="button" class="vnt-button">Cancel</button>
+      <button type="button" class="vnt-button">
+        Delete
+      </button>
+      <button type="button" class="vnt-button">
+        Cancel
+      </button>
     </div>
   </div>
 </div>
@@ -97,9 +117,15 @@ exports[`Dialog when custom primary, secondary and dismiss buttons given renders
       Are you sure you want to delete this item?
     </p>
     <div class="vnt-dialog__actions">
-      <button type="button" class="vnt-button">Delete</button>
-      <button type="button" class="vnt-button">Ask later</button>
-      <button type="button" class="vnt-button">Close</button>
+      <button type="button" class="vnt-button">
+        Delete
+      </button>
+      <button type="button" class="vnt-button">
+        Ask later
+      </button>
+      <button type="button" class="vnt-button">
+        Close
+      </button>
     </div>
   </div>
 </div>
@@ -115,8 +141,12 @@ exports[`Dialog when custom secondary button given renders correctly 1`] = `
       Are you sure you want to delete this item?
     </p>
     <div class="vnt-dialog__actions">
-      <button type="button" class="vnt-button">Ask later</button>
-      <button type="button" class="vnt-button">Cancel</button>
+      <button type="button" class="vnt-button">
+        Ask later
+      </button>
+      <button type="button" class="vnt-button">
+        Cancel
+      </button>
     </div>
   </div>
 </div>
@@ -132,7 +162,9 @@ exports[`Dialog with title and content given renders correctly 1`] = `
       This operation is not allowed.
     </p>
     <div class="vnt-dialog__actions vnt-dialog__actions--single">
-      <button type="button" class="vnt-button">Cancel</button>
+      <button type="button" class="vnt-button">
+        Cancel
+      </button>
     </div>
   </div>
 </div>
