@@ -38,7 +38,7 @@ describe('Button', () => {
       const clickSpy = jest.spyOn(wrapper.vm, 'click');
       wrapper.find('button').trigger('click');
 
-      expect(clickSpy).toBeCalled();
+      expect(clickSpy).toHaveBeenCalled();
 
       clickSpy.mockRestore();
     });
@@ -82,7 +82,7 @@ describe('Button', () => {
       }
     });
     wrapper.find('button').trigger('click');
-    expect(mockClick).toBeCalled();
+    expect(mockClick).toHaveBeenCalled();
   });
 
 });

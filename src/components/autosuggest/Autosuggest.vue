@@ -1,9 +1,8 @@
 <template>
   <div class="vnt-autosuggest">
-
-    <label class="vnt-autosuggest__label"
-           :class="{'vnt-autosuggest__label--disabled': disabled}"
-           v-if="label">
+    <label v-if="label"
+           class="vnt-autosuggest__label"
+           :class="{'vnt-autosuggest__label--disabled': disabled}">
       {{ label }}
     </label>
 
@@ -15,8 +14,8 @@
              :disabled="disabled"
              :placeholder="placeholder"
              :value="value"
-             @input="input"
-             v-bind="$attrs" />
+             v-bind="$attrs"
+             @input="input" />
 
       <vnt-dropdown-options :options="hints"
                             :opened.sync="showHints"

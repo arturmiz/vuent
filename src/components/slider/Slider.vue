@@ -12,8 +12,8 @@
            :min="min"
            type="range"
            :value="value"
-           @input="input"
-           v-bind="$attrs" />
+           v-bind="$attrs"
+           @input="input" />
 
   </div>
 </template>

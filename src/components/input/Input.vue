@@ -1,7 +1,7 @@
 <template>
   <label class="vnt-input">
-    <span class="vnt-input__label"
-          v-if="label">
+    <span v-if="label"
+          class="vnt-input__label">
       {{ label }}
     </span>
     <input class="vnt-input__control"
@@ -9,8 +9,8 @@
            :type="type"
            :placeholder="placeholder"
            :value="value"
-           @input="input"
-           v-bind="$attrs" />
+           v-bind="$attrs"
+           @input="input" />
   </label>
 </template>
 
