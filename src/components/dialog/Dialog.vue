@@ -18,9 +18,7 @@
         <vnt-button v-for="button in buttons"
                     :key="button.tag"
                     :ref="button.tag"
-                    :click="buttonClick(button.result)">
-          {{ button.label }}
-        </vnt-button>
+                    :click="buttonClick(button.result)">{{ button.label }}</vnt-button>
       </div>
     </div>
   </div>

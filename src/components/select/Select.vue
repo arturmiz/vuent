@@ -14,13 +14,9 @@
            :class="{'vnt-select__chosen--disabled': disabled}"
            @click="toggleOptions">
         <span v-if="chosenText"
-              class="vnt-select__chosen-label">
-          {{ chosenText }}
-        </span>
+              class="vnt-select__chosen-label">{{ chosenText }}</span>
         <span v-else
-              class="vnt-select__chosen-label">
-          {{ placeholder }}
-        </span>
+              class="vnt-select__chosen-label">{{ placeholder }}</span>
         <span class="vnt-select__options-toggle"
               role="presentation"></span>
       </div>

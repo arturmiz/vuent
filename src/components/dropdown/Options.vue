@@ -7,9 +7,7 @@
         :key="getKey(option)"
         class="vnt-dropdown-options__item"
         role="listitem"
-        @click="selectOption(option)">
-      {{ getText(option) }}
-    </li>
+        @click="selectOption(option)">{{ getText(option) }}</li>
 
   </ul>
 </template>

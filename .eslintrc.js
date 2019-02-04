@@ -51,6 +51,11 @@ module.exports = {
     "vue/component-name-in-template-casing": ["error", "kebab-case", {
       "ignores": []
     }],
+    "vue/singleline-html-element-content-newline": ["error", {
+      "ignoreWhenNoAttributes": true,
+      "ignoreWhenEmpty": true,
+      "ignores": ["pre", "textarea", "span"]
+    }],
     "vue/multiline-html-element-content-newline": ["warning", {
       "ignoreWhenEmpty": true,
       "ignores": ["pre", "textarea"]

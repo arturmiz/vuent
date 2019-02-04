@@ -15,9 +15,7 @@
            :aria-readonly="readonly"
            :aria-label="n"
            tabindex="0"
-           @click="rate(n)">
-      &#9733;
-    </label>
+           @click="rate(n)">&#9733;</label>
 
   </div>
 </template>

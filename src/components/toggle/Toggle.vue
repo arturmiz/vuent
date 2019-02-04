@@ -14,12 +14,8 @@
              v-bind="$attrs"
              @change="toggle" />
       <span class="vnt-toggle__switch"></span>
-      <span class="vnt-toggle__text vnt-toggle__text--off">
-        {{ labelOff }}
-      </span>
-      <span class="vnt-toggle__text vnt-toggle__text--on">
-        {{ labelOn }}
-      </span>
+      <span class="vnt-toggle__text vnt-toggle__text--off">{{ labelOff }}</span>
+      <span class="vnt-toggle__text vnt-toggle__text--on">{{ labelOn }}</span>
     </label>
 
   </div>
