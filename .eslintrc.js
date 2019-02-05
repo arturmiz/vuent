@@ -30,7 +30,7 @@ module.exports = {
       "error",
       "always"
     ],
-    "vue/max-attributes-per-line": [2, {
+    "vue/max-attributes-per-line": ["error", {
       "singleline": 1,
       "multiline": {
         "max": 1,
@@ -43,6 +43,22 @@ module.exports = {
         "normal": "never",
         "component": "always"
       }
+    }],
+    "vue/html-closing-bracket-newline": ["error", {
+      "singleline": "never",
+      "multiline": "never"
+    }],
+    "vue/component-name-in-template-casing": ["error", "kebab-case", {
+      "ignores": []
+    }],
+    "vue/singleline-html-element-content-newline": ["error", {
+      "ignoreWhenNoAttributes": true,
+      "ignoreWhenEmpty": true,
+      "ignores": ["pre", "textarea", "span"]
+    }],
+    "vue/multiline-html-element-content-newline": ["warning", {
+      "ignoreWhenEmpty": true,
+      "ignores": ["pre", "textarea"]
     }]
   }
 };

@@ -1,9 +1,9 @@
 <template>
   <div class="vnt-select">
 
-    <label class="vnt-select__title"
-           :class="{'vnt-select__title--disabled': disabled}"
-           v-if="label">
+    <label v-if="label"
+           class="vnt-select__title"
+           :class="{'vnt-select__title--disabled': disabled}">
       <slot>{{ label }}</slot>
     </label>
 
@@ -13,10 +13,10 @@
       <div class="vnt-select__chosen"
            :class="{'vnt-select__chosen--disabled': disabled}"
            @click="toggleOptions">
-        <span class="vnt-select__chosen-label"
-              v-if="chosenText">{{ chosenText }}</span>
-        <span class="vnt-select__chosen-label"
-              v-else>{{ placeholder }}</span>
+        <span v-if="chosenText"
+              class="vnt-select__chosen-label">{{ chosenText }}</span>
+        <span v-else
+              class="vnt-select__chosen-label">{{ placeholder }}</span>
         <span class="vnt-select__options-toggle"
               role="presentation"></span>
       </div>

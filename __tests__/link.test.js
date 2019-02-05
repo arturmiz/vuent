@@ -97,7 +97,7 @@ describe('Link', () => {
       const mockClick = jest.fn();
       wrapper.vm.handlerClick = mockClick;
       wrapper.find('a').trigger('click');
-      expect(mockClick).not.toBeCalled();
+      expect(mockClick).not.toHaveBeenCalled();
     });
 
   });
@@ -127,7 +127,7 @@ describe('Link', () => {
       }
     });
     wrapper.find('a').trigger('click');
-    expect(mockClick).toBeCalled();
+    expect(mockClick).toHaveBeenCalled();
   });
 
   describe('when both href and click handler passed', () => {
@@ -141,7 +141,7 @@ describe('Link', () => {
         }
       });
       wrapper.find('a').trigger('click');
-      expect(mockClick).toBeCalled();
+      expect(mockClick).toHaveBeenCalled();
     });
 
     test('renders correctly', () => {

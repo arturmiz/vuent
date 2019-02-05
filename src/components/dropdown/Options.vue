@@ -1,12 +1,12 @@
 <template>
-  <ul class="vnt-dropdown-options"
-      role="listbox"
-      v-show="opened">
+  <ul v-show="opened"
+      class="vnt-dropdown-options"
+      role="listbox">
 
-    <li class="vnt-dropdown-options__item"
-        role="listitem"
-        v-for="option in options"
+    <li v-for="option in options"
         :key="getKey(option)"
+        class="vnt-dropdown-options__item"
+        role="listitem"
         @click="selectOption(option)">{{ getText(option) }}</li>
 
   </ul>

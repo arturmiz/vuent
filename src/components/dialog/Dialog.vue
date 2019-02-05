@@ -1,14 +1,18 @@
 <template>
-  <div class="vnt-dialog-overlay"
-       v-if="opened">
-    <div class="vnt-dialog"
+  <div v-if="opened"
+       class="vnt-dialog-overlay">
+    <div ref="dialog"
+         class="vnt-dialog"
          role="dialog"
          tabindex="0"
-         ref="dialog"
          :aria-label="title"
          @keyup.esc="dismiss">
-      <h1 class="vnt-dialog__title">{{ title }}</h1>
-      <p class="vnt-dialog__content">{{ content }}</p>
+      <h1 class="vnt-dialog__title">
+        {{ title }}
+      </h1>
+      <p class="vnt-dialog__content">
+        {{ content }}
+      </p>
       <div class="vnt-dialog__actions"
            :class="{'vnt-dialog__actions--single': buttons.length === 1}">
         <vnt-button v-for="button in buttons"
