@@ -1,5 +1,6 @@
 <template>
   <button class="vnt-button"
+          :class="{'vnt-button--primary': primary}"
           :type="type"
           :disabled="disabled"
           @click="click">
@@ -27,6 +28,10 @@ export default {
     click: {
       type: Function,
       default: () => {}
+    },
+    primary: {
+      type: Boolean,
+      default: false
     }
   }
 };
@@ -46,6 +51,11 @@ export default {
 
   & ~ & {
     margin-left: 4px;
+  }
+
+  &--primary {
+    background: var(--vnt-accent-color, $fallbackAccentColor);
+    color: #fff;
   }
 
   &:hover {
