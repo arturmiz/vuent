@@ -26,6 +26,10 @@ describe('Button', () => {
       expect(wrapper.vm.disabled).toBe(false);
     });
 
+    test('is not in primary mode', () => {
+      expect(wrapper.vm.primary).toBe(false);
+    });
+
     test('label text is "Button"', () => {
       expect(wrapper.vm.label).toBe('Button');
     });
@@ -83,6 +87,26 @@ describe('Button', () => {
     });
     wrapper.find('button').trigger('click');
     expect(mockClick).toHaveBeenCalled();
+  });
+
+  describe('can be set in a primary mode', () => {
+
+    beforeAll(() => {
+      wrapper = mount(VntButton, {
+        propsData: {
+          primary: true
+        }
+      });
+    });
+
+    test('sets prop correctly', () => {
+      expect(wrapper.vm.primary).toBe(true);
+    });
+
+    test('renders correctly', () => {
+      expect(wrapper).toMatchSnapshot();
+    });
+
   });
 
 });

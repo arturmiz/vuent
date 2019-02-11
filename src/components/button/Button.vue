@@ -1,5 +1,6 @@
 <template>
   <button class="vnt-button"
+          :class="{'vnt-button--primary': primary}"
           :type="type"
           :disabled="disabled"
           @click="click">
@@ -27,6 +28,10 @@ export default {
     click: {
       type: Function,
       default: () => {}
+    },
+    primary: {
+      type: Boolean,
+      default: false
     }
   }
 };
@@ -35,13 +40,15 @@ export default {
 <style lang="scss">
 @import '../../scss/mixins/component';
 
+$buttonBaseColor: #ccc;
+
 .vnt-button {
   @include component-base();
 
   line-height: 30px;
-  background: #ccc;
+  background: $buttonBaseColor;
   padding: 0 37px;
-  border: 1px solid #ccc;
+  border: 1px solid $buttonBaseColor;
   color: #000100;
 
   & ~ & {
@@ -60,8 +67,23 @@ export default {
     color: #7a7a7a;
 
     &:hover {
-      border-color: #ccc;
+      border-color: $buttonBaseColor;
     }
+  }
+}
+
+.vnt-button--primary {
+  background: var(--vnt-accent-color, $fallbackAccentColor);
+  border-color: var(--vnt-accent-color, $fallbackAccentColor);
+  color: #fff;
+
+  &:hover {
+    border-color: #7a7a7a;
+  }
+
+  &:disabled {
+    background: $buttonBaseColor;
+    border-color: $buttonBaseColor;
   }
 }
 </style>
