@@ -40,13 +40,15 @@ export default {
 <style lang="scss">
 @import '../../scss/mixins/component';
 
+$buttonBaseColor: #ccc;
+
 .vnt-button {
   @include component-base();
 
   line-height: 30px;
-  background: #ccc;
+  background: $buttonBaseColor;
   padding: 0 37px;
-  border: 1px solid #ccc;
+  border: 1px solid $buttonBaseColor;
   color: #000100;
 
   & ~ & {
@@ -65,7 +67,7 @@ export default {
     color: #7a7a7a;
 
     &:hover {
-      border-color: #ccc;
+      border-color: $buttonBaseColor;
     }
   }
 }
@@ -77,6 +79,11 @@ export default {
 
   &:hover {
     border-color: #7a7a7a;
+  }
+
+  &:disabled {
+    background: $buttonBaseColor;
+    border-color: $buttonBaseColor;
   }
 }
 </style>
