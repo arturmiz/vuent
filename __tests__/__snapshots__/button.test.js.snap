@@ -4,4 +4,6 @@ exports[`Button by default renders correctly 1`] = `<button type="button" class=
 
 exports[`Button can be disabled renders correctly 1`] = `<button type="button" disabled="disabled" class="vnt-button">Button</button>`;
 
+exports[`Button can be set in a primary mode renders correctly 1`] = `<button type="button" class="vnt-button vnt-button--primary">Button</button>`;
+
 exports[`Button can have content set using slot 1`] = `<button type="button" class="vnt-button"><span>Custom content</span></button>`;

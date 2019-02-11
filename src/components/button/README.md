@@ -27,3 +27,8 @@ The action handler invoked once user clicks the button. Must be a JS function.
 Default: `false`
 
 Determines whether the button should be in disabled mode or not.
+
+#### `primary`
+Default: `false`
+
+Determines whether the button has primary button styling or not.

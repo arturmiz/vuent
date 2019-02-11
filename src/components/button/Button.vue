@@ -53,11 +53,6 @@ export default {
     margin-left: 4px;
   }
 
-  &--primary {
-    background: var(--vnt-accent-color, $fallbackAccentColor);
-    color: #fff;
-  }
-
   &:hover {
     border-color: #979797;
   }
@@ -72,6 +67,16 @@ export default {
     &:hover {
       border-color: #ccc;
     }
+  }
+}
+
+.vnt-button--primary {
+  background: var(--vnt-accent-color, $fallbackAccentColor);
+  border-color: var(--vnt-accent-color, $fallbackAccentColor);
+  color: #fff;
+
+  &:hover {
+    border-color: #7a7a7a;
   }
 }
 </style>
