@@ -18,6 +18,7 @@
   "bugs": {
     "url": "https://github.com/arturmiz/vuent/issues"
   },
+  "types": "types/index.d.ts",
   "keywords": [
     "components",
     "fluent",
