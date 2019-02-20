@@ -18,6 +18,7 @@
         <vnt-button v-for="button in buttons"
                     :key="button.tag"
                     :ref="button.tag"
+                    :primary="button.isDefault"
                     :click="buttonClick(button.result)">
           {{ button.label }}
         </vnt-button>
@@ -32,6 +33,7 @@ import VntButton from '../button';
 const BTN_PREFIX = 'vnt-dialog-btn-';
 const PRIMARY_BTN = `${BTN_PREFIX}primary`;
 const DISMISS_BTN = `${BTN_PREFIX}dismiss`;
+const DEFAULT_BTN_ATTR = 'default';
 
 export default {
   name: 'VntDialog',
@@ -67,7 +69,15 @@ export default {
     opened() {
       this.$nextTick(() => {
         if (this.opened) {
-          this.$refs.dialog.focus();
+          let focusedElement = this.$refs.dialog;
+
+          const [primaryBtn] = this.$refs[PRIMARY_BTN];
+
+          if (primaryBtn && primaryBtn.primary) {
+            focusedElement = primaryBtn.$el;
+          }
+
+          focusedElement.focus();
         }
       });
     }
@@ -85,26 +95,33 @@ export default {
           tag,
           label: children[0].text,
           result: attrs.result,
+          isDefault: tag === PRIMARY_BTN && Object.keys(attrs).includes(DEFAULT_BTN_ATTR)
         };
 
-        if (tag === PRIMARY_BTN) {
-          this.buttons = [btn, ...this.buttons];
-        } else if (tag === DISMISS_BTN) {
-          const nonDismissBtns = this.buttons.filter(btn => btn.tag !== tag);
-          this.buttons = [...nonDismissBtns, btn];
-        } else {
-          const [leftBtn, ...buttons] = this.buttons;
-
-          if (leftBtn.tag === PRIMARY_BTN) {
-            this.buttons = [leftBtn, btn, ...buttons];
-          } else {
-            this.buttons = [btn, leftBtn, ...buttons];
-          }
-        }
+        this.placeButton(btn);
       });
   },
 
   methods: {
+    placeButton(btn) {
+      const { tag } = btn;
+
+      if (tag === PRIMARY_BTN) {
+        this.buttons = [btn, ...this.buttons];
+      } else if (tag === DISMISS_BTN) {
+        const nonDismissBtns = this.buttons.filter(button => button.tag !== tag);
+        this.buttons = [...nonDismissBtns, btn];
+      } else {
+        const [leftBtn, ...buttons] = this.buttons;
+
+        if (leftBtn.tag === PRIMARY_BTN) {
+          this.buttons = [leftBtn, btn, ...buttons];
+        } else {
+          this.buttons = [btn, leftBtn, ...buttons];
+        }
+      }
+    },
+
     hide() {
       this.$emit('update:opened', false);
     },
