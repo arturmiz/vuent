@@ -71,10 +71,12 @@ export default {
         if (this.opened) {
           let focusedElement = this.$refs.dialog;
 
-          const [primaryBtn] = this.$refs[PRIMARY_BTN];
+          if (this.$refs[PRIMARY_BTN]) {
+            const [primaryBtn] = this.$refs[PRIMARY_BTN];
 
-          if (primaryBtn && primaryBtn.primary) {
-            focusedElement = primaryBtn.$el;
+            if (primaryBtn && primaryBtn.primary) {
+              focusedElement = primaryBtn.$el;
+            }
           }
 
           focusedElement.focus();
