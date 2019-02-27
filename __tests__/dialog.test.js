@@ -85,7 +85,7 @@ describe('Dialog', () => {
 
   });
 
-  describe('when opened after initialization', () => {
+  describe('by default, when opened after initialization', () => {
 
     beforeEach(() => {
       wrapper = mount(VntDialog);
@@ -411,6 +411,79 @@ describe('Dialog', () => {
 
       test('emits correct result', () => {
         expect(emittedResult(wrapper, 2)).toBe('cancel');
+      });
+
+      test('closes dialog', () => {
+        expect(openedResult(wrapper)).toBe(false);
+      });
+
+    });
+
+  });
+
+  describe('when custom default button given', () => {
+
+    beforeEach(() => {
+      wrapper = mount(VntDialog, {
+        propsData: {
+          title: 'Confirm Delete Action',
+          content: 'Are you sure you want to delete this item?'
+        },
+        slots: {
+          default: '<vnt-dialog-btn-primary result="remove" default>Delete</vnt-dialog-btn-primary>'
+        }
+      });
+    });
+
+    describe('when opened', () => {
+
+      test('renders correctly', () => {
+        wrapper.setProps({ opened: true });
+
+        expect(wrapper).toMatchSnapshot();
+      });
+
+    });
+
+    describe('on ESC key pressed', () => {
+
+      beforeEach(() => {
+        wrapper.setProps({ opened: true });
+      });
+
+      test('emits correct result', (done) => {
+        wrapper.vm.$nextTick(() => {
+          wrapper.find(':focus').trigger('keyup.esc');
+
+          expect(emittedResult(wrapper)).toBe(null);
+          done();
+        });
+      });
+
+      test('closes dialog', (done) => {
+        wrapper.vm.$nextTick(() => {
+          wrapper.find(':focus').trigger('keyup.esc');
+
+          expect(openedResult(wrapper)).toBe(false);
+          done();
+        });
+      });
+
+    });
+
+    describe('on Enter key pressed', () => {
+
+      beforeEach(() => {
+        wrapper.setProps({ opened: true });
+
+        wrapper.vm.$nextTick(() => {
+          // FIXME: how to trigger Enter? keyup.enter / keydown.enter doesn't work
+          wrapper.find(':focus').trigger('click');
+        });
+      });
+
+      test('emits correct result', () => {
+        expect(emittedResult(wrapper)).toBe('remove');
       });
 
       test('closes dialog', () => {
