@@ -5,11 +5,9 @@
     <div class="result"><br />opened: {{ opened }}<br />result: {{ result }}</div>
 
     <vnt-dialog :opened.sync="opened" v-on:result="onresult"
-      title="Question"
-      content="This is a dialog with two action buttons and a custom dismiss button.">
+      title="Notice"
+      content="This is a dialog with a default action button.">
       <vnt-dialog-btn-primary result="ok" default>OK</vnt-dialog-btn-primary>
-      <vnt-dialog-btn-secondary result="later">Later</vnt-dialog-btn-secondary>
-      <vnt-dialog-btn-dismiss result="cancel">Close</vnt-dialog-btn-dismiss>
     </vnt-dialog>
   </div>
 </template>
@@ -18,7 +16,7 @@
 import DialogMixin from './dialog.mixin';
 
 export default {
-  name: 'DialogFull',
+  name: 'DialogPrimaryDefault',
   mixins: [
     DialogMixin
   ]
