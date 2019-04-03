@@ -6,6 +6,7 @@ export { default as VntDialog } from './dialog';
 export { default as VntHeader } from './header';
 export { default as VntInput } from './input';
 export { default as VntLink } from './link';
+export { default as VntNavView } from './navview';
 export { default as VntRadio } from './radio';
 export { default as VntRating } from './rating';
 export { default as VntSelect } from './select';

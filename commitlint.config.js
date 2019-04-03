@@ -10,6 +10,7 @@ module.exports = {
         'header',
         'input',
         'link',
+        'navview',
         'radio',
         'rating',
         'select',
