@@ -1,0 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NavView by default renders correctly 1`] = `
+<article class="vnt-navview">
+  <aside class="vnt-navview__pane vnt-navview__pane--auto">
+    <div class="vnt-navview__pane-header">
+      <button type="button" class="vnt-navview__pane-toggle">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="9" viewBox="0 0 16 9">
+          <g transform="translate(-125.5 -80)">
+            <line x2="16" transform="translate(125.5 80.5)" class="vnt-navview__pane-toggle-line"></line>
+            <line x2="16" transform="translate(125.5 84.5)" class="vnt-navview__pane-toggle-line"></line>
+            <line x2="16" transform="translate(125.5 88.5)" class="vnt-navview__pane-toggle-line"></line>
+          </g>
+        </svg>
+      </button>
+      <!---->
+    </div>
+    <ul class="vnt-navview__navitems"></ul>
+  </aside>
+  <div class="vnt-navview__viewport">
+    <!---->
+    <section class="vnt-navview__content"></section>
+  </div>
+</article>
+`;
+
+exports[`NavView generates correct stucture renders correctly 1`] = `
+<article class="vnt-navview">
+  <aside class="vnt-navview__pane vnt-navview__pane--auto">
+    <div class="vnt-navview__pane-header">
+      <button type="button" class="vnt-navview__pane-toggle">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="9" viewBox="0 0 16 9">
+          <g transform="translate(-125.5 -80)">
+            <line x2="16" transform="translate(125.5 80.5)" class="vnt-navview__pane-toggle-line"></line>
+            <line x2="16" transform="translate(125.5 84.5)" class="vnt-navview__pane-toggle-line"></line>
+            <line x2="16" transform="translate(125.5 88.5)" class="vnt-navview__pane-toggle-line"></line>
+          </g>
+        </svg>
+      </button>
+      <!---->
+    </div>
+    <ul class="vnt-navview__navitems"></ul>
+  </aside>
+  <div class="vnt-navview__viewport">
+    <!---->
+    <section class="vnt-navview__content"></section>
+  </div>
+</article>
+`;
