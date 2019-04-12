@@ -7,9 +7,10 @@
       <div class="vnt-navview__pane-header">
         <menu-button :is-pane-opened.sync="isPaneOpened" />
 
-        <div v-if="paneTitle"
-             class="vnt-navview__pane-title">
+        <div class="vnt-navview__pane-title">
+          <slot name="paneHeader">
           {{ paneTitle }}
+          </slot>
         </div>
       </div>
 
@@ -71,10 +72,12 @@ export default {
 
   beforeMount() {
     const slots = this.$slots.default || [];
+    const paneHeader = slots.find(el => el.tag === 'vnt-navview-pane-header');
     const content = slots.find(el => el.tag === 'vnt-navview-content');
 
-    this.$slots.default = [];
+    this.$slots.paneHeader = paneHeader ? paneHeader.children : [];
     this.$slots.content = content ? content.children : [];
+    this.$slots.default = [];
   }
 };
 </script>

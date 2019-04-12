@@ -48,4 +48,28 @@ describe('NavView', () => {
 
   });
 
+  describe('when using custom pane header', () => {
+
+    beforeAll(() => {
+      wrapper = mount(VntNavView, {
+        slots: {
+          default: `
+            <vnt-navview pane-title="App name">
+              <vnt-navview-pane-header>
+                <div>App name with logo</div>
+              </vnt-navview-pane-header>
+              <vnt-navview-content>
+                Some content
+              </vnt-navview-content>
+            </vnt-navview>`
+        }
+      });
+    });
+
+    test('renders correctly', () => {
+      expect(wrapper.html()).toMatchSnapshot();
+    });
+
+  });
+
 });
