@@ -23,7 +23,7 @@
 
 <script>
 export default {
-  name: 'VntNavViewMenuButton',
+  name: 'VntNavviewMenuButton',
 
   props: {
     isPaneOpened: {

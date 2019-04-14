@@ -5,7 +5,7 @@
                     'vnt-navview__pane--opened': isPaneOpened}">
 
       <div class="vnt-navview__pane-header">
-        <menu-button :is-pane-opened.sync="isPaneOpened" />
+          <vnt-navview-menu-button :is-pane-opened.sync="isPaneOpened" />
 
         <div class="vnt-navview__pane-title">
           <slot name="paneHeader">
@@ -14,7 +14,7 @@
         </div>
       </div>
 
-      <ul class="vnt-navview__navitems">
+        <ul class="vnt-navview__items">
 
       </ul>
 
@@ -34,8 +34,8 @@
 </template>
 
 <script>
-import MenuButton from './MenuButton.vue';
 import VntHeader from '../header/Header.vue';
+import VntNavviewMenuButton from './MenuButton.vue';
 
 const DISPLAY_MODES = {
   AUTO: 'auto',
@@ -45,7 +45,7 @@ export default {
   name: 'VntNavview',
 
   components: {
-    MenuButton,
+    VntNavviewMenuButton,
     VntHeader
   },
 
