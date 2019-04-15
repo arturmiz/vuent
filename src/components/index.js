@@ -4,6 +4,7 @@ export { default as VntButton } from './button';
 export { default as VntCheckbox } from './checkbox';
 export { default as VntDialog } from './dialog';
 export { default as VntHeader } from './header';
+export { default as VntIcon } from './icon';
 export { default as VntInput } from './input';
 export { default as VntLink } from './link';
 export { default as VntRadio } from './radio';
