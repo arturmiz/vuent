@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+     width="16"
+     height="9"
+     viewBox="0 0 16 9">
+  <g transform="translate(-125.5 -80)">
+    <line transform="translate(125.5 80.5)" x2="16" stroke-width="1" fill="none" />
+    <line transform="translate(125.5 84.5)" x2="16" stroke-width="1" fill="none" />
+    <line transform="translate(125.5 88.5)" x2="16" stroke-width="1" fill="none" />
+  </g>
+</svg>

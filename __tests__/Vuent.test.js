@@ -7,6 +7,7 @@ import {
   VntCheckbox,
   VntDialog,
   VntHeader,
+  VntIcon,
   VntInput,
   VntLink,
   VntNavView,
@@ -40,6 +41,7 @@ describe('Vuent', () => {
       expect(isInstalled(localVue, VntCheckbox)).toBe(true);
       expect(isInstalled(localVue, VntDialog)).toBe(true);
       expect(isInstalled(localVue, VntHeader)).toBe(true);
+      expect(isInstalled(localVue, VntIcon)).toBe(true);
       expect(isInstalled(localVue, VntInput)).toBe(true);
       expect(isInstalled(localVue, VntLink)).toBe(true);
       expect(isInstalled(localVue, VntNavView)).toBe(true);
