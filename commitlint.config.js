@@ -8,6 +8,7 @@ module.exports = {
         'checkbox',
         'dialog',
         'header',
+        'icon',
         'input',
         'link',
         'radio',
