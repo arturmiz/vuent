@@ -5,16 +5,16 @@
                     'vnt-navview__pane--opened': isPaneOpened}">
 
       <div class="vnt-navview__pane-header">
-          <vnt-navview-menu-button :is-pane-opened.sync="isPaneOpened" />
+        <vnt-navview-menu-button :is-pane-opened.sync="isPaneOpened" />
 
         <div class="vnt-navview__pane-title">
           <slot name="paneHeader">
-          {{ paneTitle }}
+            {{ paneTitle }}
           </slot>
         </div>
       </div>
 
-        <ul class="vnt-navview__items">
+      <ul class="vnt-navview__items">
 
       </ul>
 
@@ -75,7 +75,11 @@ export default {
     const paneHeader = slots.find(el => el.tag === 'vnt-navview-pane-header');
     const content = slots.find(el => el.tag === 'vnt-navview-content');
 
-    this.$slots.paneHeader = paneHeader ? paneHeader.children : [];
+    if (paneHeader) {
+      this.$slots.paneHeader = paneHeader.children;
+    }
+
+    // this.$slots.paneHeader = paneHeader ? paneHeader.children : null;
     this.$slots.content = content ? content.children : [];
     this.$slots.default = [];
   }

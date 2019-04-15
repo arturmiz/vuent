@@ -13,7 +13,9 @@ exports[`NavView by default renders correctly 1`] = `
           </g>
         </svg>
       </button>
-      <div class="vnt-navview__pane-title"></div>
+      <div class="vnt-navview__pane-title">
+
+      </div>
     </div>
     <ul class="vnt-navview__items"></ul>
   </aside>
@@ -24,7 +26,7 @@ exports[`NavView by default renders correctly 1`] = `
 </article>
 `;
 
-exports[`NavView generates correct stucture renders correctly 1`] = `
+exports[`NavView generates correct structure renders correctly 1`] = `
 <article class="vnt-navview">
   <aside class="vnt-navview__pane vnt-navview__pane--auto">
     <div class="vnt-navview__pane-header">
@@ -37,13 +39,21 @@ exports[`NavView generates correct stucture renders correctly 1`] = `
           </g>
         </svg>
       </button>
-      <div class="vnt-navview__pane-title"></div>
+      <div class="vnt-navview__pane-title">
+        App name
+      </div>
     </div>
     <ul class="vnt-navview__items"></ul>
   </aside>
   <div class="vnt-navview__viewport">
-    <!---->
-    <section class="vnt-navview__content"></section>
+    <header class="vnt-navview__header">
+      <hgroup class="vnt-header">
+        <h1 class="vnt-header__header">Header</h1>
+      </hgroup>
+    </header>
+    <section class="vnt-navview__content">
+      Some content
+    </section>
   </div>
 </article>
 `;
@@ -61,13 +71,17 @@ exports[`NavView when using custom pane header renders correctly 1`] = `
           </g>
         </svg>
       </button>
-      <div class="vnt-navview__pane-title"></div>
+      <div class="vnt-navview__pane-title">
+        <div>App name with logo</div>
+      </div>
     </div>
     <ul class="vnt-navview__items"></ul>
   </aside>
   <div class="vnt-navview__viewport">
     <!---->
-    <section class="vnt-navview__content"></section>
+    <section class="vnt-navview__content">
+      Some content
+    </section>
   </div>
 </article>
 `;

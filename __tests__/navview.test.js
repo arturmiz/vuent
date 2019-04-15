@@ -24,20 +24,23 @@ describe('NavView', () => {
 
   });
 
-  describe('generates correct stucture', () => {
+  describe('generates correct structure', () => {
 
     beforeAll(() => {
       wrapper = mount(VntNavView, {
+        propsData: {
+          paneTitle: 'App name',
+          header: 'Header',
+        },
         slots: {
           default: `
-            <vnt-navview pane-title="App name">
-              <vnt-navview-navitems>
+            <vnt-navview-items>
 
-              </vnt-navview-navitems>
-              <vnt-navview-content>
-                Some content
-              </vnt-navview-content>
-            </vnt-navview>`
+            </vnt-navview-items>
+            <vnt-navview-content>
+              Some content
+            </vnt-navview-content>
+          `
         }
       });
     });
@@ -52,16 +55,18 @@ describe('NavView', () => {
 
     beforeAll(() => {
       wrapper = mount(VntNavView, {
+        propsData: {
+          paneTitle: 'App name'
+        },
         slots: {
           default: `
-            <vnt-navview pane-title="App name">
               <vnt-navview-pane-header>
                 <div>App name with logo</div>
               </vnt-navview-pane-header>
               <vnt-navview-content>
                 Some content
               </vnt-navview-content>
-            </vnt-navview>`
+          `
         }
       });
     });
