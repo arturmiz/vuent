@@ -31,6 +31,26 @@ export default {
   height: 16px;
   background-repeat: no-repeat;
   background-position: 50% center;
+
+  &--contact {
+    background-image: svg-load('icons/contact.svg');
+  }
+
+  &--edit {
+    background-image: svg-load('icons/edit.svg');
+  }
+
+  &--global-navigation {
+    background-image: svg-load('icons/globalNavigation.svg', stroke=#000100);
+  }
+
+  &--save {
+    background-image: svg-load('icons/save.svg');
+  }
+
+  &--settings {
+    background-image: svg-load('icons/settings.svg');
+  }
 }
 </style>
 
