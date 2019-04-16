@@ -51,7 +51,7 @@ describe('Vuent', () => {
       expect(isInstalled(localVue, VntSlider)).toBe(true);
       expect(isInstalled(localVue, VntToggle)).toBe(true);
       expect(isInstalled(localVue, VntTabs)).toBe(true);
-      expect(countInstalledPlugins(localVue)).toBe(14);
+      expect(countInstalledPlugins(localVue)).toBe(15);
     });
 
     test('has $vuent instance object', () => {
