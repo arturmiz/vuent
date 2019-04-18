@@ -35,7 +35,8 @@ describe('NavView', () => {
         slots: {
           default: `
             <vnt-navview-items>
-
+              <vnt-navview-item icon="save" active>Link 1</vnt-navview-item>
+              <vnt-navview-item icon="contact">Link 2</vnt-navview-item>
             </vnt-navview-items>
             <vnt-navview-content>
               Some content

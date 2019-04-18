@@ -15,10 +15,11 @@
       </div>
 
       <ul class="vnt-navview__items">
-
+          <slot name="items"></slot>
       </ul>
 
     </aside>
+
     <div class="vnt-navview__viewport">
       <header v-if="header"
               class="vnt-navview__header">
@@ -30,6 +31,7 @@
         </slot>
       </section>
     </div>
+
   </article>
 </template>
 
@@ -73,13 +75,14 @@ export default {
   beforeMount() {
     const slots = this.$slots.default || [];
     const paneHeader = slots.find(el => el.tag === 'vnt-navview-pane-header');
+    const items = slots.find(el => el.tag === 'vnt-navview-items');
     const content = slots.find(el => el.tag === 'vnt-navview-content');
 
     if (paneHeader) {
       this.$slots.paneHeader = paneHeader.children;
     }
 
-    // this.$slots.paneHeader = paneHeader ? paneHeader.children : null;
+    this.$slots.items = items ? items.children : [];
     this.$slots.content = content ? content.children : [];
     this.$slots.default = [];
   }
@@ -150,6 +153,17 @@ export default {
 
   .vnt-navview__pane--opened & {
     visibility: visible;
+  }
+}
+
+.vnt-navview__items {
+  list-style: none;
+  margin: 24px 0;
+  padding: 0;
+  width: 100%;
+
+  &:empty {
+    margin: 0;
   }
 }
 

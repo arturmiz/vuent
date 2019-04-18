@@ -27,7 +27,10 @@ exports[`NavView generates correct structure renders correctly 1`] = `
         App name
       </div>
     </div>
-    <ul class="vnt-navview__items"></ul>
+      <ul class="vnt-navview__items">
+        <vnt-navview-item icon="save" active="">Link 1</vnt-navview-item>
+        <vnt-navview-item icon="contact">Link 2</vnt-navview-item>
+      </ul>
   </aside>
   <div class="vnt-navview__viewport">
     <header class="vnt-navview__header">
