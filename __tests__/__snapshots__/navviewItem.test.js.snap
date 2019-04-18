@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NavviewItem by default renders correctly 1`] = `
+<li class="vnt-navview__item">
+  <a href="#" class="vnt-navview__item-link"><span class="vnt-icon vnt-navview__item-icon"></span> <span class="vnt-navview__item-label"></span></a>
+</li>
+`;
+
+exports[`NavviewItem when icon is set renders correctly 1`] = `
+<li class="vnt-navview__item">
+  <a href="#" class="vnt-navview__item-link"><span class="vnt-icon vnt-navview__item-icon vnt-icon--settings"></span> <span class="vnt-navview__item-label">Settings</span></a>
+</li>
+`;
