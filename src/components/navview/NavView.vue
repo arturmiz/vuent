@@ -3,21 +3,25 @@
     <aside class="vnt-navview__pane"
            :class="{'vnt-navview__pane--auto': displayMode === 'auto',
                     'vnt-navview__pane--opened': isPaneOpened}">
+      <div>
+        <div class="vnt-navview__pane-header">
+          <vnt-navview-menu-button :is-pane-opened.sync="isPaneOpened" />
 
-      <div class="vnt-navview__pane-header">
-        <vnt-navview-menu-button :is-pane-opened.sync="isPaneOpened" />
-
-        <div class="vnt-navview__pane-title">
-          <slot name="paneHeader">
-            {{ paneTitle }}
-          </slot>
+          <div class="vnt-navview__pane-title">
+            <slot name="paneHeader">
+              {{ paneTitle }}
+            </slot>
+          </div>
         </div>
+
+        <ul class="vnt-navview__items">
+          <slot name="items"></slot>
+        </ul>
       </div>
 
-      <ul class="vnt-navview__items">
-          <slot name="items"></slot>
+      <ul class="vnt-navview__pane-footer">
+        <slot name="paneFooter"></slot>
       </ul>
-
     </aside>
 
     <div class="vnt-navview__viewport">
@@ -77,6 +81,7 @@ export default {
     const paneHeader = slots.find(el => el.tag === 'vnt-navview-pane-header');
     const items = slots.find(el => el.tag === 'vnt-navview-items');
     const content = slots.find(el => el.tag === 'vnt-navview-content');
+    const paneFooter = slots.find(el => el.tag === 'vnt-navview-pane-footer');
 
     if (paneHeader) {
       this.$slots.paneHeader = paneHeader.children;
@@ -84,6 +89,10 @@ export default {
 
     if (content) {
       this.$slots.content = content.children;
+    }
+
+    if (paneFooter) {
+      this.$slots.paneFooter = paneFooter.children;
     }
 
     this.$slots.items = items ? items.children : [];
@@ -94,6 +103,7 @@ export default {
 
 <style lang="scss">
 @import '../../scss/mixins/component';
+@import '../../scss/mixins/text';
 
 .vnt-navview {
   @include component-base;
@@ -115,6 +125,9 @@ export default {
   box-sizing: border-box;
   background: #f2f2f2;
   transition: width cubic-bezier(0.8, 0, 0.2, 1) .3s;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 
   &--auto {
 
@@ -143,13 +156,14 @@ export default {
   }
 }
 
-
 .vnt-navview__pane-header {
   display: flex;
   max-height: 20px;
 }
 
 .vnt-navview__pane-title {
+  @include text-overflow;
+
   padding: 0 12px;
   font-weight: 600;
   visibility: hidden;
@@ -159,7 +173,8 @@ export default {
   }
 }
 
-.vnt-navview__items {
+.vnt-navview__items,
+.vnt-navview__pane-footer {
   list-style: none;
   margin: 24px 0;
   padding: 0;
@@ -168,6 +183,10 @@ export default {
   &:empty {
     margin: 0;
   }
+}
+
+.vnt-navview__pane-footer {
+  margin-bottom: 0;
 }
 
 .vnt-navview__viewport {

@@ -14,6 +14,10 @@
     <vnt-navview-item-separator></vnt-navview-item-separator>
     <vnt-navview-item icon="contact">Link 3</vnt-navview-item>
   </vnt-navview-items>
+  <vnt-navview-pane-footer>
+    <vnt-navview-item icon="contact">Account</vnt-navview-item>
+    <vnt-navview-item icon="settings">Settings</vnt-navview-item>
+  </vnt-navview-pane-footer>
   <vnt-navview-content>
     <h1>Content</h1>
   <vnt-navview-content>

@@ -19,7 +19,7 @@ describe('NavView', () => {
     beforeAll(() => {
       wrapper = mount(VntNavView, {
         localVue
-    });
+      });
     });
 
     test('pane is hidden', () => {
@@ -66,7 +66,7 @@ describe('NavView', () => {
       menuButton.trigger('click');
 
       expect(wrapper.vm.isPaneOpened).toBe(true);
-  });
+    });
 
   });
 
@@ -80,12 +80,40 @@ describe('NavView', () => {
         },
         slots: {
           default: `
-              <vnt-navview-pane-header>
-                <div>App name with logo</div>
-              </vnt-navview-pane-header>
-              <vnt-navview-content>
-                Some content
-              </vnt-navview-content>
+            <vnt-navview-pane-header>
+              <div>App name with logo</div>
+            </vnt-navview-pane-header>
+            <vnt-navview-content>
+              Some content
+            </vnt-navview-content>
+          `
+        }
+      });
+    });
+
+    test('renders correctly', () => {
+      expect(wrapper).toMatchSnapshot();
+    });
+
+  });
+
+  describe('when using custom pane footer', () => {
+
+    beforeAll(() => {
+      wrapper = mount(VntNavView, {
+        localVue,
+        propsData: {
+          paneTitle: 'App name',
+        },
+        slots: {
+          default: `
+            <vnt-navview-pane-footer>
+              <vnt-navview-item icon="contact">Account</vnt-navview-item>
+              <vnt-navview-item icon="settings">Settings</vnt-navview-item>
+            </vnt-navview-pane-footer>
+            <vnt-navview-content>
+              Some content
+            </vnt-navview-content>
           `
         }
       });
