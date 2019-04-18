@@ -3,23 +3,31 @@ import { VntNavView } from '@/components';
 import { isInstalled } from './utils';
 
 describe('NavView', () => {
-  let wrapper;
+  let localVue, wrapper;
+
+  beforeAll(() => {
+    localVue = createLocalVue();
+    localVue.use(VntNavView);
+  });
 
   test('can be installed separately', () => {
-    const localVue = createLocalVue();
-    localVue.use(VntNavView);
-
     expect(isInstalled(localVue, VntNavView)).toBe(true);
   });
 
   describe('by default', () => {
 
     beforeAll(() => {
-      wrapper = mount(VntNavView);
+      wrapper = mount(VntNavView, {
+        localVue
+    });
+    });
+
+    test('pane is hidden', () => {
+      expect(wrapper.vm.isPaneOpened).toBe(false);
     });
 
     test('renders correctly', () => {
-      expect(wrapper.html()).toMatchSnapshot();
+      expect(wrapper).toMatchSnapshot();
     });
 
   });
@@ -28,6 +36,7 @@ describe('NavView', () => {
 
     beforeAll(() => {
       wrapper = mount(VntNavView, {
+        localVue,
         propsData: {
           paneTitle: 'App name',
           header: 'Header',
@@ -35,7 +44,9 @@ describe('NavView', () => {
         slots: {
           default: `
             <vnt-navview-items>
+              <vnt-navview-item-header>Nav item header</vnt-navview-item-header>
               <vnt-navview-item icon="save" active>Link 1</vnt-navview-item>
+              <vnt-navview-item-separator />
               <vnt-navview-item icon="contact">Link 2</vnt-navview-item>
             </vnt-navview-items>
             <vnt-navview-content>
@@ -47,8 +58,15 @@ describe('NavView', () => {
     });
 
     test('renders correctly', () => {
-      expect(wrapper.html()).toMatchSnapshot();
+      expect(wrapper).toMatchSnapshot();
     });
+
+    test('pane can be toggled', () => {
+      const menuButton = wrapper.find('.vnt-navview__pane-toggle');
+      menuButton.trigger('click');
+
+      expect(wrapper.vm.isPaneOpened).toBe(true);
+  });
 
   });
 
@@ -56,6 +74,7 @@ describe('NavView', () => {
 
     beforeAll(() => {
       wrapper = mount(VntNavView, {
+        localVue,
         propsData: {
           paneTitle: 'App name'
         },
@@ -73,7 +92,7 @@ describe('NavView', () => {
     });
 
     test('renders correctly', () => {
-      expect(wrapper.html()).toMatchSnapshot();
+      expect(wrapper).toMatchSnapshot();
     });
 
   });

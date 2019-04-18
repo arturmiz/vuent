@@ -82,8 +82,11 @@ export default {
       this.$slots.paneHeader = paneHeader.children;
     }
 
+    if (content) {
+      this.$slots.content = content.children;
+    }
+
     this.$slots.items = items ? items.children : [];
-    this.$slots.content = content ? content.children : [];
     this.$slots.default = [];
   }
 };
