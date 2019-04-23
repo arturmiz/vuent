@@ -11,6 +11,7 @@ module.exports = {
         'icon',
         'input',
         'link',
+        'navview',
         'radio',
         'rating',
         'select',

@@ -1,0 +1,113 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NavView by default renders correctly 1`] = `
+<article class="vnt-navview">
+  <aside class="vnt-navview__pane vnt-navview__pane--auto">
+    <div>
+      <div class="vnt-navview__pane-header">
+        <button type="button" class="vnt-navview__pane-toggle"><span class="vnt-icon vnt-icon--global-navigation"></span></button>
+        <div class="vnt-navview__pane-title">
+
+        </div>
+      </div>
+      <ul class="vnt-navview__items"></ul>
+    </div>
+    <ul class="vnt-navview__pane-footer"></ul>
+  </aside>
+  <div class="vnt-navview__viewport">
+    <!---->
+    <section class="vnt-navview__content">
+      Content goes here
+    </section>
+  </div>
+</article>
+`;
+
+exports[`NavView generates correct structure renders correctly 1`] = `
+<article class="vnt-navview">
+  <aside class="vnt-navview__pane vnt-navview__pane--auto">
+    <div>
+      <div class="vnt-navview__pane-header">
+        <button type="button" class="vnt-navview__pane-toggle"><span class="vnt-icon vnt-icon--global-navigation"></span></button>
+        <div class="vnt-navview__pane-title">
+          App name
+        </div>
+      </div>
+      <ul class="vnt-navview__items">
+        <li class="vnt-navview__item-header">Nav item header</li>
+        <li class="vnt-navview__item vnt-navview__item--active">
+          <a href="#" class="vnt-navview__item-link"><span class="vnt-icon vnt-navview__item-icon vnt-icon--save"></span> <span class="vnt-navview__item-label">Link 1</span></a>
+        </li>
+        <li class="vnt-navview__item-separator"></li>
+        <li class="vnt-navview__item">
+          <a href="#" class="vnt-navview__item-link"><span class="vnt-icon vnt-navview__item-icon vnt-icon--contact"></span> <span class="vnt-navview__item-label">Link 2</span></a>
+        </li>
+      </ul>
+    </div>
+    <ul class="vnt-navview__pane-footer"></ul>
+  </aside>
+  <div class="vnt-navview__viewport">
+    <header class="vnt-navview__header">
+      <hgroup class="vnt-header">
+        <h1 class="vnt-header__header">Header</h1>
+      </hgroup>
+    </header>
+    <section class="vnt-navview__content">
+      Some content
+    </section>
+  </div>
+</article>
+`;
+
+exports[`NavView when using custom pane footer renders correctly 1`] = `
+<article class="vnt-navview">
+  <aside class="vnt-navview__pane vnt-navview__pane--auto">
+    <div>
+      <div class="vnt-navview__pane-header">
+        <button type="button" class="vnt-navview__pane-toggle"><span class="vnt-icon vnt-icon--global-navigation"></span></button>
+        <div class="vnt-navview__pane-title">
+          App name
+        </div>
+      </div>
+      <ul class="vnt-navview__items"></ul>
+    </div>
+    <ul class="vnt-navview__pane-footer">
+      <li class="vnt-navview__item">
+        <a href="#" class="vnt-navview__item-link"><span class="vnt-icon vnt-navview__item-icon vnt-icon--contact"></span> <span class="vnt-navview__item-label">Account</span></a>
+      </li>
+      <li class="vnt-navview__item">
+        <a href="#" class="vnt-navview__item-link"><span class="vnt-icon vnt-navview__item-icon vnt-icon--settings"></span> <span class="vnt-navview__item-label">Settings</span></a>
+      </li>
+    </ul>
+  </aside>
+  <div class="vnt-navview__viewport">
+    <!---->
+    <section class="vnt-navview__content">
+      Some content
+    </section>
+  </div>
+</article>
+`;
+
+exports[`NavView when using custom pane header renders correctly 1`] = `
+<article class="vnt-navview">
+  <aside class="vnt-navview__pane vnt-navview__pane--auto">
+    <div>
+      <div class="vnt-navview__pane-header">
+        <button type="button" class="vnt-navview__pane-toggle"><span class="vnt-icon vnt-icon--global-navigation"></span></button>
+        <div class="vnt-navview__pane-title">
+          <div>App name with logo</div>
+        </div>
+      </div>
+      <ul class="vnt-navview__items"></ul>
+    </div>
+    <ul class="vnt-navview__pane-footer"></ul>
+  </aside>
+  <div class="vnt-navview__viewport">
+    <!---->
+    <section class="vnt-navview__content">
+      Some content
+    </section>
+  </div>
+</article>
+`;
