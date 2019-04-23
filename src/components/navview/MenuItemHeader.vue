@@ -26,6 +26,12 @@ export default {
     margin: 0;
   }
 
+  .vnt-navview__pane--auto & {
+    @media screen and (min-width: 1008px) {
+      display: block;
+    }
+  }
+
   .vnt-navview__pane--opened & {
     display: block;
   }

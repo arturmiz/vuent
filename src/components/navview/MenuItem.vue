@@ -86,6 +86,12 @@ export default {
   flex: 0 0 auto;
   padding-left: 4px;
 
+  .vnt-navview__pane--auto & {
+    @media screen and (min-width: 1008px) {
+      visibility: visible;
+    }
+  }
+
   .vnt-navview__pane--opened & {
     visibility: visible;
   }

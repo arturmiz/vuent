@@ -119,9 +119,6 @@ export default {
 }
 
 .vnt-navview__pane {
-  width: 48px;
-  padding: 12px;
-  overflow: hidden;
   box-sizing: border-box;
   background: #f2f2f2;
   transition: width cubic-bezier(0.8, 0, 0.2, 1) .3s;
@@ -130,8 +127,25 @@ export default {
   justify-content: space-between;
 
   &--auto {
+    @media screen and (max-width: 640px) {
+      width: 0;
+
+      .vnt-navview__item-icon {
+        visibility: hidden;
+      }
+
+      .vnt-navview__pane-toggle {
+        position: relative;
+        top: 12px;
+        left: 12px;
+      }
+    }
 
     @media screen and (min-width: 641px) {
+      width: 48px;
+      padding: 12px;
+      overflow: hidden;
+
       .vnt-navview__pane-title {
         visibility: visible;
       }
@@ -139,6 +153,8 @@ export default {
 
     @media screen and (min-width: 1008px) {
       width: 320px;
+      padding: 12px;
+      overflow: hidden;
 
       .vnt-navview__pane-toggle {
         display: none;
@@ -149,9 +165,25 @@ export default {
   &--opened {
     flex: 0 0 auto;
     width: 100vw;
+    padding: 12px;
+    overflow: hidden;
 
     @media screen and (min-width: 321px) {
       width: 320px;
+    }
+
+    &.vnt-navview__pane--auto {
+      @media screen and (max-width: 640px) {
+        width: 320px;
+
+        .vnt-navview__item-icon {
+          visibility: visible;
+        }
+
+        .vnt-navview__pane-toggle {
+          position: static;
+        }
+      }
     }
   }
 }
