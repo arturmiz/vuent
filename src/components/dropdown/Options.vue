@@ -80,6 +80,7 @@ export default {
 
 <style lang="scss">
 @import '../../scss/mixins/component';
+@import '../../scss/mixins/text';
 
 .vnt-dropdown-options {
   position: absolute;
@@ -98,16 +99,14 @@ export default {
 }
 
 .vnt-dropdown-options__item {
-  @include component-base();
+  @include component-base;
+  @include text-overflow;
 
   line-height: 20px;
   color: #000100;
   cursor: pointer;
   display: block;
   padding: 8px 12px;
-  text-overflow: ellipsis;
-  overflow: hidden;
-  white-space: nowrap;
 
   &:hover {
     background: #dfdfdf;

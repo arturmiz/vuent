@@ -106,6 +106,7 @@ export default {
 
 <style lang="scss">
 @import '../../scss/mixins/component';
+@import '../../scss/mixins/text';
 
 .vnt-select {
   @include component-base();
@@ -154,10 +155,9 @@ export default {
 }
 
 .vnt-select__chosen-label {
+  @include text-overflow;
+
   padding: 0 12px;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  overflow: hidden;
 }
 
 .vnt-select__options-toggle {
