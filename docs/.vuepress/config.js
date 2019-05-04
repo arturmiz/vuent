@@ -34,6 +34,7 @@ module.exports = {
           '/components/checkbox',
           '/components/dialog',
           '/components/header',
+          '/components/icon',
           '/components/input',
           '/components/link',
           '/components/radio',
