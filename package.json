@@ -52,7 +52,7 @@
     "autoprefixer": "~9.1.3",
     "babel-core": "^7.0.0-bridge.0",
     "babel-jest": "~24.5.0",
-    "codecov": "~3.0.4",
+    "codecov": "~3.5.0",
     "conventional-changelog-cli": "~2.0.1",
     "css-mqpacker": "~7.0.0",
     "cssnano": "~4.1.0",
