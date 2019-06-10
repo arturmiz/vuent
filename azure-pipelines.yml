@@ -43,7 +43,7 @@ jobs:
 
   - script: |
       yarn install --frozen-lockfile
-      yarn test:ci
+      yarn test:ci -t $(CODECOV_TOKEN)
 
 - job: website
   pool:
