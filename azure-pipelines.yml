@@ -31,6 +31,17 @@ jobs:
       yarn build
     displayName: 'yarn install and build'
 
+  - task: CopyFiles@2
+    inputs:
+      sourceFolder: '$(Build.SourcesDirectory)/dist'
+      contents: '**'
+      targetFolder: $(Build.ArtifactStagingDirectory)
+
+  - task: PublishBuildArtifacts@1
+    inputs:
+      pathtoPublish: '$(Build.ArtifactStagingDirectory)'
+      artifactName: vuent
+
 - job: codecov
   pool:
     vmImage: 'ubuntu-16.04'
