@@ -34,11 +34,13 @@
     "lint": "eslint --ext .js,.vue .",
     "min:css": "postcss dist/vuent.css -o dist/vuent.min.css",
     "preversion": "npm run build",
+    "storybook": "start-storybook -p 6006",
     "test": "jest --config=jest.config.json",
     "test:ci": "npm run test:coverage && codecov",
     "test:dev": "jest --config=jest.config.json --watch",
     "test:coverage": "jest --config=jest.config.json --coverage",
-    "version": "conventional-changelog -p angular -i CHANGELOG.md -s && git add CHANGELOG.md"
+    "version": "conventional-changelog -p angular -i CHANGELOG.md -s && git add CHANGELOG.md",
+    "build-storybook": "build-storybook"
   },
   "peerDependencies": {
     "vue": "~2.5.x"
@@ -48,10 +50,17 @@
     "@babel/preset-env": "~7.1.0",
     "@commitlint/cli": "6.0.2",
     "@commitlint/config-conventional": "6.0.2",
+    "@storybook/addon-actions": "~5.1.9",
+    "@storybook/addon-links": "~5.1.9",
+    "@storybook/addons": "~5.1.9",
+    "@storybook/cli": "~5.1.9",
+    "@storybook/vue": "~5.1.9",
     "@vue/test-utils": "1.0.0-beta.28",
     "autoprefixer": "~9.1.3",
     "babel-core": "^7.0.0-bridge.0",
     "babel-jest": "~24.5.0",
+    "babel-loader": "~8.0.6",
+    "babel-preset-vue": "~2.0.2",
     "codecov": "~3.5.0",
     "conventional-changelog-cli": "~2.0.1",
     "css-mqpacker": "~7.0.0",
