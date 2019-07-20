@@ -1,5 +1,7 @@
 import { storiesOf } from '@storybook/vue';
 
+/* eslint no-undef: 0,
+          no-unused-vars: 0 */
 storiesOf('Button', module)
   .add('default', () => ({
     render: (h) => (

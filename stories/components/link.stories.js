@@ -1,6 +1,8 @@
 import { storiesOf } from '@storybook/vue';
 import { action } from '@storybook/addon-actions';
 
+/* eslint no-undef: 0,
+          no-unused-vars: 0 */
 storiesOf('Link', module)
   .add('default', () => ({
     render: (h) => (

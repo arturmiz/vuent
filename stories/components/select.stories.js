@@ -15,6 +15,7 @@ const createData = () => ({
   countries,
 });
 
+/* eslint no-undef: 0 */
 storiesOf('Select', module)
   .add('default', () => ({
     data: () => createData(),

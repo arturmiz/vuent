@@ -1,5 +1,6 @@
 import { storiesOf } from '@storybook/vue';
 
+/* eslint no-undef: 0 */
 storiesOf('Input', module)
   .add('default', () => ({
     data() {

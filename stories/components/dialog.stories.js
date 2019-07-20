@@ -17,6 +17,7 @@ const mixin = {
   }
 };
 
+/* eslint no-undef: 0 */
 storiesOf('Dialog', module)
   .add('default', () => ({
     ...mixin,

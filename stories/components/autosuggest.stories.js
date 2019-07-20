@@ -17,6 +17,7 @@ const createData = () => ({
   countries
 });
 
+/* eslint no-undef: 0 */
 storiesOf('Autosuggest', module)
   .add('default', () => ({
     data: () => createData(),
