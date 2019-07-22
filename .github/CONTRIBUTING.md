@@ -12,7 +12,8 @@ Reporting issues, enhancements ideas, writing documentation etc. and, of course,
 3) Run `npm run install` or `yarn install` in your favourite command line tool to download all necessary dependencies.
 
 ### Development
-4) Run `npm run dev` or `yarn dev` to start bundler's watcher outputting the content to `dist` folder.
+4a) Run `npm run storybook` or `yarn storybook` to start [Storybook](https://storybook.js.org/docs/guides/guide-vue/).
+4b) Run `npm run dev` or `yarn dev` to start bundler's watcher outputting the content to `dist` folder.
 
 ### Running tests
 5) Run (in a separate command line window) `npm run test:dev` or `yarn test:dev` to get tests results.
