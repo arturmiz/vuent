@@ -36,6 +36,7 @@ jobs:
       sourceFolder: '$(Build.SourcesDirectory)'
       contents: |
         dist/*
+        README.md
         LICENSE
         package.json
       targetFolder: '$(Build.ArtifactStagingDirectory)'
