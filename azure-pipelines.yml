@@ -83,7 +83,7 @@ stages:
         displayName: 'yarn install and build'
 
       - powershell: |
-          npm --no-git-tag-version version prerelease --pre-id=$(Build.BuildNumber)
+          npm --no-git-tag-version version prerelease --preid=$(Build.BuildNumber)
         displayName: 'version bump'
 
       - task: CopyFiles@2
@@ -101,18 +101,3 @@ stages:
         inputs:
           pathtoPublish: '$(Build.ArtifactStagingDirectory)'
           artifactName: vuent
-
-      - task: CopyFiles@2
-        inputs:
-          sourceFolder: '$(Build.SourcesDirectory)'
-          contents: |
-            dist/*
-            README.md
-            LICENSE
-            package.json
-          targetFolder: '$(Build.SourcesDirectory)/dist2'
-          overWrite: true
-
-      - publish: $(System.DefaultWorkingDirectory)/dist2
-        artifact: vuent_new
-
