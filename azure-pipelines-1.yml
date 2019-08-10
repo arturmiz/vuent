@@ -1,0 +1,110 @@
+# https://docs.microsoft.com/vsts/pipelines/languages/javascript
+
+stages:
+- stage: test
+  jobs:
+    - job: codecov
+
+- stage: build
+  jobs:
+    - job: Linux
+    - job: Windows
+    - job: website
+
+- stage: publish
+  jobs:
+    - job: publish_artifact
+
+jobs:
+- job: Linux
+  pool:
+    vmImage: 'ubuntu-16.04'
+
+  steps:
+  - task: NodeTool@0
+    inputs:
+      versionSpec: '8.x'
+    displayName: 'Install Node.js'
+
+  - script: |
+      yarn install --frozen-lockfile
+      yarn build
+    displayName: 'yarn install and build'
+
+- job: Windows
+  pool:
+    vmImage: 'vs2017-win2016'
+
+  steps:
+  - task: NodeTool@0
+    inputs:
+      versionSpec: '8.x'
+    displayName: 'Install Node.js'
+
+  - powershell: |
+      yarn install --frozen-lockfile
+      yarn build
+    displayName: 'yarn install and build'
+
+- job: publish_artifact
+  pool:
+    vmImage: 'vs2017-win2016'
+
+  steps:
+  - task: NodeTool@0
+    inputs:
+      versionSpec: '8.x'
+    displayName: 'Install Node.js'
+
+  - powershell: |
+      yarn install --frozen-lockfile
+      yarn build
+    displayName: 'yarn install and build'
+
+  - powershell: |
+      npm --no-git-tag-version version prerelease
+    displayName: 'version bump'
+
+  - task: CopyFiles@2
+    inputs:
+      sourceFolder: '$(Build.SourcesDirectory)'
+      contents: |
+        dist/*
+        README.md
+        LICENSE
+        package.json
+      targetFolder: '$(Build.ArtifactStagingDirectory)'
+      overWrite: true
+
+  - task: PublishBuildArtifacts@1
+    inputs:
+      pathtoPublish: '$(Build.ArtifactStagingDirectory)'
+      artifactName: vuent
+
+- job: codecov
+  pool:
+    vmImage: 'ubuntu-16.04'
+
+  steps:
+  - task: NodeTool@0
+    inputs:
+      versionSpec: '8.x'
+    displayName: 'Install Node.js'
+
+  - script: |
+      yarn install --frozen-lockfile
+      yarn test:ci -t $(CODECOV_TOKEN)
+
+- job: website
+  pool:
+    vmImage: 'ubuntu-16.04'
+
+  steps:
+  - task: NodeTool@0
+    inputs:
+      versionSpec: '8.x'
+    displayName: 'Install Node.js'
+
+  - script: |
+      yarn install --frozen-lockfile
+      yarn docs:build
