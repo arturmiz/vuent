@@ -110,8 +110,8 @@ stages:
             README.md
             LICENSE
             package.json
-          targetFolder: '$(Build.ArtifactStagingDirectory)/.artifact'
+          targetFolder: '$(Build.ArtifactStagingDirectory)/artifact'
           overWrite: true
 
-      - publish: $(System.DefaultWorkingDirectory)/.artifact
+      - publish: $(Build.ArtifactStagingDirectory)/artifact
         artifact: vuent_next
