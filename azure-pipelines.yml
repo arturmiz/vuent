@@ -1,76 +1,105 @@
-# https://docs.microsoft.com/vsts/pipelines/languages/javascript
+stages:
+- stage: test
+  jobs:
+    - job: codecov
+      pool:
+        vmImage: 'ubuntu-16.04'
 
-jobs:
-- job: Linux
-  pool:
-    vmImage: 'ubuntu-16.04'
+      steps:
+      - task: NodeTool@0
+        inputs:
+          versionSpec: '8.x'
+        displayName: 'Install Node.js'
 
-  steps:
-  - task: NodeTool@0
-    inputs:
-      versionSpec: '8.x'
-    displayName: 'Install Node.js'
+      - script: |
+          yarn install --frozen-lockfile
+          yarn test:ci -t $(CODECOV_TOKEN)
 
-  - script: |
-      yarn install --frozen-lockfile
-      yarn build
-    displayName: 'yarn install and build'
+- stage: build
+  jobs:
+    - job: Linux
+      pool:
+        vmImage: 'ubuntu-16.04'
 
-- job: Windows
-  pool:
-    vmImage: 'vs2017-win2016'
+      steps:
+      - task: NodeTool@0
+        inputs:
+          versionSpec: '8.x'
+        displayName: 'Install Node.js'
 
-  steps:
-  - task: NodeTool@0
-    inputs:
-      versionSpec: '8.x'
-    displayName: 'Install Node.js'
+      - script: |
+          yarn install --frozen-lockfile
+          yarn build
+        displayName: 'yarn install and build'
 
-  - powershell: |
-      yarn install --frozen-lockfile
-      yarn build
-    displayName: 'yarn install and build'
+    - job: Windows
+      pool:
+        vmImage: 'vs2017-win2016'
 
-  - task: CopyFiles@2
-    inputs:
-      sourceFolder: '$(Build.SourcesDirectory)'
-      contents: |
-        dist/*
-        README.md
-        LICENSE
-        package.json
-      targetFolder: '$(Build.ArtifactStagingDirectory)'
-      overWrite: true
+      steps:
+      - task: NodeTool@0
+        inputs:
+          versionSpec: '8.x'
+        displayName: 'Install Node.js'
 
-  - task: PublishBuildArtifacts@1
-    inputs:
-      pathtoPublish: '$(Build.ArtifactStagingDirectory)'
-      artifactName: vuent
+      - powershell: |
+          yarn install --frozen-lockfile
+          yarn build
+        displayName: 'yarn install and build'
 
-- job: codecov
-  pool:
-    vmImage: 'ubuntu-16.04'
+    - job: website
+      pool:
+        vmImage: 'ubuntu-16.04'
 
-  steps:
-  - task: NodeTool@0
-    inputs:
-      versionSpec: '8.x'
-    displayName: 'Install Node.js'
+      steps:
+      - task: NodeTool@0
+        inputs:
+          versionSpec: '8.x'
+        displayName: 'Install Node.js'
 
-  - script: |
-      yarn install --frozen-lockfile
-      yarn test:ci -t $(CODECOV_TOKEN)
+      - script: |
+          yarn install --frozen-lockfile
+          yarn docs:build
 
-- job: website
-  pool:
-    vmImage: 'ubuntu-16.04'
+      - publish: $(System.DefaultWorkingDirectory)/docs/dist
+        artifact: website
 
-  steps:
-  - task: NodeTool@0
-    inputs:
-      versionSpec: '8.x'
-    displayName: 'Install Node.js'
+- stage: publish
+  # condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/master'))
+  jobs:
+    - job: artifact
+      pool:
+        vmImage: 'vs2017-win2016'
 
-  - script: |
-      yarn install --frozen-lockfile
-      yarn docs:build
+      steps:
+      - task: NodeTool@0
+        inputs:
+          versionSpec: '8.x'
+        displayName: 'Install Node.js'
+
+      - powershell: |
+          yarn install --frozen-lockfile
+        displayName: 'yarn install'
+
+      - powershell: |
+          npm version prerelease
+        displayName: 'version bump'
+
+      - publish: $(System.DefaultWorkingDirectory)
+        artifact: vuent_all
+
+      - task: CopyFiles@2
+        inputs:
+          sourceFolder: '$(Build.SourcesDirectory)'
+          contents: |
+            dist/*
+            README.md
+            LICENSE
+            package.json
+          targetFolder: '$(Build.ArtifactStagingDirectory)'
+          overWrite: true
+
+      - task: PublishBuildArtifacts@1
+        inputs:
+          pathtoPublish: '$(Build.ArtifactStagingDirectory)'
+          artifactName: vuent
