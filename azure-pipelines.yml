@@ -82,7 +82,7 @@ stages:
         displayName: 'yarn install'
 
       - powershell: |
-          npm version prerelease
+          npm --no-git-tag-version version prerelease --pre-id=$(Build.BuildNumber)
         displayName: 'version bump'
 
       - publish: $(System.DefaultWorkingDirectory)
