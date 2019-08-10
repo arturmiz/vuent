@@ -1,7 +1,7 @@
 stages:
 - stage: test
   jobs:
-    - job: codecov
+    - job: unit
       pool:
         vmImage: 'ubuntu-16.04'
 
@@ -47,6 +47,22 @@ stages:
           yarn build
         displayName: 'yarn install and build'
 
+      - task: CopyFiles@2
+        inputs:
+          sourceFolder: '$(Build.SourcesDirectory)'
+          contents: |
+            dist/*
+            README.md
+            LICENSE
+            package.json
+          targetFolder: '$(Build.ArtifactStagingDirectory)'
+          overWrite: true
+
+      - task: PublishBuildArtifacts@1
+        inputs:
+          pathtoPublish: '$(Build.ArtifactStagingDirectory)'
+          artifactName: vuent
+
     - job: website
       pool:
         vmImage: 'ubuntu-16.04'
@@ -64,7 +80,7 @@ stages:
       - publish: $(System.DefaultWorkingDirectory)/docs/dist
         artifact: website
 
-- stage: publish
+- stage: prerelease
   # condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/master'))
   jobs:
     - job: artifact
@@ -94,10 +110,8 @@ stages:
             README.md
             LICENSE
             package.json
-          targetFolder: '$(Build.ArtifactStagingDirectory)'
+          targetFolder: '$(Build.ArtifactStagingDirectory)/.artifact'
           overWrite: true
 
-      - task: PublishBuildArtifacts@1
-        inputs:
-          pathtoPublish: '$(Build.ArtifactStagingDirectory)'
-          artifactName: vuent
+      - publish: $(System.DefaultWorkingDirectory)/.artifact
+        artifact: vuent_next
