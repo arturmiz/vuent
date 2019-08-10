@@ -99,7 +99,7 @@ stages:
         displayName: 'yarn install and build'
 
       - powershell: |
-          npm --no-git-tag-version version prerelease --preid=$(Build.BuildNumber)
+          npm --no-git-tag-version version prerelease --preid=$(Build.BuildId)
         displayName: 'version bump'
 
       - task: CopyFiles@2
