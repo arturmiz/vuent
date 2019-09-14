@@ -62,7 +62,7 @@ exports[`NavView when using custom pane footer renders correctly 1`] = `
   <aside class="vnt-navview__pane vnt-navview__pane--auto">
     <div>
       <div class="vnt-navview__pane-header">
-        <vnt-navview-menu-button-stub></vnt-navview-menu-button-stub>
+        <button type="button" class="vnt-navview__pane-toggle"><span class="vnt-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 9"><g transform="translate(-125.5 -80)" stroke="#000100"><line transform="translate(125.5 80.5)" x2="16" stroke-width="1" fill="none"></line> <line transform="translate(125.5 84.5)" x2="16" stroke-width="1" fill="none"></line> <line transform="translate(125.5 88.5)" x2="16" stroke-width="1" fill="none"></line></g></svg></span></button>
         <div class="vnt-navview__pane-title">
           App name
         </div>
@@ -92,7 +92,7 @@ exports[`NavView when using custom pane header renders correctly 1`] = `
   <aside class="vnt-navview__pane vnt-navview__pane--auto">
     <div>
       <div class="vnt-navview__pane-header">
-        <vnt-navview-menu-button-stub></vnt-navview-menu-button-stub>
+        <button type="button" class="vnt-navview__pane-toggle"><span class="vnt-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 9"><g transform="translate(-125.5 -80)" stroke="#000100"><line transform="translate(125.5 80.5)" x2="16" stroke-width="1" fill="none"></line> <line transform="translate(125.5 84.5)" x2="16" stroke-width="1" fill="none"></line> <line transform="translate(125.5 88.5)" x2="16" stroke-width="1" fill="none"></line></g></svg></span></button>
         <div class="vnt-navview__pane-title">
           <div>App name with logo</div>
         </div>
