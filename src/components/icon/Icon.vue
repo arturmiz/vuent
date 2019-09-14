@@ -35,17 +35,17 @@ export default {
       case 'global-nav':
       case 'global-navigation':
         return VntIconGlobalNav;
-      case 'settings':
-        return VntIconSettings;
       case 'save':
         return VntIconSave;
+      case 'settings':
+        return VntIconSettings;
       default:
         return null;
       }
     }
 
     return createElement('span', {
-      class: 'vnt-icon',
+      class: data.staticClass ? `vnt-icon ${data.staticClass}` : 'vnt-icon',
       attrs: data.attrs
     }, [
       createElement(resolveIcon(props.name))

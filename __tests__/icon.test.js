@@ -18,10 +18,6 @@ describe('Icon', () => {
       wrapper = mount(VntIcon);
     });
 
-    test('name is undefined', () => {
-      expect(wrapper.vm.name).toBeUndefined();
-    });
-
     test('renders correctly', () => {
       expect(wrapper).toMatchSnapshot();
     });
