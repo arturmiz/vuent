@@ -1,6 +1,8 @@
 __tests__/
 coverage/
+docs/
 src/
+stories/
 .*
 *.config.*
 *.lock
