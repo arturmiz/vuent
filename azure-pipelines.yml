@@ -1,6 +1,21 @@
 stages:
 - stage: test
   jobs:
+    - job: lint
+      pool:
+        vmImage: 'ubuntu-16.04'
+
+      steps:
+      - task: NodeTool@0
+        inputs:
+          versionSpec: '8.x'
+        displayName: 'Install Node.js'
+
+      - script: |
+          yarn install --frozen-lockfile
+          yarn lint
+        displayName: 'lint'
+
     - job: unit
       pool:
         vmImage: 'ubuntu-16.04'
@@ -14,6 +29,7 @@ stages:
       - script: |
           yarn install --frozen-lockfile
           yarn test:ci -t $(CODECOV_TOKEN)
+        displayName: 'unit'
 
 - stage: build
   jobs:
@@ -30,7 +46,7 @@ stages:
       - script: |
           yarn install --frozen-lockfile
           yarn build
-        displayName: 'yarn install and build'
+        displayName: 'build on ubuntu'
 
     - job: Windows
       pool:
@@ -40,12 +56,12 @@ stages:
       - task: NodeTool@0
         inputs:
           versionSpec: '8.x'
-        displayName: 'Install Node.js'
+        displayName: 'install Node.js'
 
       - powershell: |
           yarn install --frozen-lockfile
           yarn build
-        displayName: 'yarn install and build'
+        displayName: 'build on windows'
 
       - task: CopyFiles@2
         inputs:
@@ -63,6 +79,23 @@ stages:
           pathtoPublish: '$(Build.ArtifactStagingDirectory)'
           artifactName: vuent
 
+    - job: storybook
+      pool:
+        vmImage: 'ubuntu-16.04'
+
+      steps:
+      - task: NodeTool@0
+        inputs:
+          versionSpec: '8.x'
+        displayName: 'install Node.js'
+
+      - script: |
+          yarn install --frozen-lockfile
+          yarn storybook:build
+
+      - publish: $(System.DefaultWorkingDirectory)/storybook-static
+        artifact: storybook
+
     - job: website
       pool:
         vmImage: 'ubuntu-16.04'
@@ -71,17 +104,18 @@ stages:
       - task: NodeTool@0
         inputs:
           versionSpec: '8.x'
-        displayName: 'Install Node.js'
+        displayName: 'install Node.js'
 
       - script: |
           yarn install --frozen-lockfile
           yarn docs:build
+        displayName: 'build website'
 
       - publish: $(System.DefaultWorkingDirectory)/docs/dist
         artifact: website
 
-- stage: prerelease
-  # condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/master'))
+- stage: pre-release
+  condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/master'))
   jobs:
     - job: artifact
       pool:
@@ -91,12 +125,12 @@ stages:
       - task: NodeTool@0
         inputs:
           versionSpec: '8.x'
-        displayName: 'Install Node.js'
+        displayName: 'install Node.js'
 
       - powershell: |
           yarn install --frozen-lockfile
           yarn build
-        displayName: 'yarn install and build'
+        displayName: 'build'
 
       - powershell: |
           npm --no-git-tag-version version prerelease --preid=$(Build.BuildId)
