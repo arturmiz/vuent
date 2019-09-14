@@ -5,6 +5,24 @@ import VntIconGlobalNav from './icons/GlobalNavigation.vue';
 import VntIconSave from './icons/Save.vue';
 import VntIconSettings from './icons/Settings.vue';
 
+export function resolveIcon(name) {
+  switch (name) {
+  case 'contact':
+    return VntIconContact;
+  case 'edit':
+    return VntIconEdit;
+  case 'global-nav':
+  case 'global-navigation':
+    return VntIconGlobalNav;
+  case 'save':
+    return VntIconSave;
+  case 'settings':
+    return VntIconSettings;
+  default:
+    return null;
+  }
+}
+
 export default {
   name: 'VntIcon',
 
@@ -26,24 +44,6 @@ export default {
   },
 
   render(createElement, { props, data }) {
-    function resolveIcon(name) {
-      switch (name) {
-      case 'contact':
-        return VntIconContact;
-      case 'edit':
-        return VntIconEdit;
-      case 'global-nav':
-      case 'global-navigation':
-        return VntIconGlobalNav;
-      case 'save':
-        return VntIconSave;
-      case 'settings':
-        return VntIconSettings;
-      default:
-        return null;
-      }
-    }
-
     return createElement('span', {
       class: data.staticClass ? `vnt-icon ${data.staticClass}` : 'vnt-icon',
       attrs: data.attrs
