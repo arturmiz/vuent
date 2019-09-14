@@ -114,7 +114,7 @@ stages:
       - publish: $(System.DefaultWorkingDirectory)/docs/dist
         artifact: website
 
-- stage: pre-release
+- stage: prerelease
   condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/master'))
   jobs:
     - job: artifact
