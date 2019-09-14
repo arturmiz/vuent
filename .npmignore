@@ -1,6 +1,9 @@
 __tests__/
 coverage/
+docs/
 src/
+stories/
+storybook-static/
 .*
 *.config.*
 *.lock
