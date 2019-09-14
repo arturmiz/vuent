@@ -2,6 +2,7 @@
   <article class="vnt-navview">
     <aside class="vnt-navview__pane"
            :class="{'vnt-navview__pane--auto': displayMode === 'auto',
+                    'vnt-navview__pane--left-compact': displayMode === 'leftCompact',
                     'vnt-navview__pane--opened': isPaneOpened}">
       <div>
         <div class="vnt-navview__pane-header">
@@ -45,6 +46,7 @@ import VntNavviewMenuButton from './MenuButton.vue';
 
 const DISPLAY_MODES = {
   AUTO: 'auto',
+  LEFT_COMPACT: 'leftCompact',
 };
 
 export default {
@@ -161,6 +163,15 @@ export default {
       }
     }
   }
+
+  // &--left {
+
+  //   &:not(&--opened) {
+  //     @media screen and (min-width: 1008px) {
+  //       width: 320px;
+  //     }
+  //   }
+  // }
 
   &--opened {
     flex: 0 0 auto;
