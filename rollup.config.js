@@ -4,6 +4,7 @@ import babel from 'rollup-plugin-babel';
 import vue from 'rollup-plugin-vue';
 import { terser as uglify } from 'rollup-plugin-terser';
 import css from 'rollup-plugin-css-only';
+import serve from 'rollup-plugin-serve';
 import pkg from './package.json';
 
 const input = 'src/index.js';
@@ -23,7 +24,7 @@ export default [
       name: 'vuent',
       file: pkg.browser,
       format: 'umd',
-      sourcemap: true,
+      sourcemap: false,
       globals: {
         'vue': 'Vue'
       }
@@ -44,6 +45,11 @@ export default [
       }),
       babel({
         exclude: 'node_modules/**'
+      }),
+      !production && serve({
+        contentBase: '',
+        port: 8888,
+        verbose: false
       }),
       production && uglify()
     ],

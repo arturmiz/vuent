@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Vuent Demo</title>
+
+    <link href="/dist/vuent.min.css" type="text/css" rel="stylesheet" media="screen" />
+    <script src="https://unpkg.com/vue@2.5.13/dist/vue.js" defer></script>
+    <script src="/dist/vuent.umd.js" defer></script>
+    <script src="main.js" defer></script>
+
+    <style>
+      .vnt-body {
+        margin: 0;
+      }
+    </style>
+</head>
+<body class="vnt-body">
+    <div id="app">
+      <!--
+      <p>{{ message }}</p>
+
+      <div>
+        This is a hyperlink to
+        <vnt-link target="_blank" href="http://google.com">Google</vnt-link> or
+        <vnt-link :click="linkClick">alert</vnt-link>
+      </div>
+
+      <p>checkboxChecked: {{ checkboxChecked }}</p>
+
+      <vnt-checkbox>Action Text</vnt-checkbox>
+      <vnt-checkbox :checked.sync="checkboxChecked">Action Text</vnt-checkbox>
+      <vnt-checkbox v-model="checkboxChecked" value="dupa">v-model test</vnt-checkbox>
+      <vnt-checkbox disabled>Action Text</vnt-checkbox>
+      <vnt-checkbox disabled checked>Action Text</vnt-checkbox>
+
+      <p>toggleChecked: {{ toggleChecked }}</p>
+
+      <vnt-toggle :checked.sync="toggleChecked"></vnt-toggle>
+      <vnt-toggle v-model="toggleChecked">v-model test</vnt-toggle>
+      <vnt-toggle checked>Toggle 2</vnt-toggle>
+      <vnt-toggle disabled>Toggle</vnt-toggle>
+      <vnt-toggle disabled checked>Toggle</vnt-toggle>
+      <vnt-toggle label-on="Yes" label-off="No">Option</vnt-toggle>
+
+      <p>radioValue: {{ radioValue }}</p>
+
+      < !--
+      <input type="radio" name="test" value="123" checked v-model="radioValue" />
+      <input type="radio" name="test" value="345" v-model="radioValue" />
+      -- >
+
+      <div style="width: 300px">
+        <vnt-radio name="abc" value="123" v-model="radioValue">Radio 1</vnt-radio>
+        <vnt-radio name="abc" value="456" v-model="radioValue">Radio 2</vnt-radio>
+        <vnt-radio disabled>Radio 3 lorem ipsum dolor sit amet very long text</vnt-radio>
+      </div>
+
+      <vnt-input :value.sync="message"></vnt-input>
+      <vnt-input :value.sync="message" label="Password" type="password"></vnt-input>
+      <vnt-input v-model="message" label="abc" disabled></vnt-input>
+
+      <div style="width: 400px">
+        <vnt-slider>Control header</vnt-slider>
+
+        <vnt-slider disabled>Control header</vnt-slider>
+
+        <p>sliderValue: {{ sliderValue }}</p>
+        <vnt-slider step="5" v-model="sliderValue">Control header</vnt-slider>
+      </div>
+
+      <div style="width: 400px">
+        <vnt-select :options="optionsList" v-model="chosenValue">Control header</vnt-select>
+        <vnt-select :options="optionsList" v-model="chosenValue" disabled>Control header</vnt-select>
+      </div>
+
+      <div style="width: 400px">
+        <vnt-autosuggest :options="optionsList"></vnt-autosuggest>
+      </div>
+
+      <div style="margin: 100px 0">
+        <vnt-rating v-model="ratingValue"></vnt-rating>
+        <vnt-rating v-model="ratingValue" readonly></vnt-rating>
+        <vnt-rating v-model="ratingValue" disabled></vnt-rating>
+      </div>
+
+      <div style="margin: 100px 0">
+        <vnt-button :click="dialogToggle">Open dialog</vnt-button>
+
+        <vnt-dialog title="Confirm Delete Action" content="Are you sure you want to delete this item?"
+           :opened.sync="dialogVisible">
+          <vnt-dialog-btn-primary result="ok" default>OK</vnt-dialog-btn-primary>
+          <vnt-dialog-btn-secondary result="later">Ask me later</vnt-dialog-btn-secondary>
+          <vnt-dialog-btn-dismiss result="cancel">Cancel</vnt-dialog-btn-dismiss>
+        </vnt-dialog>
+      </div>
+      -->
+    </div>
+
+    <!--
+    <script src="https://unpkg.com/axe-core@3.1.2/axe.min.js"></script>
+    <script>
+    axe.run(function (err, results) {
+      if (err) throw err;
+        // ok(results.violations.length === 0, 'Should be no accessibility issues');
+        console.log(results);
+    });
+    </script>
+    -->
+</body>
+</html>
