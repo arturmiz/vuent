@@ -2,10 +2,17 @@
   "collectCoverageFrom": [
     "src/**/*.{js,vue}"
   ],
+  "coverageReporters": [
+    "cobertura",
+    "json",
+    "lcov",
+    "text",
+    "clover"
+  ],
   "moduleFileExtensions": [
-      "js",
-      "json",
-      "vue"
+    "js",
+    "json",
+    "vue"
   ],
   "moduleNameMapper": {
     "^@/(.*)$": "<rootDir>/src/$1"
@@ -17,7 +24,7 @@
     "**/__tests__/**/(*.)+(spec|test).js"
   ],
   "transform": {
-      "^.+\\.js$": "<rootDir>/node_modules/babel-jest",
-      ".*\\.(vue)$": "<rootDir>/node_modules/vue-jest"
+    "^.+\\.js$": "<rootDir>/node_modules/babel-jest",
+    ".*\\.(vue)$": "<rootDir>/node_modules/vue-jest"
   }
 }

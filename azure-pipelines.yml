@@ -31,6 +31,12 @@ stages:
           yarn test:ci -t $(CODECOV_TOKEN)
         displayName: 'unit'
 
+      - task: PublishCodeCoverageResults@1
+        inputs:
+          codeCoverageTool: Cobertura
+          summaryFileLocation: '$(System.DefaultWorkingDirectory)/coverage/cobertura-coverage.xml'
+          reportDirectory: '$(System.DefaultWorkingDirectory)/coverage'
+
 - stage: build
   jobs:
     - job: Linux
