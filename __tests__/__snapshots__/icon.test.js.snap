@@ -1,5 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Icon by default renders correctly 1`] = `<span class="vnt-icon"></span>`;
+exports[`Icon by default renders correctly 1`] = `<span class="vnt-icon"><!----></span>`;
 
-exports[`Icon given icon's key renders correctly 1`] = `<span class="vnt-icon vnt-icon--settings"></span>`;
+exports[`Icon given icon's key renders correctly 1`] = `<span class="vnt-icon" name="settings"><!----></span>`;

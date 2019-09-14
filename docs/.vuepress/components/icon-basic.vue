@@ -1,7 +1,5 @@
 <template>
-  <div class="playground">
-    <vnt-icon name="contact" />
-  </div>
+  <vnt-icon :name="name" />
 </template>
 
 <script>
@@ -11,6 +9,7 @@ export default {
   name: 'IconBasic',
   components: {
     VntIcon
-  }
+  },
+  props: ['name']
 }
 </script>

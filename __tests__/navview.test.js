@@ -1,4 +1,4 @@
-import { createLocalVue, mount } from '@vue/test-utils';
+import { createLocalVue, shallowMount, mount } from '@vue/test-utils';
 import { VntNavView } from '@/components';
 import { isInstalled } from './utils';
 
@@ -17,7 +17,7 @@ describe('NavView', () => {
   describe('by default', () => {
 
     beforeAll(() => {
-      wrapper = mount(VntNavView, {
+      wrapper = shallowMount(VntNavView, {
         localVue
       });
     });
@@ -33,9 +33,10 @@ describe('NavView', () => {
   });
 
   describe('generates correct structure', () => {
+    let componentConfig;
 
     beforeAll(() => {
-      wrapper = mount(VntNavView, {
+      componentConfig = {
         localVue,
         propsData: {
           paneTitle: 'App name',
@@ -54,14 +55,17 @@ describe('NavView', () => {
             </vnt-navview-content>
           `
         }
-      });
+      };
     });
 
     test('renders correctly', () => {
+      wrapper = shallowMount(VntNavView, componentConfig);
       expect(wrapper).toMatchSnapshot();
     });
 
     test('pane can be toggled', () => {
+      wrapper = mount(VntNavView, componentConfig);
+
       const menuButton = wrapper.find('.vnt-navview__pane-toggle');
       menuButton.trigger('click');
 
