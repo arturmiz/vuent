@@ -7,6 +7,7 @@ export { default as VntHeader } from './header';
 export { default as VntIcon } from './icon';
 export { default as VntInput } from './input';
 export { default as VntLink } from './link';
+export { default as VntListView } from './listview';
 export { default as VntNavView } from './navview';
 export { default as VntRadio } from './radio';
 export { default as VntRating } from './rating';

@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ListView renders correctly simple static list 1`] = `
+<div role="list" class="vnt-listview">
+  <div role="listitem" class="vnt-listview-item">
+    Banana
+  </div>
+  <div role="listitem" class="vnt-listview-item">
+    Apple
+  </div>
+  <div role="listitem" class="vnt-listview-item">
+    Orange
+  </div>
+</div>
+`;
