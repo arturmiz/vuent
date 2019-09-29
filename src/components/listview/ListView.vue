@@ -6,14 +6,22 @@
 </template>
 
 <script>
+import { SELECTION_MODE } from './SelectionMode';
+
 export default {
   name: 'VntListview',
 
   props: {
     selectionMode: {
       type: String,
-      default: 'none'
+      default: SELECTION_MODE.none
     }
+  },
+
+  provide() {
+    return {
+      selectionMode: this.selectionMode
+    };
   }
 };
 </script>

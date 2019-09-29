@@ -45,4 +45,27 @@ describe('ListView', () => {
     });
     expect(wrapper).toMatchSnapshot();
   });
+
+  test('renders correctly single selection list', () => {
+    wrapper = shallowMount(VntListView, {
+      localVue,
+      propsData: {
+        selectionMode: 'single',
+      },
+      slots: {
+        default: `
+         <vnt-listview-item>
+          Banana
+         </vnt-listview-item>
+         <vnt-listview-item>
+          Apple
+         </vnt-listview-item>
+         <vnt-listview-item>
+          Orange
+         </vnt-listview-item>
+        `
+      }
+    });
+    expect(wrapper).toMatchSnapshot();
+  });
 });

@@ -1,3 +1,3 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`ListViewItem by default renders correctly 1`] = `<div role="listitem" class="vnt-listview-item"></div>`;
+exports[`ListViewItem by default renders correctly 1`] = `<div role="listitem" tabindex="0" class="vnt-listview-item"></div>`;
