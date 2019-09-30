@@ -1,5 +1,6 @@
 import { createLocalVue, shallowMount } from '@vue/test-utils';
 import { VntListView } from '@/components';
+import { SELECTION_MODE } from '@/components/listview/SelectionMode';
 import { isInstalled } from './utils';
 
 describe('ListView', () => {
@@ -20,8 +21,8 @@ describe('ListView', () => {
       wrapper = shallowMount(VntListView);
     });
 
-    test('selectionMode is none', () => {
-      expect(wrapper.vm.selectionMode).toBe('none');
+    test(`selectionMode is '${SELECTION_MODE.none}'`, () => {
+      expect(wrapper.vm.selectionMode).toBe(SELECTION_MODE.none);
     });
 
   });
@@ -50,7 +51,7 @@ describe('ListView', () => {
     wrapper = shallowMount(VntListView, {
       localVue,
       propsData: {
-        selectionMode: 'single',
+        selectionMode: SELECTION_MODE.single,
       },
       slots: {
         default: `
