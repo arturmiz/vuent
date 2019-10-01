@@ -139,8 +139,8 @@ stages:
         displayName: 'build'
 
       - script: |
-          echo $(BuildID)
-          npm --no-git-tag-version version prerelease --preid=$(BuildID)
+          echo $(Build)
+          npm --no-git-tag-version version prerelease --preid=$(Build.BuildID)
         displayName: 'version bump'
 
       - task: CopyFiles@2
