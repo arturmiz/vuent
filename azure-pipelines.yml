@@ -146,7 +146,8 @@ stages:
           echo Build.BuildID
           echo Build.BuildId
           echo $(Build.BuildNumber)
-          npm --no-git-tag-version version prerelease --preid='$(Build.BuildID)'
+          # npm --no-git-tag-version version prerelease --preid='$(Build.BuildID)'
+          yarn version --prerelease --preid $(Build.BuildID) --no-git-tag-version --no-commit-hooks
         displayName: 'version bump'
 
       - task: CopyFiles@2
