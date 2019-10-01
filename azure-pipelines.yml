@@ -121,7 +121,7 @@ stages:
         artifact: website
 
 - stage: prerelease
-  condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/master'))
+  # condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/master'))
   jobs:
     - job: artifact
       pool:
@@ -139,7 +139,7 @@ stages:
         displayName: 'build'
 
       - powershell: |
-          npm --no-git-tag-version version prerelease --preid=$(Build.BuildId)
+          npm --no-git-tag-version version prerelease --preid=$(BuildId)
         displayName: 'version bump'
 
       - task: CopyFiles@2
