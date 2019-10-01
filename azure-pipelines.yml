@@ -138,7 +138,8 @@ stages:
           yarn build
         displayName: 'build'
 
-      - powershell: |
+      - script: |
+          echo $(BuildID)
           npm --no-git-tag-version version prerelease --preid=$(BuildID)
         displayName: 'version bump'
 
