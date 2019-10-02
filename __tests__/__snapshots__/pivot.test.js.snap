@@ -1,0 +1,46 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Pivot by default renders correctly 1`] = `
+<div class="vnt-pivot">
+  <ul class="vnt-pivot__navigation"></ul>
+  <div class="vnt-pivot__container"></div>
+</div>
+`;
+
+exports[`Pivot generates correct stucture renders correctly 1`] = `
+<div class="vnt-pivot">
+  <ul class="vnt-pivot__navigation">
+    <li class="vnt-pivot__header vnt-pivot__header--active">Pivot Item 1</li>
+    <li class="vnt-pivot__header">Pivot Item 2</li>
+    <li class="vnt-pivot__header">Pivot Item 3</li>
+  </ul>
+  <div class="vnt-pivot__container">
+    <div class="vnt-pivot-item vnt-pivot-item--active">
+      <div>Item 1</div>
+    </div>
+    <div class="vnt-pivot-item">
+      <p>Item 2</p>
+    </div>
+    <div class="vnt-pivot-item">
+      <p>Item 3</p>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Pivot once a tab is clicked renders correctly 1`] = `
+<div class="vnt-pivot">
+  <ul class="vnt-pivot__navigation">
+    <li class="vnt-pivot__header">Pivot Item 1</li>
+    <li class="vnt-pivot__header vnt-pivot__header--active">Pivot Item 2</li>
+  </ul>
+  <div class="vnt-pivot__container">
+    <div class="vnt-pivot-item">
+      <p>Item 1</p>
+    </div>
+    <div class="vnt-pivot-item vnt-pivot-item--active">
+      <p>Item 2</p>
+    </div>
+  </div>
+</div>
+`;

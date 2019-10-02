@@ -12,12 +12,12 @@ import {
   VntLink,
   VntNavView,
   VntListView,
+  VntPivot,
   VntRadio,
   VntRating,
   VntSelect,
   VntSlider,
   VntToggle,
-  VntTabs,
 } from '@/components';
 
 import Vuent from '@/';
@@ -47,12 +47,13 @@ describe('Vuent', () => {
       expect(isInstalled(localVue, VntLink)).toBe(true);
       expect(isInstalled(localVue, VntListView)).toBe(true);
       expect(isInstalled(localVue, VntNavView)).toBe(true);
+      expect(isInstalled(localVue, VntPivot)).toBe(true);
       expect(isInstalled(localVue, VntRadio)).toBe(true);
       expect(isInstalled(localVue, VntRating)).toBe(true);
       expect(isInstalled(localVue, VntSelect)).toBe(true);
       expect(isInstalled(localVue, VntSlider)).toBe(true);
       expect(isInstalled(localVue, VntToggle)).toBe(true);
-      expect(isInstalled(localVue, VntTabs)).toBe(true);
+
       expect(countInstalledPlugins(localVue)).toBe(16);
     });
 
