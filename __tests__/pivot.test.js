@@ -36,7 +36,7 @@ describe('Pivot', () => {
             <vnt-pivot-item label="Pivot Item 2">
               <p>Item 2</p>
             </vnt-pivot-item>
-            <vnt-pivot-item label="Pivot 3">
+            <vnt-pivot-item label="Pivot Item 3">
               <p>Item 3</p>
             </vnt-pivot-item>`
         }
@@ -64,7 +64,7 @@ describe('Pivot', () => {
         }
       });
 
-      const label = wrapper.findAll('.vnt-pivot-items__header').at(1);
+      const label = wrapper.findAll('.vnt-pivot__header').at(1);
       label.trigger('click');
     });
 
