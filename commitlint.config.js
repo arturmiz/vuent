@@ -13,11 +13,11 @@ module.exports = {
         'link',
         'listview',
         'navview',
+        'pivot',
         'radio',
         'rating',
         'select',
         'slider',
-        'tabs',
         'toggle',
         'website'
       ]
