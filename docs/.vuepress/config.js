@@ -37,11 +37,11 @@ module.exports = {
           '/components/icon',
           '/components/input',
           '/components/link',
+          '/components/pivot',
           '/components/radio',
           '/components/rating',
           '/components/select',
           '/components/slider',
-          '/components/tabs',
           '/components/toggle',
         ]
       },

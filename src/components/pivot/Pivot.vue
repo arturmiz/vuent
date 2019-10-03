@@ -1,7 +1,7 @@
 <style lang="scss">
 @import '../../scss/mixins/component';
 
-.vnt-tabs {
+.vnt-pivot {
   @include component-base;
 
   color: #000100;
@@ -9,13 +9,13 @@
   margin: 10px 0;
 }
 
-.vnt-tabs__navigation {
+.vnt-pivot__navigation {
   margin: 0;
   padding: 0;
   list-style: none;
 }
 
-.vnt-tabs__header {
+.vnt-pivot__header {
   display: inline-block;
   padding: 0 0 8px 0;
   margin: 0 8px;
@@ -31,7 +31,7 @@
   }
 }
 
-.vnt-tabs__tab {
+.vnt-pivot-item {
   display: none;
   margin: 15px 0;
 
@@ -42,11 +42,11 @@
 </style>
 
 <script>
-const ACTIVE_HEADER_CLASS = 'vnt-tabs__header--active';
-const ACTIVE_TAB_CLASS = 'vnt-tabs__tab--active';
+const ACTIVE_HEADER_CLASS = 'vnt-pivot__header--active';
+const ACTIVE_ITEM_CLASS = 'vnt-pivot-item--active';
 
 export default {
-  name: 'VntTabs',
+  name: 'VntPivot',
 
   data() {
     return {
@@ -55,35 +55,35 @@ export default {
   },
 
   methods: {
-    switchTab(tabIndex) {
+    switchItem(itemIndex) {
       for(let i=0; i < this.length; i++) {
         this.$refs[`nav-${i}`].classList.remove(ACTIVE_HEADER_CLASS);
-        this.$refs[`tab-${i}`].classList.remove(ACTIVE_TAB_CLASS);
+        this.$refs[`item-${i}`].classList.remove(ACTIVE_ITEM_CLASS);
       }
 
-      this.$refs[`nav-${tabIndex}`].classList.add(ACTIVE_HEADER_CLASS);
-      this.$refs[`tab-${tabIndex}`].classList.add(ACTIVE_TAB_CLASS);
+      this.$refs[`nav-${itemIndex}`].classList.add(ACTIVE_HEADER_CLASS);
+      this.$refs[`item-${itemIndex}`].classList.add(ACTIVE_ITEM_CLASS);
     }
   },
 
   render(createElement) {
     const slots = this.$slots.default || [];
     const headers = [];
-    const tabs = [];
+    const items = [];
 
     slots
-      .filter(tab => tab.tag === 'vnt-tab')
-      .forEach((tab, index) => {
-        const attrs = tab.data.attrs;
+      .filter(pivotItem => pivotItem.tag === 'vnt-pivot-item')
+      .forEach((pivotItem, index) => {
+        const attrs = pivotItem.data.attrs;
         const isActive = Object.keys(attrs).indexOf('active') > -1;
 
         const header = createElement('li', {
-          staticClass: 'vnt-tabs__header',
+          staticClass: 'vnt-pivot__header',
           class: {
             [ACTIVE_HEADER_CLASS]: isActive
           },
           on: {
-            click: this.switchTab.bind(this, index)
+            click: this.switchItem.bind(this, index)
           },
           ref: `nav-${index}`,
           key: `nav-${index}`
@@ -92,28 +92,28 @@ export default {
         headers.push(header);
 
         const content = createElement('div', {
-          staticClass: 'vnt-tabs__tab',
+          staticClass: 'vnt-pivot-item',
           class: {
-            [ACTIVE_TAB_CLASS]: isActive
+            [ACTIVE_ITEM_CLASS]: isActive
           },
-          ref: `tab-${index}`,
-          key: `tab-${index}`
-        }, tab.children);
+          ref: `item-${index}`,
+          key: `item-${index}`
+        }, pivotItem.children);
 
-        tabs.push(content);
+        items.push(content);
       });
 
-    this.length = tabs.length;
+    this.length = items.length;
 
     return createElement('div', {
-      staticClass: 'vnt-tabs'
+      staticClass: 'vnt-pivot'
     }, [
       createElement('ul', {
-        staticClass: 'vnt-tabs__navigation'
+        staticClass: 'vnt-pivot__navigation'
       }, headers),
       createElement('div', {
-        staticClass: 'vnt-tabs__container'
-      }, tabs)
+        staticClass: 'vnt-pivot__container'
+      }, items)
     ]);
   }
 };

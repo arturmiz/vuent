@@ -1,21 +1,21 @@
 import { createLocalVue, mount } from '@vue/test-utils';
-import { VntTabs } from '@/components';
+import { VntPivot } from '@/components';
 import { isInstalled } from './utils';
 
-describe('Tabs', () => {
+describe('Pivot', () => {
   let wrapper;
 
   test('can be installed separately', () => {
     const localVue = createLocalVue();
-    localVue.use(VntTabs);
+    localVue.use(VntPivot);
 
-    expect(isInstalled(localVue, VntTabs)).toBe(true);
+    expect(isInstalled(localVue, VntPivot)).toBe(true);
   });
 
   describe('by default', () => {
 
     beforeAll(() => {
-      wrapper = mount(VntTabs);
+      wrapper = mount(VntPivot);
     });
 
     test('renders correctly', () => {
@@ -27,18 +27,18 @@ describe('Tabs', () => {
   describe('generates correct stucture', () => {
 
     beforeAll(() => {
-      wrapper = mount(VntTabs, {
+      wrapper = mount(VntPivot, {
         slots: {
           default: `
-            <vnt-tab label="Pivot Item 1" active>
-              <div>Tab 1</div>
-            </vnt-tab>
-            <vnt-tab label="Pivot Item 2">
-              <p>Tab 2</p>
-            </vnt-tab>
-            <vnt-tab label="Tab 3">
-              <p>Tab 3</p>
-            </vnt-tab>`
+            <vnt-pivot-item label="Pivot Item 1" active>
+              <div>Item 1</div>
+            </vnt-pivot-item>
+            <vnt-pivot-item label="Pivot Item 2">
+              <p>Item 2</p>
+            </vnt-pivot-item>
+            <vnt-pivot-item label="Pivot Item 3">
+              <p>Item 3</p>
+            </vnt-pivot-item>`
         }
       });
     });
@@ -52,19 +52,19 @@ describe('Tabs', () => {
   describe('once a tab is clicked', () => {
 
     beforeAll(() => {
-      wrapper = mount(VntTabs, {
+      wrapper = mount(VntPivot, {
         slots: {
           default: `
-            <vnt-tab label="Pivot Item 1" active>
-              <p>Tab 1</p>
-            </vnt-tab>
-            <vnt-tab label="Pivot Item 2">
-              <p>Tab 2</p>
-            </vnt-tab>`
+            <vnt-pivot-item label="Pivot Item 1" active>
+              <p>Item 1</p>
+            </vnt-pivot-item>
+            <vnt-pivot-item label="Pivot Item 2">
+              <p>Item 2</p>
+            </vnt-pivot-item>`
         }
       });
 
-      const label = wrapper.findAll('.vnt-tabs__header').at(1);
+      const label = wrapper.findAll('.vnt-pivot__header').at(1);
       label.trigger('click');
     });
 
