@@ -37,6 +37,7 @@ module.exports = {
           '/components/icon',
           '/components/input',
           '/components/link',
+          '/components/listview',
           '/components/pivot',
           '/components/radio',
           '/components/rating',
