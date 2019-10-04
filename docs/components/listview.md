@@ -14,7 +14,7 @@
 </vnt-listview>
 ```
 
-## SelectionMode
+## Selectable
 
 <listview-selection-single />
 
