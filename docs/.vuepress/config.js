@@ -38,6 +38,7 @@ module.exports = {
           '/components/input',
           '/components/link',
           '/components/listview',
+          '/components/navview',
           '/components/pivot',
           '/components/radio',
           '/components/rating',
