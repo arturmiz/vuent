@@ -1,5 +1,6 @@
 <template>
   <div class="vnt-listview"
+       :class="{'vnt-listview--selectable': selectionMode === 'single'}"
        role="list">
     <slot></slot>
   </div>

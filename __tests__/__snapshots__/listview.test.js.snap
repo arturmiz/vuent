@@ -15,14 +15,14 @@ exports[`ListView renders correctly simple static list 1`] = `
 `;
 
 exports[`ListView renders correctly single selection list 1`] = `
-<div role="list" class="vnt-listview">
-  <div role="listitem" tabindex="0" class="vnt-listview-item vnt-listview-item--selectable">
+<div role="list" class="vnt-listview vnt-listview--selectable">
+  <div role="listitem" tabindex="0" class="vnt-listview-item">
     Banana
   </div>
-  <div role="listitem" tabindex="0" class="vnt-listview-item vnt-listview-item--selectable">
+  <div role="listitem" tabindex="0" class="vnt-listview-item">
     Apple
   </div>
-  <div role="listitem" tabindex="0" class="vnt-listview-item vnt-listview-item--selectable">
+  <div role="listitem" tabindex="0" class="vnt-listview-item">
     Orange
   </div>
 </div>

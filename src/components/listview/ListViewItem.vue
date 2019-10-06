@@ -1,6 +1,5 @@
 <template>
   <div class="vnt-listview-item"
-       :class="{'vnt-listview-item--selectable': selectionMode === 'single'}"
        role="listitem"
        tabindex="0"
        @click="handleClick">
@@ -46,10 +45,9 @@ export default {
   padding: 4px 12px;
   box-sizing: border-box;
   height: 40px;
-  font-size: 14px;
   outline: none;
 
-  &--selectable {
+  .vnt-listview--selectable & {
     &:focus {
       outline: auto;
     }
