@@ -19,13 +19,17 @@ export default {
     click: {
       type: Function,
       default: undefined
+    },
+    item: {
+      type: [Object, String, Number],
+      default: undefined
     }
   },
 
   methods: {
     handleClick(...args) {
       if (typeof this.click === 'function' && this.selectionMode === SELECTION_MODE.single) {
-        this.click(...args);
+        this.click(...args, this.item);
       }
     }
   }

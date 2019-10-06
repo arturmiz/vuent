@@ -19,6 +19,10 @@ describe('ListViewItem', () => {
       expect(wrapper.vm.click).toBeUndefined();
     });
 
+    test('item is undefined', () => {
+      expect(wrapper.vm.item).toBeUndefined();
+    });
+
     test('renders correctly', () => {
       expect(wrapper).toMatchSnapshot();
     });
@@ -55,7 +59,8 @@ describe('ListViewItem', () => {
 
       wrapper = shallowMount(ListViewItem, {
         propsData: {
-          click: clickHandler
+          click: clickHandler,
+          item: 'Some item'
         },
         provide: {
           selectionMode: SELECTION_MODE.single
@@ -64,7 +69,7 @@ describe('ListViewItem', () => {
 
       wrapper.trigger('click');
 
-      expect(clickHandler).toHaveBeenCalledTimes(1);
+      expect(clickHandler).toHaveBeenCalledWith(new MouseEvent('click'), 'Some item');
     });
 
   });
