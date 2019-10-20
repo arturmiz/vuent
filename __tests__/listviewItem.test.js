@@ -33,6 +33,18 @@ describe('ListViewItem', () => {
       }).not.toThrow();
     });
 
+    test('by default does not emit pick event', () => {
+      wrapper = shallowMount(ListViewItem, {
+        provide: {
+          selectionMode: SELECTION_MODE.none
+        }
+      });
+
+      wrapper.trigger('click');
+
+      expect(wrapper.emitted()).toEqual({});
+    });
+
     test(`emits correct pick event when selectionMode is '${SELECTION_MODE.single}'`, () => {
       const item = 'Some item';
 
