@@ -15,10 +15,6 @@ describe('ListViewItem', () => {
       });
     });
 
-    test('click is undefined', () => {
-      expect(wrapper.vm.click).toBeUndefined();
-    });
-
     test('item is undefined', () => {
       expect(wrapper.vm.item).toBeUndefined();
     });
@@ -37,13 +33,8 @@ describe('ListViewItem', () => {
       }).not.toThrow();
     });
 
-    test('by default does not trigger click', () => {
-      const clickHandler = jest.fn();
-
+    test('by default does not emit pick event', () => {
       wrapper = shallowMount(ListViewItem, {
-        propsData: {
-          click: clickHandler
-        },
         provide: {
           selectionMode: SELECTION_MODE.none
         }
@@ -51,16 +42,15 @@ describe('ListViewItem', () => {
 
       wrapper.trigger('click');
 
-      expect(clickHandler).not.toHaveBeenCalled();
+      expect(wrapper.emitted()).toEqual({});
     });
 
-    test(`trigger click when selectionMode is '${SELECTION_MODE.single}'`, () => {
-      const clickHandler = jest.fn();
+    test(`emits correct pick event when selectionMode is '${SELECTION_MODE.single}'`, () => {
+      const item = 'Some item';
 
       wrapper = shallowMount(ListViewItem, {
         propsData: {
-          click: clickHandler,
-          item: 'Some item'
+          item
         },
         provide: {
           selectionMode: SELECTION_MODE.single
@@ -69,7 +59,7 @@ describe('ListViewItem', () => {
 
       wrapper.trigger('click');
 
-      expect(clickHandler).toHaveBeenCalledWith(new MouseEvent('click'), 'Some item');
+      expect(wrapper.emitted()['pick'][0]).toEqual([item]);
     });
 
   });

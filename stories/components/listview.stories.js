@@ -33,13 +33,13 @@ storiesOf('ListView', module)
       };
     },
     methods: {
-      pickFruit: action('click')
+      pickFruit: action('pick')
     },
     template: `
       <vnt-listview selectionMode="single">
         <vnt-listview-item
           v-for="item in items" :key="item"
-          :click="pickFruit"
+          @pick="pickFruit"
           :item="item">
           {{ item }}
         </vnt-listview-item>

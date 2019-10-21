@@ -20,7 +20,7 @@
 
 ```html
 <vnt-listview selectionMode="single">
-  <vnt-listview-item v-for="fruit in fruits" :key="fruit" :click="pickFruit">
+  <vnt-listview-item v-for="fruit in fruits" :key="fruit" @pick="pickFruit">
     {{ fruit }}
   </vnt-listview-item>
 </vnt-listview>

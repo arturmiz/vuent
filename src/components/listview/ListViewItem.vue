@@ -16,10 +16,6 @@ export default {
   inject: ['selectionMode'],
 
   props: {
-    click: {
-      type: Function,
-      default: undefined
-    },
     item: {
       type: [Object, String, Number],
       default: undefined
@@ -27,9 +23,9 @@ export default {
   },
 
   methods: {
-    handleClick(...args) {
-      if (typeof this.click === 'function' && this.selectionMode === SELECTION_MODE.single) {
-        this.click(...args, this.item);
+    handleClick() {
+      if (this.selectionMode === SELECTION_MODE.single) {
+        this.$emit('pick', this.item);
       }
     }
   }

@@ -2,7 +2,9 @@
   <div class="playground">
     <div style="max-width: 300px">
       <vnt-listview selectionMode="single">
-        <vnt-listview-item v-for="fruit in fruits" :key="fruit" :click="pickFruit" :item="fruit">
+        <vnt-listview-item
+          v-for="fruit in fruits" :key="fruit" :item="fruit"
+          @pick="pickFruit">
           {{ fruit }}
         </vnt-listview-item>
       </vnt-listview>
@@ -21,7 +23,7 @@ export default {
     VntListviewItem: VntListViewItem
   },
   methods: {
-    pickFruit(event, fruit) {
+    pickFruit(fruit) {
       window.alert(fruit)
     }
   },
