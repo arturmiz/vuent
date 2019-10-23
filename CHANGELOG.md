@@ -1,3 +1,18 @@
+<a name="0.6.0"></a>
+# [0.6.0](https://github.com/arturmiz/vuent/compare/v0.5.0...v0.6.0) (2019-10-23)
+
+
+### Features
+
+* **tabs:** renamed Tabs to Pivot ([b07a2db](https://github.com/arturmiz/vuent/commit/b07a2db))
+* **button:** primary button mode ([#53](https://github.com/arturmiz/vuent/issues/53)) ([61957be](https://github.com/arturmiz/vuent/commit/61957be))
+* **dialog:** default button support ([#56](https://github.com/arturmiz/vuent/issues/56)) ([0036354](https://github.com/arturmiz/vuent/commit/0036354))
+* **icon:** initial implementation  ([#63](https://github.com/arturmiz/vuent/issues/63)) ([14d7c8b](https://github.com/arturmiz/vuent/commit/14d7c8b))
+* **listview:** basic implementation ([#84](https://github.com/arturmiz/vuent/issues/84)) ([a6d115a](https://github.com/arturmiz/vuent/commit/a6d115a))
+* **navview:** initial implementation ([#62](https://github.com/arturmiz/vuent/issues/62)) ([2013d34](https://github.com/arturmiz/vuent/commit/2013d34))
+
+
+
 <a name="0.5.0"></a>
 # [0.5.0](https://github.com/arturmiz/vuent/compare/v0.4.0...v0.5.0) (2019-01-29)
 
