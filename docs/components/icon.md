@@ -16,6 +16,7 @@ Currently supported glyphs:
 
 `name` | icon
 --- |:---:
+add | <icon-basic name="add" />
 close | <icon-basic name="close" />
 contact | <icon-basic name="contact" />
 delete | <icon-basic name="delete" />

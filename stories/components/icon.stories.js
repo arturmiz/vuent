@@ -3,6 +3,11 @@ import { storiesOf } from '@storybook/vue';
 /* eslint no-undef: 0,
           no-unused-vars: 0 */
 storiesOf('Icon', module)
+  .add('add', () => ({
+    render: (h) => (
+      <vnt-icon name="add" />
+    )
+  }))
   .add('close', () => ({
     render: (h) => (
       <vnt-icon name="close" />

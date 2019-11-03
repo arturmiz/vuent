@@ -1,4 +1,5 @@
 <script>
+import VntIconAdd from './icons/Add.vue';
 import VntIconClose from './icons/Close.vue';
 import VntIconContact from './icons/Contact.vue';
 import VntIconDelete from './icons/Delete.vue';
@@ -12,6 +13,8 @@ import VntIconTag from './icons/Tag.vue';
 
 export function resolveIcon(name) {
   switch (name) {
+  case 'add':
+    return VntIconAdd;
   case 'close':
     return VntIconClose;
   case 'contact':
@@ -44,6 +47,7 @@ export default {
   functional: true,
 
   components: {
+    VntIconAdd,
     VntIconClose,
     VntIconContact,
     VntIconDelete,
