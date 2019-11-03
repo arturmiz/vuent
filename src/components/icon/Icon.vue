@@ -1,23 +1,38 @@
 <script>
+import VntIconClose from './icons/Close.vue';
 import VntIconContact from './icons/Contact.vue';
+import VntIconDelete from './icons/Delete.vue';
 import VntIconEdit from './icons/Edit.vue';
+import VntIconFlag from './icons/Flag.vue';
 import VntIconGlobalNav from './icons/GlobalNavigation.vue';
+import VntIconHome from './icons/Home.vue';
 import VntIconSave from './icons/Save.vue';
 import VntIconSettings from './icons/Settings.vue';
+import VntIconTag from './icons/Tag.vue';
 
 export function resolveIcon(name) {
   switch (name) {
+  case 'close':
+    return VntIconClose;
   case 'contact':
     return VntIconContact;
+  case 'delete':
+    return VntIconDelete;
   case 'edit':
     return VntIconEdit;
+  case 'flag':
+    return VntIconFlag;
   case 'global-nav':
   case 'global-navigation':
     return VntIconGlobalNav;
+  case 'home':
+    return VntIconHome;
   case 'save':
     return VntIconSave;
   case 'settings':
     return VntIconSettings;
+  case 'tag':
+    return VntIconTag;
   default:
     return null;
   }
@@ -29,11 +44,16 @@ export default {
   functional: true,
 
   components: {
+    VntIconClose,
     VntIconContact,
+    VntIconDelete,
     VntIconEdit,
+    VntIconFlag,
     VntIconGlobalNav,
+    VntIconHome,
     VntIconSave,
-    VntIconSettings
+    VntIconSettings,
+    VntIconTag
   },
 
   props: {
