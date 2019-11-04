@@ -65,6 +65,9 @@ export default [
           }
         }
       }),
+      css({
+        output: false
+      })
     ],
     external
   }
