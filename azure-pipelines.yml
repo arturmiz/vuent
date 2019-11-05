@@ -61,7 +61,7 @@ stages:
       steps:
       - task: NodeTool@0
         inputs:
-          versionSpec: '8.x'
+          versionSpec: '10.x'
         displayName: 'install Node.js'
 
       - powershell: |
