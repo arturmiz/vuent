@@ -1,15 +1,14 @@
 <template>
   <li class="vnt-navview__item"
       :class="{'vnt-navview__item--active': active}">
-    <a href="#"
-       class="vnt-navview__item-link"
-       @click="handleClick">
+    <span class="vnt-navview__item-link"
+          @click="handleClick">
       <vnt-icon :name="icon"
                 class="vnt-navview__item-icon" />
       <span class="vnt-navview__item-label">
         <slot></slot>
       </span>
-    </a>
+    </span>
   </li>
 </template>
 
@@ -69,9 +68,13 @@ export default {
 .vnt-navview__item-link {
   width: 100%;
   color: #000100;
-  text-decoration: none;
   display: flex;
   align-items: center;
+
+  a {
+    color: #000100;
+    text-decoration: none;
+  }
 }
 
 .vnt-navview__item-icon {
