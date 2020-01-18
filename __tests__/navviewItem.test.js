@@ -4,6 +4,8 @@ import VntNavviewItem from '@/components/navview/MenuItem.vue';
 describe('NavviewItem', () => {
   let wrapper;
 
+  const linkSelector = '.vnt-navview__item-link';
+
   describe('by default', () => {
 
     beforeAll(() => {
@@ -28,7 +30,7 @@ describe('NavviewItem', () => {
 
     test('when clicked, no error is thrown', () => {
       expect(() => {
-        wrapper.find('a').trigger('click');
+        wrapper.find(linkSelector).trigger('click');
       }).not.toThrow();
     });
 
@@ -67,7 +69,7 @@ describe('NavviewItem', () => {
     });
 
     test('when clicked, click handler is invoked', () => {
-      wrapper.find('a').trigger('click');
+      wrapper.find(linkSelector).trigger('click');
       expect(mockClick).toHaveBeenCalled();
     });
 
