@@ -12,7 +12,9 @@ storiesOf('NavView', module)
         <vnt-navview-items>
           <vnt-navview-item-header>Nav item header</vnt-navview-item-header>
           <vnt-navview-item icon="save" active>Link 1</vnt-navview-item>
-          <vnt-navview-item icon="edit">Link 2</vnt-navview-item>
+          <vnt-navview-item icon="edit">
+            <a href="javascript:alert('Hi!')">Link 2</a>
+          </vnt-navview-item>
           <vnt-navview-item icon="contact">Link 3</vnt-navview-item>
           <vnt-navview-item-separator></vnt-navview-item-separator>
           <vnt-navview-item>Link 4</vnt-navview-item>

@@ -41,9 +41,8 @@ export default {
     handleClick(event) {
       if (typeof this.click === 'function') {
         this.click();
+        event.preventDefault();
       }
-
-      event.preventDefault();
     }
   }
 };
@@ -70,6 +69,7 @@ export default {
   color: #000100;
   display: flex;
   align-items: center;
+  cursor: pointer;
 
   a {
     color: #000100;
