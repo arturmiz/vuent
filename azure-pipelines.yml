@@ -146,6 +146,7 @@ stages:
         artifact: vuent
 
       - script: |
+          yarn install --frozen-lockfile
           yarn version --prerelease --preid $(Build.BuildID) --no-git-tag-version --no-commit-hooks
         displayName: 'version bump'
 
