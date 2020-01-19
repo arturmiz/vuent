@@ -8,7 +8,7 @@ stages:
       steps:
       - task: NodeTool@0
         inputs:
-          versionSpec: '8.x'
+          versionSpec: '12.x'
         displayName: 'Install Node.js'
 
       - script: |
@@ -23,7 +23,7 @@ stages:
       steps:
       - task: NodeTool@0
         inputs:
-          versionSpec: '8.x'
+          versionSpec: '12.x'
         displayName: 'Install Node.js'
 
       - script: |
@@ -46,7 +46,7 @@ stages:
       steps:
       - task: NodeTool@0
         inputs:
-          versionSpec: '8.x'
+          versionSpec: '12.x'
         displayName: 'Install Node.js'
 
       - script: |
@@ -60,6 +60,7 @@ stages:
           contents: |
             dist/*
             README.md
+            CHANGELOG.md
             LICENSE
             package.json
           targetFolder: '$(Build.ArtifactStagingDirectory)'
@@ -75,7 +76,7 @@ stages:
     #   steps:
     #   - task: NodeTool@0
     #     inputs:
-    #       versionSpec: '8.x'
+    #       versionSpec: '12.x'
     #     displayName: 'install Node.js'
 
     #   - powershell: |
@@ -89,6 +90,7 @@ stages:
     #       contents: |
     #         dist/*
     #         README.md
+    #         CHANGELOG.md
     #         LICENSE
     #         package.json
     #       targetFolder: '$(Build.ArtifactStagingDirectory)'
@@ -106,7 +108,7 @@ stages:
       steps:
       - task: NodeTool@0
         inputs:
-          versionSpec: '8.x'
+          versionSpec: '12.x'
         displayName: 'install Node.js'
 
       - script: |
@@ -123,7 +125,7 @@ stages:
       steps:
       - task: NodeTool@0
         inputs:
-          versionSpec: '8.x'
+          versionSpec: '12.x'
         displayName: 'install Node.js'
 
       - script: |
@@ -139,20 +141,14 @@ stages:
   jobs:
     - job: artifact
       pool:
-        vmImage: 'vs2017-win2016'
+        vmImage: 'ubuntu-16.04'
 
       steps:
-      - task: NodeTool@0
-        inputs:
-          versionSpec: '8.x'
-        displayName: 'install Node.js'
+      - download: current
+        artifact: vuent
 
-      - powershell: |
+      - script: |
           yarn install --frozen-lockfile
-          yarn build
-        displayName: 'build'
-
-      - powershell: |
           yarn version --prerelease --preid $(Build.BuildID) --no-git-tag-version --no-commit-hooks
         displayName: 'version bump'
 
@@ -162,6 +158,7 @@ stages:
           contents: |
             dist/*
             README.md
+            CHANGELOG.md
             LICENSE
             package.json
           targetFolder: '$(Build.ArtifactStagingDirectory)/artifact'
