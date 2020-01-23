@@ -141,7 +141,7 @@ export default {
       }
     }
 
-    @media screen and (min-width: 641px) {
+    @media screen and (min-width: 641px) and (max-width: 1007px) {
       width: 48px;
       padding: 12px;
       overflow: hidden;
@@ -155,6 +155,10 @@ export default {
       width: 320px;
       padding: 12px;
       overflow: hidden;
+
+      .vnt-navview__pane-title {
+        visibility: visible;
+      }
 
       .vnt-navview__pane-toggle {
         display: none;
