@@ -1,6 +1,7 @@
 import './Vnt.vue';
 export { default as VntAutosuggest } from './autosuggest';
 export { default as VntButton } from './button';
+export { default as VntCalendarView } from './calendarview';
 export { default as VntCheckbox } from './checkbox';
 export { default as VntDialog } from './dialog';
 export { default as VntHeader } from './header';

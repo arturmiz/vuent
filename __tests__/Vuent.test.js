@@ -4,6 +4,7 @@ import { isInstalled, countInstalledPlugins } from './utils';
 import {
   VntAutosuggest,
   VntButton,
+  VntCalendarView,
   VntCheckbox,
   VntDialog,
   VntHeader,
@@ -39,6 +40,7 @@ describe('Vuent', () => {
     test('installs all components', () => {
       expect(isInstalled(localVue, VntAutosuggest)).toBe(true);
       expect(isInstalled(localVue, VntButton)).toBe(true);
+      expect(isInstalled(localVue, VntCalendarView)).toBe(true);
       expect(isInstalled(localVue, VntCheckbox)).toBe(true);
       expect(isInstalled(localVue, VntDialog)).toBe(true);
       expect(isInstalled(localVue, VntHeader)).toBe(true);
@@ -54,7 +56,7 @@ describe('Vuent', () => {
       expect(isInstalled(localVue, VntSlider)).toBe(true);
       expect(isInstalled(localVue, VntToggle)).toBe(true);
 
-      expect(countInstalledPlugins(localVue)).toBe(16);
+      expect(countInstalledPlugins(localVue)).toBe(17);
     });
 
     test('has $vuent instance object', () => {

@@ -5,6 +5,7 @@ module.exports = {
       [
         'autosuggest',
         'button',
+        'calendarview',
         'checkbox',
         'dialog',
         'header',
