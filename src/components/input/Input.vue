@@ -36,7 +36,7 @@ export default {
       default: 'text'
     },
     value: {
-      type: String,
+      type: [String, Number],
       default: ''
     }
   },
