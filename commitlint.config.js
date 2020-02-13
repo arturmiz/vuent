@@ -19,6 +19,7 @@ module.exports = {
         'select',
         'slider',
         'toggle',
+        'tooltip',
         'website'
       ]
     ]
