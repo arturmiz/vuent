@@ -1,5 +1,6 @@
 <template>
-  <div class="vnt-tooltip">
+  <div class="vnt-tooltip"
+       role="tooltip">
     <slot></slot>
   </div>
 </template>
@@ -57,16 +58,11 @@ export default {
   @include component-base;
 
   display: none;
-  border: 1px solid lighten(#000, 80%);
+  border: 1px solid #ccc;
   background: #f2f2f2;
   padding: 8px;
   font-size: 12px;
-  line-height: 1.2;
-
-  /* &[data-popper-reference-hidden] {
-    visibility: hidden;
-    pointer-events: none;
-  } */
+  line-height: 1.33;
 }
 
 .vnt-tooltip[data-show] {
