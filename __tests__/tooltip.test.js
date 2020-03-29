@@ -17,7 +17,16 @@ describe('Tooltip', () => {
   describe('by default', () => {
 
     beforeAll(() => {
-      wrapper = shallowMount(VntTooltip);
+      wrapper = shallowMount(VntTooltip, {
+        localVue,
+        slots: {
+          default: 'Tooltip text'
+        }
+      });
+    });
+
+    test('renders correctly', () => {
+      expect(wrapper).toMatchSnapshot();
     });
 
   });
