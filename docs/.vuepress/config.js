@@ -45,6 +45,7 @@ module.exports = {
           '/components/select',
           '/components/slider',
           '/components/toggle',
+          '/components/tooltip',
         ]
       },
       {
