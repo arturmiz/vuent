@@ -29,6 +29,10 @@ describe('Tooltip', () => {
       expect(wrapper).toMatchSnapshot();
     });
 
+    test('doesn\'t break when destroyed', () => {
+      wrapper.destroy();
+    });
+
   });
 
 });
