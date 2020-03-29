@@ -6,8 +6,10 @@
 </template>
 
 <script>
-import { createPopper } from '@popperjs/core';
-
+import { createPopper } from '@popperjs/core/dist/esm/popper-lite';
+import flip from '@popperjs/core/dist/esm/modifiers/flip';
+import preventOverflow from '@popperjs/core/dist/esm/modifiers/preventOverflow';
+import offset from '@popperjs/core/dist/esm/modifiers/offset';
 const showEvents = ['mouseenter', 'focus'];
 const hideEvents = ['mouseleave', 'blur'];
 
@@ -19,6 +21,9 @@ export default {
     const tooltip = createPopper(parent, this.$el, {
       placement: 'top',
       modifiers: [
+        flip,
+        preventOverflow,
+        offset,
         {
           name: 'offset',
           options: {
@@ -28,10 +33,10 @@ export default {
         {
           name: 'flip',
           options: {
-            fallbackPlacements: ['bottom', 'left', 'right']
+            fallbackPlacements: ['top-start', 'top-end', 'right', 'left', 'bottom']
           }
         }
-      ],
+      ]
     });
 
     showEvents.forEach(event => {
