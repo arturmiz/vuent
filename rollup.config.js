@@ -1,9 +1,11 @@
+import path from 'path'
 import resolve from 'rollup-plugin-node-resolve';
 import commonjs from 'rollup-plugin-commonjs';
 import babel from 'rollup-plugin-babel';
 import vue from 'rollup-plugin-vue';
 import { terser as uglify } from 'rollup-plugin-terser';
 import css from 'rollup-plugin-css-only';
+import license from 'rollup-plugin-license';
 import pkg from './package.json';
 
 const input = 'src/index.js';
@@ -45,7 +47,15 @@ export default [
       babel({
         exclude: 'node_modules/**'
       }),
-      production && uglify()
+      production && uglify(),
+      license({
+        thirdParty: {
+          allow: '(MIT OR Apache-2.0)',
+          output: {
+            file: path.join(__dirname, 'dist', 'dependencies.md'),
+          }
+        }
+      })
     ],
     external
   },
