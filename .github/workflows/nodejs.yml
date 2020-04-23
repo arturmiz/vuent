@@ -32,11 +32,11 @@ jobs:
     - run: yarn build
     
     - name: Upload artifact
-      uses: actions/upload-artifact@v1.0.0
+      uses: actions/upload-artifact@v1
       with:
         name: vuent
         path: |
-          dist/*
+          dist
           README.md
           CHANGELOG.md
           LICENSE
@@ -45,16 +45,13 @@ jobs:
   storybook:
     runs-on: ubuntu-latest
 
-    strategy:
-      matrix:
-        node-version: [12.x]
-        
     steps:
     - uses: actions/checkout@v2
+    
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v1
       with:
-        node-version: ${{ matrix.node-version }}
+        node-version: '12.x'
       env:
         CI: true
 
@@ -62,24 +59,21 @@ jobs:
     - run: yarn storybook:build
     
     - name: Upload artifact
-      uses: actions/upload-artifact@v1.0.0
+      uses: actions/upload-artifact@v1
       with:
         name: storybook
-        path: storybook-static/*
+        path: storybook-static
           
   website:
     runs-on: ubuntu-latest
 
-    strategy:
-      matrix:
-        node-version: [12.x]
-        
     steps:
     - uses: actions/checkout@v2
+      
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v1
       with:
-        node-version: ${{ matrix.node-version }}
+        node-version: '12.x'
       env:
         CI: true
 
@@ -87,8 +81,8 @@ jobs:
     - run: yarn docs:build
     
     - name: Upload artifact
-      uses: actions/upload-artifact@v1.0.0
+      uses: actions/upload-artifact@v1
       with:
         name: website
-        path: docs/dist/*
+        path: docs/dist
           
