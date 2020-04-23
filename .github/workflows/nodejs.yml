@@ -28,31 +28,19 @@ jobs:
     - run: yarn lint
     - run: yarn test:ci 
     - run: yarn build
-    
-    - name: Upload artifact
-      uses: actions/upload-artifact@v1
-      with:
-        name: vuent
-        path: |
-          dist
-          README.md
-          CHANGELOG.md
-          LICENSE
-          package.json
           
-  # storybook:
-    # runs-on: ubuntu-latest
+  storybook:
+    runs-on: ubuntu-latest
 
-    # steps:
-    # - uses: actions/checkout@v2
-    
-    # - name: Use Node.js 12.x
-    #  uses: actions/setup-node@v1
-    #  with:
-    #    node-version: 12.x
+    steps:
+    - uses: actions/checkout@v2
+    - name: Use Node.js 12.x
+      uses: actions/setup-node@v1
+      with:
+        node-version: 12.x
 
-    # - run: yarn install --frozen-lockfile
-    # - run: yarn storybook:build
+    - run: yarn install --frozen-lockfile
+    - run: yarn storybook:build
     
     # - name: Upload artifact
     #  uses: actions/upload-artifact@v1
