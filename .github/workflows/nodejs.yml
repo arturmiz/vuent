@@ -40,43 +40,43 @@ jobs:
           LICENSE
           package.json
           
-  storybook:
-    runs-on: ubuntu-latest
+  # storybook:
+    # runs-on: ubuntu-latest
 
-    steps:
-    - uses: actions/checkout@v2
+    # steps:
+    # - uses: actions/checkout@v2
     
-    - name: Use Node.js 12.x
-      uses: actions/setup-node@v1
-      with:
-        node-version: 12.x
+    # - name: Use Node.js 12.x
+    #  uses: actions/setup-node@v1
+    #  with:
+    #    node-version: 12.x
 
-    - run: yarn install --frozen-lockfile
-    - run: yarn storybook:build
+    # - run: yarn install --frozen-lockfile
+    # - run: yarn storybook:build
     
-    - name: Upload artifact
-      uses: actions/upload-artifact@v1
-      with:
-        name: storybook
-        path: storybook-static
+    # - name: Upload artifact
+    #  uses: actions/upload-artifact@v1
+    #  with:
+    #    name: storybook
+    #    path: storybook-static
           
-  website:
-    runs-on: ubuntu-latest
+  # website:
+  #  runs-on: ubuntu-latest
 
-    steps:
-    - uses: actions/checkout@v2
+  # steps:
+  #  - uses: actions/checkout@v2
       
-    - name: Use Node.js 12.x
-      uses: actions/setup-node@v1
-      with:
-        node-version: 12.x
+  #  - name: Use Node.js 12.x
+  #    uses: actions/setup-node@v1
+  #    with:
+  #      node-version: 12.x
 
-    - run: yarn install --frozen-lockfile
-    - run: yarn docs:build
+  #  - run: yarn install --frozen-lockfile
+  #  - run: yarn docs:build
     
-    - name: Upload artifact
-      uses: actions/upload-artifact@v1
-      with:
-        name: website
-        path: docs/dist
+  #  - name: Upload artifact
+  #    uses: actions/upload-artifact@v1
+  #    with:
+  #      name: website
+  #      path: docs/dist
           
