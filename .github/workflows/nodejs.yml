@@ -23,8 +23,6 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
-      env:
-        CI: true
 
     - run: yarn install --frozen-lockfile
     - run: yarn lint
@@ -52,8 +50,6 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: 12.x
-      env:
-        CI: true
 
     - run: yarn install --frozen-lockfile
     - run: yarn storybook:build
@@ -74,8 +70,6 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: 12.x
-      env:
-        CI: true
 
     - run: yarn install --frozen-lockfile
     - run: yarn docs:build
