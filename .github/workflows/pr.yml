@@ -4,8 +4,6 @@
 name: PR-CI
 
 on:
-  # push:
-  #  branches: [ master ]
   pull_request:
     branches: [ master ]
 
@@ -42,12 +40,6 @@ jobs:
     - run: yarn install --frozen-lockfile
     - run: yarn storybook:build
     
-    # - name: Upload artifact
-    #  uses: actions/upload-artifact@v1
-    #  with:
-    #    name: storybook
-    #    path: storybook-static
-          
   website:
     runs-on: ubuntu-latest
 
@@ -60,10 +52,3 @@ jobs:
 
     - run: yarn install --frozen-lockfile
     - run: yarn docs:build
-    
-  #  - name: Upload artifact
-  #    uses: actions/upload-artifact@v1
-  #    with:
-  #      name: website
-  #      path: docs/dist
-          
