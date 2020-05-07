@@ -1,5 +1,5 @@
 import { createLocalVue, mount } from '@vue/test-utils';
-import { VntCalendarDatePicker } from '@/components';
+import { VntCalendarDatepicker } from '@/components';
 import { isInstalled } from './utils';
 
 describe('CalendarDatePicker', () => {
@@ -7,17 +7,17 @@ describe('CalendarDatePicker', () => {
 
   beforeAll(() => {
     localVue = createLocalVue();
-    localVue.use(VntCalendarDatePicker);
+    localVue.use(VntCalendarDatepicker);
   });
 
   test('can be installed separately', () => {
-    expect(isInstalled(localVue, VntCalendarDatePicker)).toBe(true);
+    expect(isInstalled(localVue, VntCalendarDatepicker)).toBe(true);
   });
 
   describe('by default', () => {
 
     beforeAll(() => {
-      wrapper = mount(VntCalendarDatePicker);
+      wrapper = mount(VntCalendarDatepicker);
     });
 
     test('renders correctly', () => {
@@ -33,7 +33,7 @@ describe('CalendarDatePicker', () => {
   describe('can be disabled', () => {
 
     beforeAll(() => {
-      wrapper = mount(VntCalendarDatePicker, {
+      wrapper = mount(VntCalendarDatepicker, {
         propsData: {
           disabled: true
         }

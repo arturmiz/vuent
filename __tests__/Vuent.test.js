@@ -4,7 +4,7 @@ import { isInstalled, countInstalledPlugins } from './utils';
 import {
   VntAutosuggest,
   VntButton,
-  VntCalendarDatePicker,
+  VntCalendarDatepicker,
   VntCheckbox,
   VntDialog,
   VntHeader,
@@ -40,7 +40,7 @@ describe('Vuent', () => {
     test('installs all components', () => {
       expect(isInstalled(localVue, VntAutosuggest)).toBe(true);
       expect(isInstalled(localVue, VntButton)).toBe(true);
-      expect(isInstalled(localVue, VntCalendarDatePicker)).toBe(true);
+      expect(isInstalled(localVue, VntCalendarDatepicker)).toBe(true);
       expect(isInstalled(localVue, VntCheckbox)).toBe(true);
       expect(isInstalled(localVue, VntDialog)).toBe(true);
       expect(isInstalled(localVue, VntHeader)).toBe(true);

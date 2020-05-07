@@ -1,24 +1,24 @@
 {
-  "editor.tabSize": 2,
-  "editor.insertSpaces": true,
-  "eslint.enable": true,
-  "eslint.validate": [
-    "javascript",
-    {
-      "language": "vue",
-      "autoFix": false
-    }
-  ],
-  "files.trimTrailingWhitespace": true,
-  "files.insertFinalNewline": true,
-  "search.exclude": {
-    "dist": true,
-    "**/node_modules": true
-  },
-  "files.exclude": {
-    "**/.git": true,
-    "**/.DS_Store": true,
-    "**/node_modules": true
-  },
-  "files.eol": "\n"
-}
+    "editor.tabSize": 2,
+    "editor.insertSpaces": true,
+    "eslint.enable": true,
+    "eslint.validate": [
+        "javascript",
+        {
+            "language": "vue",
+            "autoFix": false
+        },
+    ],
+    "files.trimTrailingWhitespace": true,
+    "files.insertFinalNewline": true,
+    "search.exclude": {
+      "dist": true,
+      "**/node_modules": true
+    },
+    "files.exclude": {
+      "**/.git": true,
+      "**/.DS_Store": true,
+      "**/node_modules": true
+    },
+    "files.eol": "\n"
+  }
