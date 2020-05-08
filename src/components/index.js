@@ -16,3 +16,4 @@ export { default as VntRating } from './rating';
 export { default as VntSelect } from './select';
 export { default as VntSlider } from './slider';
 export { default as VntToggle } from './toggle';
+export { default as VntTooltip } from './tooltip';

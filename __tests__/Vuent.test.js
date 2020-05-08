@@ -19,6 +19,7 @@ import {
   VntSelect,
   VntSlider,
   VntToggle,
+  VntTooltip,
 } from '@/components';
 
 import Vuent from '@/';
@@ -55,6 +56,7 @@ describe('Vuent', () => {
       expect(isInstalled(localVue, VntSelect)).toBe(true);
       expect(isInstalled(localVue, VntSlider)).toBe(true);
       expect(isInstalled(localVue, VntToggle)).toBe(true);
+      expect(isInstalled(localVue, VntTooltip)).toBe(true);
 
       expect(countInstalledPlugins(localVue)).toBe(17);
     });

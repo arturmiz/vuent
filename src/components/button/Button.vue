@@ -50,6 +50,7 @@ $buttonBaseColor: #ccc;
   padding: 0 37px;
   border: 1px solid $buttonBaseColor;
   color: #000100;
+  border-radius: 0;
 
   & ~ & {
     margin-left: 4px;
