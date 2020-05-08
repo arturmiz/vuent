@@ -4,6 +4,7 @@
   <img src="https://vuentjs.org/logo.svg" alt="Vuent" width="280" />
 </p>
 
+![master](https://github.com/arturmiz/vuent/workflows/build/badge.svg)
 [![Build Status](https://dev.azure.com/vuent/vuent/_apis/build/status/arturmiz.vuent)](https://dev.azure.com/vuent/vuent/_build/latest?definitionId=1)
 [![codecov](https://codecov.io/gh/arturmiz/vuent/branch/master/graph/badge.svg)](https://codecov.io/gh/arturmiz/vuent)
 [![License](https://img.shields.io/npm/l/vuent.svg)](https://www.npmjs.com/package/vuent)
