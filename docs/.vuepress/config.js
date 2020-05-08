@@ -32,6 +32,7 @@ module.exports = {
           '/components/autosuggest',
           '/components/button',
           '/components/checkbox',
+          '/components/calendardatepicker',
           '/components/dialog',
           '/components/header',
           '/components/icon',
