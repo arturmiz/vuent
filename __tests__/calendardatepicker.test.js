@@ -46,4 +46,28 @@ describe('CalendarDatePicker', () => {
 
   });
 
+  describe('updates passed value', () => {
+
+    beforeAll(async () => {
+      wrapper = mount(VntCalendarDatepicker, {
+        propsData: {
+          value: '12345'
+        }
+      });
+      const input = wrapper.find('input');
+      input.setValue('123456');
+    });
+
+    test('event is emitted', () => {
+      expect(wrapper.emitted().input).toHaveLength(1);
+    });
+
+    test('entered value is emitted', () => {
+      wrapper.vm.input('123456');
+
+      expect(wrapper.emitted().input[1]).toEqual(['123456']);
+    });
+
+  });
+
 });

@@ -1,5 +1,6 @@
 <template>
   <vnt-input v-model="localValue"
+             v-bind="$attrs"
              type="date"
              @input="input" />
 </template>

@@ -10,6 +10,6 @@ exports[`CalendarDatePicker by default renders correctly 1`] = `
 exports[`CalendarDatePicker can be disabled renders correctly 1`] = `
 <label class="vnt-input" disabled="disabled">
   <!---->
-  <input type="date" placeholder="" class="vnt-input__control">
+  <input disabled="disabled" type="date" placeholder="" class="vnt-input__control">
 </label>
 `;
