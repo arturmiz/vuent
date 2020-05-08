@@ -10,6 +10,14 @@
 <vnt-calendar-datepicker v-model="date" />
 ```
 
+## Disabled
+
+<calendar-datepicker-disabled />
+
+```html
+<vnt-calendar-datepicker v-model="date" disabled />
+```
+
 ## Configuration
 
-Same as for Input component.
+Same as for [Input](/components/input.html#configuration) component.

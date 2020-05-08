@@ -1,6 +1,6 @@
 <template>
   <div class="playground">
-    <vnt-calendar-datepicker v-model="date" />
+    <vnt-calendar-datepicker v-model="date" disabled />
     <div class="result">date: {{ date }}</div>
   </div>
 </template>
@@ -15,7 +15,7 @@ export default {
   },
   data() {
     return {
-      date: ''
+      date: "2020-04-05"
     };
   }
 };

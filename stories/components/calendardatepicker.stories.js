@@ -13,4 +13,28 @@ storiesOf('CalendarDatePicker', module)
         <vnt-calendar-datepicker v-model="date" />
         <p class="result">date: {{ date }}</p>
       </div>`
+  }))
+  .add('disabled', () => ({
+    data() {
+      return {
+        date: '2020-01-15'
+      };
+    },
+    template: `
+      <div>
+        <vnt-calendar-datepicker v-model="date" disabled />
+        <p class="result">date: {{ date }}</p>
+      </div>`
+  }))
+  .add('with date', () => ({
+    data() {
+      return {
+        date: '2020-01-15'
+      };
+    },
+    template: `
+      <div>
+        <vnt-calendar-datepicker v-model="date" />
+        <p class="result">date: {{ date }}</p>
+      </div>`
   }));
