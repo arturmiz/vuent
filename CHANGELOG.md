@@ -1,3 +1,23 @@
+<a name="0.7.0"></a>
+# [0.7.0](https://github.com/arturmiz/vuent/compare/v0.6.0...v0.7.0) (2020-05-11)
+
+
+### Bug Fixes
+
+* **input:** missing number as acceptable value type causing an error ([fc01a39](https://github.com/arturmiz/vuent/commit/fc01a39))
+* **input:** reset border-radius ([74983dc](https://github.com/arturmiz/vuent/commit/74983dc))
+* **navview:** pane width on desktop ([0df3c57](https://github.com/arturmiz/vuent/commit/0df3c57))
+* **navview:** use span instead of link to avoid nested links ([#97](https://github.com/arturmiz/vuent/issues/97)) ([ef5384e](https://github.com/arturmiz/vuent/commit/ef5384e))
+
+
+### Features
+
+* **calendardatepicker:** initial implementation ([#106](https://github.com/arturmiz/vuent/issues/106)) ([48a2868](https://github.com/arturmiz/vuent/commit/48a2868))
+* **icon:** a few new icons ([#94](https://github.com/arturmiz/vuent/issues/94)) ([1e2c947](https://github.com/arturmiz/vuent/commit/1e2c947))
+* **tooltip:** initial implementation ([#101](https://github.com/arturmiz/vuent/issues/101)) ([6150577](https://github.com/arturmiz/vuent/commit/6150577))
+
+
+
 <a name="0.6.0"></a>
 # [0.6.0](https://github.com/arturmiz/vuent/compare/v0.5.0...v0.6.0) (2019-10-23)
 
