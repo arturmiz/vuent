@@ -215,7 +215,7 @@ describe('Select', () => {
 
   describe('can have custom optionValue', () => {
 
-    beforeAll(() => {
+    test('correct value is resolved - object option', () => {
       wrapper = mount(VntSelect, {
         propsData: {
           optionValue: 'id',
@@ -228,11 +228,21 @@ describe('Select', () => {
 
       const option = wrapper.find('.vnt-dropdown-options__item');
       option.trigger('click');
-    });
-
-    test('correct value is resolved', () => {
       const [[newValue]] = wrapper.emitted()['input'];
       expect(newValue).toBe(123);
+    });
+
+    test('correct value is resolved - primitive option', () => {
+      wrapper = mount(VntSelect, {
+        propsData: {
+          options: [ 'List item 1', 'List item 2']
+        }
+      });
+
+      const option = wrapper.find('.vnt-dropdown-options__item');
+      option.trigger('click');
+      const [[newValue]] = wrapper.emitted()['input'];
+      expect(newValue).toBe('List item 1');
     });
 
   });

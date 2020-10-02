@@ -10,14 +10,33 @@ const countries = [
   { label: 'United States', value: 'USA' }
 ];
 
+const countriesPrimitive = [
+  'Australia',
+  'Belgium',
+  'Canada',
+  'Germany',
+  'France',
+  'United Kingdom',
+  'United States'
+];
+
 const createData = () => ({
   country: null,
   countries,
+  countriesPrimitive
 });
 
 /* eslint no-undef: 0 */
 storiesOf('Select', module)
   .add('default', () => ({
+    data: () => createData(),
+    template: `
+      <div style="width: 300px">
+        <vnt-select v-model="country" :options="countriesPrimitive"></vnt-select>
+        <p class="result">country: {{ country }}</p>
+      </div>`
+  }))
+  .add('object', () => ({
     data: () => createData(),
     template: `
       <div style="width: 300px">

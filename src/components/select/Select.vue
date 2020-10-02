@@ -83,15 +83,21 @@ export default {
 
   computed: {
     chosenText() {
-      const chosenOption = this.options.find(option => option[this.optionValue] === this.value);
-      return chosenOption ? chosenOption[this.optionText] : '';
+      const chosenOption = this.options.find(option => {
+        if (typeof option === 'object') return option[this.optionValue] === this.value;
+        return option === this.value;
+      });
+
+      if (!chosenOption) return '';
+      if (typeof chosenOption === 'object') return chosenOption[this.optionText]
+      return chosenOption;
     }
   },
 
   methods: {
     selectValue(option) {
       if (!this.disabled) {
-        this.$emit('input', option[this.optionValue]);
+        this.$emit('input', typeof option === 'object' ? option[this.optionValue] : option);
       }
     },
 

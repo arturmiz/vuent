@@ -19,13 +19,13 @@ export default {
     return {
       country: null,
       countries: [
-        'Australia',
-        'Belgium',
-        'Canada',
-        'Germany',
-        'France',
-        'United Kingdom',
-        'United States'
+        { label: 'Australia', value: 'AUS' },
+        { label: 'Belgium', value: 'BEL' },
+        { label: 'Canada', value: 'CAN' },
+        { label: 'Germany', value: 'GER' },
+        { label: 'France', value: 'FRA' },
+        { label: 'United Kingdom', value: 'GBR' },
+        { label: 'United States', value: 'USA' }
       ]
     }
   }

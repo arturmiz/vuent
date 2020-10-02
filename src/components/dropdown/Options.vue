@@ -3,8 +3,8 @@
       class="vnt-dropdown-options"
       role="listbox">
 
-    <li v-for="option in options"
-        :key="getKey(option)"
+    <li v-for="(option, i) in options"
+        :key="i"
         class="vnt-dropdown-options__item"
         role="listitem"
         @click="selectOption(option)">{{ getText(option) }}</li>
@@ -53,10 +53,7 @@ export default {
     },
 
     getText(option) {
-      if (this.optionText) {
-        return option[this.optionText];
-      }
-      return option;
+      return typeof option === 'object' && this.optionText ? option[this.optionText] : option;
     },
 
     getValue(option) {
