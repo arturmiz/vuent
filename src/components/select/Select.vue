@@ -89,7 +89,7 @@ export default {
       });
 
       if (!chosenOption) return '';
-      if (typeof chosenOption === 'object') return chosenOption[this.optionText]
+      if (typeof chosenOption === 'object') return chosenOption[this.optionText];
       return chosenOption;
     }
   },
