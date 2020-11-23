@@ -75,7 +75,7 @@ export default {
       .filter(pivotItem => pivotItem.tag === 'vnt-pivot-item')
       .forEach((pivotItem, index) => {
         const attrs = pivotItem.data.attrs;
-        const isActive = attrs && !!attrs.active
+        const isActive = attrs && (!!attrs.active || attrs.active === '');
 
         const header = createElement('li', {
           staticClass: 'vnt-pivot__header',
