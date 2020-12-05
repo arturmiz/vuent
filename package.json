@@ -27,7 +27,6 @@
   ],
   "scripts": {
     "build": "rollup -c && npm run min:css",
-    "commitmsg": "commitlint -e $GIT_PARAMS",
     "dev": "rollup -c -w",
     "docs:dev": "vuepress dev docs",
     "docs:build": "vuepress build docs",
@@ -47,8 +46,8 @@
   "devDependencies": {
     "@babel/core": "~7.1.0",
     "@babel/preset-env": "~7.1.0",
-    "@commitlint/cli": "6.0.2",
-    "@commitlint/config-conventional": "6.0.2",
+    "@commitlint/cli": "9.1.2",
+    "@commitlint/config-conventional": "9.1.2",
     "@popperjs/core": "~2.0.6",
     "@storybook/addon-a11y": "~5.2.3",
     "@storybook/addon-actions": "~5.2.4",
@@ -72,7 +71,7 @@
     "eslint": "~5.13.0",
     "eslint-plugin-jest": "~22.2.2",
     "eslint-plugin-vue": "~5.1.0",
-    "husky": "~0.14.3",
+    "husky": "4.3.4",
     "jest": "~24.5.0",
     "jest-serializer-vue": "~2.0.2",
     "postcss-cli": "~6.0.0",
@@ -90,5 +89,10 @@
     "vue-jest": "~3.0.2",
     "vue-template-compiler": "2.5.16",
     "vuepress": "~0.14.2"
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
   }
 }
