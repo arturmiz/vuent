@@ -111,7 +111,7 @@ export default {
 .vnt-select {
   @include component-base();
 
-  margin: 10px 0;
+  margin: 12px 0;
 }
 
 .vnt-select__title {

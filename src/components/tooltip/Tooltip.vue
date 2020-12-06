@@ -22,6 +22,13 @@ export default {
           name: 'offset',
           options: {
             offset: [8, 8]
+            // offset: ({ placement, reference, popper }) => {
+            //   if (placement === 'bottom') {
+            //     return [0, popper.height / 2];
+            //   } else {
+            //     return [8, 8];
+            //   }
+            // },
           }
         },
         {
@@ -62,6 +69,11 @@ export default {
   padding: 8px;
   font-size: 12px;
   line-height: 1.33;
+
+    /* &[data-popper-reference-hidden] {
+    visibility: hidden;
+    pointer-events: none;
+  } */
 }
 
 .vnt-tooltip[data-show] {

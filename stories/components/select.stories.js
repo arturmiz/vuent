@@ -53,4 +53,26 @@ storiesOf('Select', module)
         <vnt-select v-model="country" :options="countries" placeholder="Choose country"></vnt-select>
         <p class="result">country: {{ country }}</p>
       </div>`
+  }))
+  .add('list of strings', () => ({
+    data() {
+      return {
+        country: 'Canada',
+        countries: [
+          'Australia',
+          'Belgium',
+          'Canada',
+          'Germany',
+          'France',
+          'United Kingdom',
+          'United States'
+        ]
+      };
+    },
+    template: `
+      <div style="width: 300px">
+        <vnt-select v-model="country" :options="countries"></vnt-select>
+        <p class="result">country: {{ country }}</p>
+      </div>`
   }));
+

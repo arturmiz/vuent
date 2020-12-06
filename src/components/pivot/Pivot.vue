@@ -6,7 +6,7 @@
 
   color: #000100;
   display: block;
-  margin: 10px 0;
+  margin: 12px 0;
 }
 
 .vnt-pivot__navigation {
