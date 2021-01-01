@@ -57,7 +57,7 @@ export default {
 
   color: #000100;
   display: block;
-  margin: 12px 0;
+  margin: 10px 0;
 }
 
 .vnt-input__label {

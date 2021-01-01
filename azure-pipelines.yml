@@ -166,15 +166,3 @@ stages:
 
       - publish: $(Build.ArtifactStagingDirectory)/artifact
         artifact: vuent_next
-
-      - task: Npm@1
-        displayName: 'publish to Azure Artifacts'
-        inputs:
-          command: publish
-          workingDir: '$(System.DefaultWorkingDirectory)/_arturmiz.vuent/vuent_next'
-          verbose: false
-          customRegistry: useFeed
-          customFeed: '1452c84f-6927-48ec-ba36-a124885dac80'
-          publishRegistry: useFeed
-          publishFeed: '1452c84f-6927-48ec-ba36-a124885dac80'
-
