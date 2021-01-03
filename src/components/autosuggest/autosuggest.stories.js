@@ -23,7 +23,7 @@ const createData = () => ({
 
 export const Default = () => ({
   components: { Autosuggest },
-  data: () => createData() ,
+  data: () => createData(),
   template: `
     <div>
       <vnt-autosuggest v-model="country" :options="countries"></vnt-autosuggest>
@@ -34,7 +34,7 @@ export const Default = () => ({
 
 export const Disabled = () => ({
   components: { Autosuggest },
-  data: () => createData() ,
+  data: () => createData(),
   template: `
     <div>
       <vnt-autosuggest v-model="country" :options="countries" disabled></vnt-autosuggest>
@@ -45,7 +45,7 @@ export const Disabled = () => ({
 
 export const Label = () => ({
   components: { Autosuggest },
-  data: () => createData() ,
+  data: () => createData(),
   template: `
     <div>
       <vnt-autosuggest v-model="country" :options="countries" label="Country"></vnt-autosuggest>
@@ -56,7 +56,7 @@ export const Label = () => ({
 
 export const Placeholder = () => ({
   components: { Autosuggest },
-  data: () => createData() ,
+  data: () => createData(),
   template: `
     <div>
       <vnt-autosuggest v-model="country" :options="countries" placeholder="Choose country"></vnt-autosuggest>
