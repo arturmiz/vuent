@@ -85,13 +85,13 @@
     "rollup-plugin-terser": "~5.0.0",
     "rollup-plugin-vue": "~5.1.2",
     "sass": "1.30.0",
-    "sass-loader": "10.1.0",
+    "sass-loader": "7.3.0",
     "style-loader": "2.0.0",
     "vue": "2.5.16",
     "vue-jest": "~3.0.2",
     "vue-loader": "15.9.5",
     "vue-template-compiler": "2.5.16",
-    "vuepress": "~0.14.2"
+    "vuepress": "0.14.11"
   },
   "husky": {
     "hooks": {
