@@ -15,3 +15,10 @@
   </vnt-pivot-item>
 </vnt-pivot>
 ```
+
+## Configuration
+
+`active` attribute
+
+Determines which tab should be set as active.
+Must be added to \`vnt-pivot-item\` element that should be active at start.
