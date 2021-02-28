@@ -17,9 +17,31 @@ const countries = [
   { label: 'United States', value: 'USA' }
 ];
 
+const countriesNames = [
+  'Australia',
+  'Belgium',
+  'Canada',
+  'Germany',
+  'France',
+  'United Kingdom',
+  'United States'
+];
+
+const countriesMixed = [
+  'Australia',
+  { label: 'Belgium', value: 'BEL' },
+  { label: 'Canada', value: 'CAN' },
+  'Germany',
+  'France',
+  { label: 'United Kingdom', value: 'GBR' },
+  'United States'
+];
+
 const createData = () => ({
   country: null,
   countries,
+  countriesMixed,
+  countriesNames
 });
 
 const template = `
@@ -29,11 +51,35 @@ const template = `
   </div>
 `;
 
-export const Default = (args, { argTypes }) => ({
+export const Objects = (args, { argTypes }) => ({
   components: { Select },
   data: () => createData(),
   props: Object.keys(argTypes),
   template
+});
+
+export const Primitives = (args, { argTypes }) => ({
+  components: { Select },
+  data: () => createData(),
+  props: Object.keys(argTypes),
+  template: `
+    <div style="width: 300px">
+      <vnt-select v-model="country" :options="countriesNames" :disabled="disabled"></vnt-select>
+      <p class="result">country: {{ country }}</p>
+    </div>
+  `
+});
+
+export const Mixed = (args, { argTypes }) => ({
+  components: { Select },
+  data: () => createData(),
+  props: Object.keys(argTypes),
+  template: `
+    <div style="width: 300px">
+      <vnt-select v-model="country" :options="countriesMixed" :disabled="disabled"></vnt-select>
+      <p class="result">country: {{ country }}</p>
+    </div>
+  `
 });
 
 export const WithValue = (args, { argTypes }) => ({

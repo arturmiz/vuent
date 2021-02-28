@@ -83,15 +83,25 @@ export default {
 
   computed: {
     chosenText() {
-      const chosenOption = this.options.find(option => option[this.optionValue] === this.value);
-      return chosenOption ? chosenOption[this.optionText] : '';
+      const chosenOption = this.options.find((option) => {
+        if (typeof option === 'object') {
+          return option[this.optionValue] === this.value;
+        }
+        return option === this.value;
+      });
+
+      if (chosenOption) {
+        return typeof chosenOption === 'object' ? chosenOption[this.optionText] : chosenOption;
+      }
+
+      return '';
     }
   },
 
   methods: {
-    selectValue(option) {
+    selectValue(value) {
       if (!this.disabled) {
-        this.$emit('input', option[this.optionValue]);
+        this.$emit('input', value);
       }
     },
 
@@ -111,7 +121,7 @@ export default {
 .vnt-select {
   @include component-base();
 
-  margin: 10px 0;
+  margin: 12px 0;
 }
 
 .vnt-select__title {
