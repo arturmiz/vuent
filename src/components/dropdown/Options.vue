@@ -53,21 +53,21 @@ export default {
     },
 
     getText(option) {
-      if (this.optionText) {
+      if (typeof option === 'object' && this.optionText) {
         return option[this.optionText];
       }
       return option;
     },
 
     getValue(option) {
-      if (this.optionValue) {
+      if (typeof option === 'object' && this.optionValue) {
         return option[this.optionValue];
       }
       return option;
     },
 
     selectOption(option) {
-      this.$emit('on-select', option);
+      this.$emit('on-select', this.getValue(option));
     },
 
     hide() {

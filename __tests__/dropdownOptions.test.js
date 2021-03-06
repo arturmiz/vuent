@@ -201,7 +201,7 @@ describe('DropdownOptions', () => {
       test('event is emitted', () => {
         const [option] = wrapper.vm.options;
         const [[eventValue]] = wrapper.emitted()['on-select'];
-        expect(eventValue).toBe(option);
+        expect(eventValue).toBe(option.val);
       });
 
     });
