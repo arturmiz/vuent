@@ -1,12 +1,15 @@
 <template>
-  <li class="vnt-navview__item"
-      :class="{'vnt-navview__item--active': active}">
-    <span class="vnt-navview__item-link"
-          @click="handleClick">
-      <vnt-icon :name="icon"
-                class="vnt-navview__item-icon" />
+  <li
+    class="vnt-navview__item"
+    :class="{'vnt-navview__item--active': active}"
+  >
+    <span @click="handleClick()" class="vnt-navview__item-link">
+      <vnt-icon
+        :name="icon"
+        class="vnt-navview__item-icon"
+      />
       <span class="vnt-navview__item-label">
-        <slot></slot>
+        <slot/>
       </span>
     </span>
   </li>
@@ -29,7 +32,7 @@ export default {
     },
     click: {
       type: Function,
-      default: undefined
+      default: () => {}
     },
     icon: {
       type: String,
@@ -39,10 +42,8 @@ export default {
 
   methods: {
     handleClick(event) {
-      if (typeof this.click === 'function') {
-        this.click();
-        event.preventDefault();
-      }
+      this.click();
+      event.preventDefault();
     }
   }
 };
