@@ -28,7 +28,7 @@ The project aims to help developers build web or [UWP][uwp] apps with Fluent's l
 npm install vuent --save
 ```
 
-For more details visit [Get Started](/get-started) guide.
+For more details visit [Get Started](/get-started.md) guide.
 
 ## Changelog
 
